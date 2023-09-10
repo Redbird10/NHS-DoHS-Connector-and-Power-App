@@ -1,0 +1,1805 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "title": "NHS_DoHS_API",
+    "description": "This Power Connector provides access to the NHS Directory of Healthcare Services API - version 3, using the Integration test environment.",
+    "version": "1.0"
+  },
+  "host": "int.api.service.nhs.uk",
+  "basePath": "/service-search-api/",
+  "schemes": [
+    "https"
+  ],
+  "consumes": [],
+  "produces": [],
+  "paths": {
+    "/organisationtypes": {
+      "get": {
+        "responses": {
+          "default": {
+            "description": "default",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "@odata.context": {
+                  "type": "string",
+                  "description": "@odata.context"
+                },
+                "value": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "@search.score": {
+                        "type": "integer",
+                        "format": "int32",
+                        "description": "@search.score"
+                      },
+                      "OrganisationTypeID": {
+                        "type": "string",
+                        "description": "OrganisationTypeID"
+                      },
+                      "OrganisationTypeName": {
+                        "type": "string",
+                        "description": "OrganisationTypeName"
+                      },
+                      "IsDeleted": {
+                        "type": "boolean",
+                        "description": "IsDeleted"
+                      },
+                      "DisplayName": {
+                        "type": "string",
+                        "description": "DisplayName"
+                      }
+                    }
+                  },
+                  "description": "value"
+                }
+              }
+            }
+          }
+        },
+        "summary": "Search for organisation types",
+        "description": "Use this endpoint to get, filter or search the organisation types.",
+        "operationId": "GetOrganisationTypes",
+        "parameters": [
+          {
+            "name": "api-version",
+            "in": "query",
+            "required": true,
+            "type": "integer",
+            "default": 1,
+            "description": "The API version number must be supplied as a query parameter. This must be 1."
+          },
+          {
+            "name": "search",
+            "in": "query",
+            "required": false,
+            "type": "string",
+            "description": "The text to search for. All searchable fields are searched by default unless searchFields is specified.  When searching searchable fields, the search text itself is tokenized, so multiple terms can be separated by white space, for example search=hello world.  To match any term, use * which can be useful for boolean filter queries. Omitting this parameter has the same effect as setting it to *."
+          },
+          {
+            "name": "searchMode",
+            "in": "query",
+            "required": false,
+            "type": "string",
+            "default": "any",
+            "description": "Defaults to any. Specifies whether any or all of the search terms must be matched in order to count the document as a match.",
+            "enum": [
+              "any",
+              "all"
+            ]
+          },
+          {
+            "name": "searchFields",
+            "in": "query",
+            "required": false,
+            "type": "string",
+            "description": "A comma-separated list of field names to search for the specified text. This field works in conjunction with the search field.  Example search field - searchFields=ODSCode  Omitting this parameter has the same effect as setting it to *."
+          },
+          {
+            "name": "queryType",
+            "in": "query",
+            "required": false,
+            "type": "string",
+            "default": "simple",
+            "description": "When set to simple, search text is interpreted using a simple query language that allows for symbols such as +, * and \"\".  When the query type is set to full, search text is interpreted using the Lucene query language which allows field-specific and weighted searches.  The following example is a search over independent terms, with a requirement that all matching documents include pool.  For more information, see Simple query syntax in Azure Cognitive Search.  Example using simple query type:  queryType=simple  search=budget hotel +pool  searchMode=all  The next example shows in-field search and term boosting. It looks for hotels where the category field contains the term budget.  Any documents containing the phrase recently renovated are ranked higher as a result of the term boost value.  For more information, see Lucene query syntax in Azure Cognitive Search.  Example using full query type:  queryType=full  search=category:budget AND \\'recently renovated\\'^3  searchMode=all  Allowed values: simple, full",
+            "enum": [
+              "simple",
+              "full"
+            ]
+          },
+          {
+            "name": "$skip",
+            "in": "query",
+            "required": false,
+            "type": "integer",
+            "description": "The number of search results to skip. For example, $skip:25 returns the entries after the first 25 entries in the search results."
+          },
+          {
+            "name": "$top",
+            "in": "query",
+            "required": false,
+            "type": "integer",
+            "default": 50,
+            "description": "The number of search results to retrieve. The default is 50."
+          },
+          {
+            "name": "$count",
+            "in": "query",
+            "required": false,
+            "type": "boolean",
+            "default": false,
+            "description": "Optional, defaults to false. Specifies whether to fetch the total count of results.  This is the count of all documents that match the search and $filter parameters, ignoring $top and $skip.  Setting this value to true may have a performance impact. The count returned is an approximation.  If you’d like to get only the count without any documents, you can use $top=0."
+          },
+          {
+            "name": "$orderBy",
+            "in": "query",
+            "required": false,
+            "type": "string",
+            "description": "A list of comma-separated expressions to sort the results by. Each expression can be either a field name or a call to the geo.distance() function.  Each expression can be followed by asc to indicate ascending, and desc to indicate descending. The default is ascending order.  This $orderBy routine orders the results by the distance from the geography point included in the expression.  The geography point can be a position from where you are and the results are ordered by how local they are.  For more information, see Simple query syntax in Azure Cognitive Search.  Example: $orderby=geo.distance(Geocode, geography'POINT(-0.76444095373153675 52.000820159912109)')"
+          },
+          {
+            "name": "$select",
+            "in": "query",
+            "required": false,
+            "type": "string",
+            "description": "A list of comma-separated fields to include in the result set.  If unspecified or set to *, all fields marked as retrievable in the schema are included in the projection.  Example: $select=ODSCode,OrganisationName,Contacts,Address1,Address2,Address3,City,Postcode,OrganisationSubType"
+          },
+          {
+            "name": "$filter",
+            "in": "query",
+            "required": false,
+            "type": "string",
+            "description": "A structured search expression in standard OData syntax.  The $filter parameter specifies inclusion or exclusion criteria for returning matches in search results.  For more information on using the $filter, see OData $filter syntax in Azure Cognitive Search.  Examples:  Filter results by pharmacies that are EPS-enabled and classed as 'community', that is, ServiceCode is EPS0001 and OrganisationTypeID is PHA and SubType is Community:  $filter=Services / any (x: x/ServiceCode eq 'EPS0001' ) and OrganisationTypeId eq 'PHA' and OrganisationSubType eq 'Community'  Filter results that match a postcode, that is Postcode field is NG16:  $filter=search.ismatch('NG16', 'Postcode')  Filter results by Postcode is CW9 and OrganisationTypeId is a dentist:  $filter=search.ismatch('CW9', 'Postcode') and OrganisationTypeId eq 'DEN'  For details on organisation types and service codes, see organisation and service codes."
+          }
+        ]
+      }
+    },
+    "/": {
+      "get": {
+        "responses": {
+          "default": {
+            "description": "default",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "@odata.context": {
+                  "type": "string",
+                  "description": "@odata.context"
+                },
+                "@odata.count": {
+                  "type": "integer",
+                  "format": "int32",
+                  "description": "@odata.count"
+                },
+                "value": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "@search.score": {
+                        "type": "integer",
+                        "format": "int32",
+                        "description": "@search.score"
+                      },
+                      "SearchKey": {
+                        "type": "string",
+                        "description": "SearchKey"
+                      },
+                      "ODSCode": {
+                        "type": "string",
+                        "description": "ODSCode"
+                      },
+                      "OrganisationName": {
+                        "type": "string",
+                        "description": "OrganisationName"
+                      },
+                      "OrganisationTypeId": {
+                        "type": "string",
+                        "description": "OrganisationTypeId"
+                      },
+                      "OrganisationType": {
+                        "type": "string",
+                        "description": "OrganisationType"
+                      },
+                      "OrganisationStatus": {
+                        "type": "string",
+                        "description": "OrganisationStatus"
+                      },
+                      "SummaryText": {
+                        "type": "string",
+                        "description": "SummaryText"
+                      },
+                      "URL": {
+                        "type": "string",
+                        "description": "URL"
+                      },
+                      "Address1": {
+                        "type": "string",
+                        "description": "Address1"
+                      },
+                      "Address2": {
+                        "type": "string",
+                        "description": "Address2"
+                      },
+                      "Address3": {
+                        "type": "string",
+                        "description": "Address3"
+                      },
+                      "City": {
+                        "type": "string",
+                        "description": "City"
+                      },
+                      "County": {
+                        "type": "string",
+                        "description": "County"
+                      },
+                      "Latitude": {
+                        "type": "number",
+                        "format": "float",
+                        "description": "Latitude"
+                      },
+                      "Longitude": {
+                        "type": "number",
+                        "format": "float",
+                        "description": "Longitude"
+                      },
+                      "Postcode": {
+                        "type": "string",
+                        "description": "Postcode"
+                      },
+                      "Geocode": {
+                        "type": "object",
+                        "properties": {
+                          "type": {
+                            "type": "string",
+                            "description": "type"
+                          },
+                          "coordinates": {
+                            "type": "array",
+                            "items": {
+                              "type": "number",
+                              "format": "float"
+                            },
+                            "description": "coordinates"
+                          },
+                          "crs": {
+                            "type": "object",
+                            "properties": {
+                              "type": {
+                                "type": "string",
+                                "description": "type"
+                              },
+                              "properties": {
+                                "type": "object",
+                                "properties": {
+                                  "name": {
+                                    "type": "string",
+                                    "description": "name"
+                                  }
+                                },
+                                "description": "properties"
+                              }
+                            },
+                            "description": "crs"
+                          }
+                        },
+                        "description": "Geocode"
+                      },
+                      "OrganisationSubType": {
+                        "type": "string",
+                        "description": "OrganisationSubType"
+                      },
+                      "OrganisationAliases": {
+                        "type": "array",
+                        "items": {
+                          "type": "object",
+                          "properties": {
+                            "OrganisationAlias": {
+                              "type": "string",
+                              "description": "OrganisationAlias"
+                            },
+                            "OrganisationAliasId": {
+                              "type": "string",
+                              "description": "OrganisationAliasId"
+                            }
+                          }
+                        },
+                        "description": "OrganisationAliases"
+                      },
+                      "ParentOrganisation": {
+                        "type": "object",
+                        "properties": {
+                          "ODSCode": {
+                            "type": "string",
+                            "description": "ODSCode"
+                          },
+                          "OrganisationName": {
+                            "type": "string",
+                            "description": "OrganisationName"
+                          }
+                        },
+                        "description": "ParentOrganisation"
+                      },
+                      "Services": {
+                        "type": "array",
+                        "items": {
+                          "type": "object",
+                          "properties": {
+                            "ServiceName": {
+                              "type": "string",
+                              "description": "ServiceName"
+                            },
+                            "ServiceCode": {
+                              "type": "string",
+                              "description": "ServiceCode"
+                            },
+                            "ServiceDescription": {
+                              "type": "string",
+                              "description": "ServiceDescription"
+                            },
+                            "Contacts": {
+                              "type": "array",
+                              "items": {
+                                "type": "object",
+                                "properties": {
+                                  "ContactType": {
+                                    "type": "string",
+                                    "description": "ContactType"
+                                  },
+                                  "ContactAvailabilityType": {
+                                    "type": "string",
+                                    "description": "ContactAvailabilityType"
+                                  },
+                                  "ContactMethodType": {
+                                    "type": "string",
+                                    "description": "ContactMethodType"
+                                  },
+                                  "ContactValue": {
+                                    "type": "string",
+                                    "description": "ContactValue"
+                                  }
+                                }
+                              },
+                              "description": "Contacts"
+                            },
+                            "ServiceProvider": {
+                              "type": "object",
+                              "properties": {
+                                "ODSCode": {
+                                  "type": "string",
+                                  "description": "ODSCode"
+                                },
+                                "OrganisationName": {
+                                  "type": "string",
+                                  "description": "OrganisationName"
+                                }
+                              },
+                              "description": "ServiceProvider"
+                            },
+                            "Treatments": {
+                              "type": "array",
+                              "items": {},
+                              "description": "Treatments"
+                            },
+                            "OpeningTimes": {
+                              "type": "array",
+                              "items": {},
+                              "description": "OpeningTimes"
+                            },
+                            "AgeRange": {
+                              "type": "array",
+                              "items": {},
+                              "description": "AgeRange"
+                            },
+                            "Metrics": {
+                              "type": "array",
+                              "items": {},
+                              "description": "Metrics"
+                            },
+                            "KeyValueData": {
+                              "type": "array",
+                              "items": {},
+                              "description": "KeyValueData"
+                            }
+                          }
+                        },
+                        "description": "Services"
+                      },
+                      "OpeningTimes": {
+                        "type": "array",
+                        "items": {
+                          "type": "object",
+                          "properties": {
+                            "Weekday": {
+                              "type": "string",
+                              "description": "Weekday"
+                            },
+                            "OpeningTime": {
+                              "type": "string",
+                              "description": "OpeningTime"
+                            },
+                            "ClosingTime": {
+                              "type": "string",
+                              "description": "ClosingTime"
+                            },
+                            "Times": {
+                              "type": "string",
+                              "description": "Times"
+                            },
+                            "OffsetOpeningTime": {
+                              "type": "integer",
+                              "format": "int32",
+                              "description": "OffsetOpeningTime"
+                            },
+                            "OffsetClosingTime": {
+                              "type": "integer",
+                              "format": "int32",
+                              "description": "OffsetClosingTime"
+                            },
+                            "OpeningTimeType": {
+                              "type": "string",
+                              "description": "OpeningTimeType"
+                            },
+                            "AdditionalOpeningDate": {
+                              "type": "string",
+                              "description": "AdditionalOpeningDate"
+                            },
+                            "IsOpen": {
+                              "type": "boolean",
+                              "description": "IsOpen"
+                            }
+                          }
+                        },
+                        "description": "OpeningTimes"
+                      },
+                      "Contacts": {
+                        "type": "array",
+                        "items": {
+                          "type": "object",
+                          "properties": {
+                            "ContactType": {
+                              "type": "string",
+                              "description": "ContactType"
+                            },
+                            "ContactAvailabilityType": {
+                              "type": "string",
+                              "description": "ContactAvailabilityType"
+                            },
+                            "ContactMethodType": {
+                              "type": "string",
+                              "description": "ContactMethodType"
+                            },
+                            "ContactValue": {
+                              "type": "string",
+                              "description": "ContactValue"
+                            }
+                          }
+                        },
+                        "description": "Contacts"
+                      },
+                      "Facilities": {
+                        "type": "array",
+                        "items": {
+                          "type": "object",
+                          "properties": {
+                            "Id": {
+                              "type": "integer",
+                              "format": "int32",
+                              "description": "Id"
+                            },
+                            "Name": {
+                              "type": "string",
+                              "description": "Name"
+                            },
+                            "Value": {
+                              "type": "string",
+                              "description": "Value"
+                            },
+                            "FacilityGroupName": {
+                              "type": "string",
+                              "description": "FacilityGroupName"
+                            }
+                          }
+                        },
+                        "description": "Facilities"
+                      },
+                      "Staff": {
+                        "type": "array",
+                        "items": {
+                          "type": "object",
+                          "properties": {
+                            "Title": {
+                              "type": "string",
+                              "description": "Title"
+                            },
+                            "GivenName": {
+                              "type": "string",
+                              "description": "GivenName"
+                            },
+                            "FamilyName": {
+                              "type": "string",
+                              "description": "FamilyName"
+                            },
+                            "Role": {
+                              "type": "string",
+                              "description": "Role"
+                            },
+                            "Qualification": {
+                              "type": "string",
+                              "description": "Qualification"
+                            }
+                          }
+                        },
+                        "description": "Staff"
+                      },
+                      "GSD": {
+                        "type": "object",
+                        "properties": {
+                          "Metrics": {
+                            "type": "array",
+                            "items": {
+                              "type": "object",
+                              "properties": {
+                                "ElementTitle": {
+                                  "type": "string",
+                                  "description": "ElementTitle"
+                                },
+                                "ElementText": {
+                                  "type": "string",
+                                  "description": "ElementText"
+                                },
+                                "ElementOrder": {
+                                  "type": "integer",
+                                  "format": "int32",
+                                  "description": "ElementOrder"
+                                },
+                                "MetricId": {
+                                  "type": "string",
+                                  "description": "MetricId"
+                                }
+                              }
+                            },
+                            "description": "Metrics"
+                          },
+                          "DataSupplier": {
+                            "type": "array",
+                            "items": {
+                              "type": "object",
+                              "properties": {
+                                "ProvidedBy": {
+                                  "type": "string",
+                                  "description": "ProvidedBy"
+                                },
+                                "ProvidedByImage": {
+                                  "type": "string",
+                                  "description": "ProvidedByImage"
+                                },
+                                "ProvidedByUrl": {
+                                  "type": "string",
+                                  "description": "ProvidedByUrl"
+                                },
+                                "ProvidedOn": {
+                                  "type": "string",
+                                  "description": "ProvidedOn"
+                                }
+                              }
+                            },
+                            "description": "DataSupplier"
+                          },
+                          "GsdServices": {
+                            "type": "array",
+                            "items": {
+                              "type": "object",
+                              "properties": {
+                                "ServiceId": {
+                                  "type": "string",
+                                  "description": "ServiceId"
+                                },
+                                "ServiceName": {
+                                  "type": "string",
+                                  "description": "ServiceName"
+                                }
+                              }
+                            },
+                            "description": "GsdServices"
+                          }
+                        },
+                        "description": "GSD"
+                      },
+                      "LastUpdatedDates": {
+                        "type": "object",
+                        "properties": {
+                          "OpeningTimes": {
+                            "type": "string",
+                            "description": "OpeningTimes"
+                          },
+                          "BankHolidayOpeningTimes": {
+                            "type": "string",
+                            "description": "BankHolidayOpeningTimes"
+                          },
+                          "DentistsAcceptingPatients": {
+                            "type": "string",
+                            "description": "DentistsAcceptingPatients"
+                          },
+                          "Facilities": {
+                            "type": "string",
+                            "description": "Facilities"
+                          },
+                          "HospitalDepartment": {
+                            "type": "string",
+                            "description": "HospitalDepartment"
+                          },
+                          "Services": {
+                            "type": "string",
+                            "description": "Services"
+                          },
+                          "ContactDetails": {
+                            "type": "string",
+                            "description": "ContactDetails"
+                          },
+                          "AcceptingPatients": {
+                            "type": "string",
+                            "description": "AcceptingPatients"
+                          },
+                          "KeyValueData": {
+                            "type": "array",
+                            "items": {},
+                            "description": "KeyValueData"
+                          }
+                        },
+                        "description": "LastUpdatedDates"
+                      },
+                      "AcceptingPatients": {
+                        "type": "object",
+                        "properties": {
+                          "GP": {
+                            "type": "string",
+                            "description": "GP"
+                          },
+                          "Dentist": {
+                            "type": "array",
+                            "items": {
+                              "type": "object",
+                              "properties": {
+                                "Id": {
+                                  "type": "integer",
+                                  "format": "int32",
+                                  "description": "Id"
+                                },
+                                "Name": {
+                                  "type": "string",
+                                  "description": "Name"
+                                },
+                                "AcceptingPatients": {
+                                  "type": "boolean",
+                                  "description": "AcceptingPatients"
+                                }
+                              }
+                            },
+                            "description": "Dentist"
+                          }
+                        },
+                        "description": "AcceptingPatients"
+                      },
+                      "GPRegistration": {
+                        "type": "object",
+                        "properties": {
+                          "RegistrationLink": {
+                            "type": "string",
+                            "description": "RegistrationLink"
+                          },
+                          "AcceptingOutOfArea": {
+                            "type": "boolean",
+                            "description": "AcceptingOutOfArea"
+                          }
+                        },
+                        "description": "GPRegistration"
+                      },
+                      "CCG": {
+                        "type": "object",
+                        "properties": {
+                          "ODSCode": {
+                            "type": "string",
+                            "description": "ODSCode"
+                          },
+                          "OrganisationName": {
+                            "type": "string",
+                            "description": "OrganisationName"
+                          }
+                        },
+                        "description": "CCG"
+                      },
+                      "RelatedIAPTCCGs": {
+                        "type": "array",
+                        "items": {},
+                        "description": "RelatedIAPTCCGs"
+                      },
+                      "CCGLocalAuthority": {
+                        "type": "array",
+                        "items": {},
+                        "description": "CCGLocalAuthority"
+                      },
+                      "Trusts": {
+                        "type": "array",
+                        "items": {
+                          "type": "object",
+                          "properties": {
+                            "ODSCode": {
+                              "type": "string",
+                              "description": "ODSCode"
+                            },
+                            "OrganisationName": {
+                              "type": "string",
+                              "description": "OrganisationName"
+                            }
+                          }
+                        },
+                        "description": "Trusts"
+                      },
+                      "Metrics": {
+                        "type": "array",
+                        "items": {
+                          "type": "object",
+                          "properties": {
+                            "MetricID": {
+                              "type": "integer",
+                              "format": "int32",
+                              "description": "MetricID"
+                            },
+                            "MetricName": {
+                              "type": "string",
+                              "description": "MetricName"
+                            },
+                            "DisplayName": {
+                              "type": "string",
+                              "description": "DisplayName"
+                            },
+                            "Description": {
+                              "type": "string",
+                              "description": "Description"
+                            },
+                            "Value": {
+                              "type": "string",
+                              "description": "Value"
+                            },
+                            "Value2": {
+                              "type": "string",
+                              "description": "Value2"
+                            },
+                            "Value3": {
+                              "type": "string",
+                              "description": "Value3"
+                            },
+                            "Text": {
+                              "type": "string",
+                              "description": "Text"
+                            },
+                            "LinkUrl": {
+                              "type": "string",
+                              "description": "LinkUrl"
+                            },
+                            "LinkText": {
+                              "type": "string",
+                              "description": "LinkText"
+                            },
+                            "MetricDisplayTypeID": {
+                              "type": "integer",
+                              "format": "int32",
+                              "description": "MetricDisplayTypeID"
+                            },
+                            "MetricDisplayTypeName": {
+                              "type": "string",
+                              "description": "MetricDisplayTypeName"
+                            },
+                            "HospitalSectorType": {
+                              "type": "string",
+                              "description": "HospitalSectorType"
+                            },
+                            "MetricText": {
+                              "type": "string",
+                              "description": "MetricText"
+                            },
+                            "DefaultText": {
+                              "type": "string",
+                              "description": "DefaultText"
+                            },
+                            "IsMetaMetric": {
+                              "type": "boolean",
+                              "description": "IsMetaMetric"
+                            },
+                            "BandingClassification": {
+                              "type": "string",
+                              "description": "BandingClassification"
+                            },
+                            "BandingName": {
+                              "type": "string",
+                              "description": "BandingName"
+                            }
+                          }
+                        },
+                        "description": "Metrics"
+                      }
+                    }
+                  },
+                  "description": "value"
+                },
+                "@odata.nextLink": {
+                  "type": "string",
+                  "description": "@odata.nextLink"
+                }
+              }
+            }
+          }
+        },
+        "summary": "Search for organisations",
+        "description": "Use this endpoint to find information about services provided by NHS organisations.  For more information on how to use search identifiers with this endpoint, see DoHS API guide to search identifiers and service codes.",
+        "operationId": "GetOrganisations",
+        "parameters": [
+          {
+            "name": "api-version",
+            "in": "query",
+            "required": true,
+            "type": "integer",
+            "default": 2,
+            "description": "The API version number can be supplied as a query parameter."
+          },
+          {
+            "name": "search",
+            "in": "query",
+            "required": false,
+            "type": "string",
+            "description": "The text to search for. All searchable fields are searched by default unless searchFields is specified.  When searching searchable fields, the search text itself is tokenized, so multiple terms can be separated by white space, for example search=hello world.  To match any term, use * which can be useful for boolean filter queries. Omitting this parameter has the same effect as setting it to *."
+          },
+          {
+            "name": "searchMode",
+            "in": "query",
+            "required": false,
+            "type": "string",
+            "default": "any",
+            "description": "Defaults to any. Specifies whether any or all of the search terms must be matched in order to count the document as a match.",
+            "enum": [
+              "any",
+              "all"
+            ]
+          },
+          {
+            "name": "searchFields",
+            "in": "query",
+            "required": false,
+            "type": "string",
+            "description": "A comma-separated list of field names to search for the specified text. This field works in conjunction with the search field.  Example search field: searchFields=ODSCode"
+          },
+          {
+            "name": "queryType",
+            "in": "query",
+            "required": false,
+            "type": "string",
+            "default": "simple",
+            "description": "When set to simple, search text is interpreted using a simple query language that allows for symbols such as +, * and \"\".  When the query type is set to full, search text is interpreted using the Lucene query language which allows field-specific and weighted searches.  The following example is a search over independent terms, with a requirement that all matching documents include pool.  For more information, see Simple query syntax in Azure Cognitive Search.  Example using simple query type:  queryType=simple  search=budget hotel +pool  searchMode=all  This particular example shows in-field search and term boosting. It looks for hotels where the category field contains the term budget.  Any documents containing the phrase recently renovated are ranked higher as a result of the term boost value.  For more information, see Lucene query syntax in Azure Cognitive Search.  Example using full query type:  queryType=full  search=category:budget AND \\'recently renovated\\'^3  searchMode=all",
+            "enum": [
+              "simple",
+              "full"
+            ]
+          },
+          {
+            "name": "$skip",
+            "in": "query",
+            "required": false,
+            "type": "integer",
+            "description": "The number of search results to skip. For example, $skip:25 returns the entries after the first 25 entries in the search results."
+          },
+          {
+            "name": "$top",
+            "in": "query",
+            "required": false,
+            "type": "integer",
+            "default": 50,
+            "description": "The number of search results to retrieve. The default is 50."
+          },
+          {
+            "name": "$count",
+            "in": "query",
+            "required": false,
+            "type": "boolean",
+            "default": false,
+            "description": "Optional, defaults to false. Specifies whether to fetch the total count of results.  This is the count of all documents that match the search and $filter parameters, ignoring $top and $skip.  Setting this value to true may have a performance impact. The count returned is an approximation.  If you’d like to get only the count without any documents, you can use $top=0."
+          },
+          {
+            "name": "$orderBy",
+            "in": "query",
+            "required": false,
+            "type": "string",
+            "description": "A list of comma-separated expressions to sort the results by. Each expression can be either a field name or a call to the geo.distance() function.  Each expression can be followed by asc to indicate ascending, and desc to indicate descending. The default is ascending order.  This $orderBy routine orders the results by the distance from the geography point included in the expression.  The geography point can be a position from where you are and the results are ordered by how local the results are.  For more information, see Simple query syntax in Azure Cognitive Search.  Example: $orderby=geo.distance(Geocode, geography'POINT(-0.76444095373153675 52.000820159912109)')"
+          },
+          {
+            "name": "$select",
+            "in": "query",
+            "required": false,
+            "type": "string",
+            "description": "A list of comma-separated fields to include in the result set.  If unspecified or set to *, all fields marked as retrievable in the schema are included in the projection.  Example: $select=ODSCode,OrganisationName,Contacts,Address1,Address2,Address3,City,Postcode,OrganisationSubType"
+          },
+          {
+            "name": "$filter",
+            "in": "query",
+            "required": false,
+            "type": "string",
+            "description": "A structured search expression in standard OData syntax.  The $filter parameter specifies inclusion or exclusion criteria for returning matches in search results.  For more information on using the $filter, see OData $filter syntax in Azure Cognitive Search.  Examples:  Filter results by Pharmacies that are EPS-enabled and classed as 'Community', that is, ServiceCode is EPS0001, Organisation Type is PHA and Sub Type is Community:  $filter=Services / any (x: x/ServiceCode eq 'EPS0001' ) and OrganisationTypeId eq 'PHA' and OrganisationSubType eq 'Community'  Filter results that match our postcode, that is Postcode field is NG16:  $filter=search.ismatch('NG16', 'Postcode')  Filter results by Postcode is CW9 and `OrganisationTypeId\" is a dentist:  $filter=search.ismatch('CW9', 'Postcode') and OrganisationTypeId eq 'DEN'  For details on organisation types and service codes, see organisation and service codes."
+          }
+        ]
+      }
+    },
+    "/search-postcode-or-place": {
+      "post": {
+        "responses": {
+          "default": {
+            "description": "default",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "@odata.count": {
+                  "type": "integer",
+                  "format": "int32",
+                  "description": "@odata.count"
+                },
+                "@search.nextPageParameters": {
+                  "type": "object",
+                  "properties": {
+                    "search": {
+                      "type": "string",
+                      "description": "search"
+                    },
+                    "searchMode": {
+                      "type": "string",
+                      "description": "searchMode"
+                    },
+                    "searchFields": {
+                      "type": "string",
+                      "description": "searchFields"
+                    },
+                    "queryType": {
+                      "type": "string",
+                      "description": "queryType"
+                    },
+                    "select": {
+                      "type": "string",
+                      "description": "select"
+                    },
+                    "filter": {
+                      "type": "string",
+                      "description": "filter"
+                    },
+                    "orderby": {
+                      "type": "string",
+                      "description": "orderby"
+                    },
+                    "skip": {
+                      "type": "integer",
+                      "format": "int32",
+                      "description": "skip"
+                    }
+                  },
+                  "description": "@search.nextPageParameters"
+                },
+                "place": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "Latitude": {
+                        "type": "number",
+                        "format": "float",
+                        "description": "Latitude"
+                      },
+                      "Longitude": {
+                        "type": "number",
+                        "format": "float",
+                        "description": "Longitude"
+                      },
+                      "text": {
+                        "type": "string",
+                        "description": "text"
+                      },
+                      "url": {
+                        "type": "string",
+                        "description": "url"
+                      }
+                    }
+                  },
+                  "description": "place"
+                },
+                "value": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "@search.score": {
+                        "type": "integer",
+                        "format": "int32",
+                        "description": "@search.score"
+                      },
+                      "SearchKey": {
+                        "type": "string",
+                        "description": "SearchKey"
+                      },
+                      "ODSCode": {
+                        "type": "string",
+                        "description": "ODSCode"
+                      },
+                      "OrganisationName": {
+                        "type": "string",
+                        "description": "OrganisationName"
+                      },
+                      "OrganisationTypeId": {
+                        "type": "string",
+                        "description": "OrganisationTypeId"
+                      },
+                      "OrganisationType": {
+                        "type": "string",
+                        "description": "OrganisationType"
+                      },
+                      "OrganisationStatus": {
+                        "type": "string",
+                        "description": "OrganisationStatus"
+                      },
+                      "SummaryText": {
+                        "type": "string",
+                        "description": "SummaryText"
+                      },
+                      "URL": {
+                        "type": "string",
+                        "description": "URL"
+                      },
+                      "Address1": {
+                        "type": "string",
+                        "description": "Address1"
+                      },
+                      "Address2": {
+                        "type": "string",
+                        "description": "Address2"
+                      },
+                      "Address3": {
+                        "type": "string",
+                        "description": "Address3"
+                      },
+                      "City": {
+                        "type": "string",
+                        "description": "City"
+                      },
+                      "County": {
+                        "type": "string",
+                        "description": "County"
+                      },
+                      "Latitude": {
+                        "type": "number",
+                        "format": "float",
+                        "description": "Latitude"
+                      },
+                      "Longitude": {
+                        "type": "number",
+                        "format": "float",
+                        "description": "Longitude"
+                      },
+                      "Postcode": {
+                        "type": "string",
+                        "description": "Postcode"
+                      },
+                      "Geocode": {
+                        "type": "object",
+                        "properties": {
+                          "type": {
+                            "type": "string",
+                            "description": "type"
+                          },
+                          "coordinates": {
+                            "type": "array",
+                            "items": {
+                              "type": "number",
+                              "format": "float"
+                            },
+                            "description": "coordinates"
+                          },
+                          "crs": {
+                            "type": "object",
+                            "properties": {
+                              "type": {
+                                "type": "string",
+                                "description": "type"
+                              },
+                              "properties": {
+                                "type": "object",
+                                "properties": {
+                                  "name": {
+                                    "type": "string",
+                                    "description": "name"
+                                  }
+                                },
+                                "description": "properties"
+                              }
+                            },
+                            "description": "crs"
+                          }
+                        },
+                        "description": "Geocode"
+                      },
+                      "OrganisationSubType": {
+                        "type": "string",
+                        "description": "OrganisationSubType"
+                      },
+                      "OrganisationAliases": {
+                        "type": "array",
+                        "items": {
+                          "type": "object",
+                          "properties": {
+                            "OrganisationAlias": {
+                              "type": "string",
+                              "description": "OrganisationAlias"
+                            },
+                            "OrganisationAliasId": {
+                              "type": "string",
+                              "description": "OrganisationAliasId"
+                            }
+                          }
+                        },
+                        "description": "OrganisationAliases"
+                      },
+                      "ParentOrganisation": {
+                        "type": "object",
+                        "properties": {
+                          "ODSCode": {
+                            "type": "string",
+                            "description": "ODSCode"
+                          },
+                          "OrganisationName": {
+                            "type": "string",
+                            "description": "OrganisationName"
+                          }
+                        },
+                        "description": "ParentOrganisation"
+                      },
+                      "Services": {
+                        "type": "array",
+                        "items": {
+                          "type": "object",
+                          "properties": {
+                            "ServiceName": {
+                              "type": "string",
+                              "description": "ServiceName"
+                            },
+                            "ServiceCode": {
+                              "type": "string",
+                              "description": "ServiceCode"
+                            },
+                            "ServiceDescription": {
+                              "type": "string",
+                              "description": "ServiceDescription"
+                            },
+                            "Contacts": {
+                              "type": "array",
+                              "items": {
+                                "type": "object",
+                                "properties": {
+                                  "ContactType": {
+                                    "type": "string",
+                                    "description": "ContactType"
+                                  },
+                                  "ContactAvailabilityType": {
+                                    "type": "string",
+                                    "description": "ContactAvailabilityType"
+                                  },
+                                  "ContactMethodType": {
+                                    "type": "string",
+                                    "description": "ContactMethodType"
+                                  },
+                                  "ContactValue": {
+                                    "type": "string",
+                                    "description": "ContactValue"
+                                  }
+                                }
+                              },
+                              "description": "Contacts"
+                            },
+                            "ServiceProvider": {
+                              "type": "object",
+                              "properties": {
+                                "ODSCode": {
+                                  "type": "string",
+                                  "description": "ODSCode"
+                                },
+                                "OrganisationName": {
+                                  "type": "string",
+                                  "description": "OrganisationName"
+                                }
+                              },
+                              "description": "ServiceProvider"
+                            },
+                            "Treatments": {
+                              "type": "array",
+                              "items": {},
+                              "description": "Treatments"
+                            },
+                            "OpeningTimes": {
+                              "type": "array",
+                              "items": {},
+                              "description": "OpeningTimes"
+                            },
+                            "AgeRange": {
+                              "type": "array",
+                              "items": {},
+                              "description": "AgeRange"
+                            },
+                            "Metrics": {
+                              "type": "array",
+                              "items": {},
+                              "description": "Metrics"
+                            },
+                            "KeyValueData": {
+                              "type": "array",
+                              "items": {},
+                              "description": "KeyValueData"
+                            }
+                          }
+                        },
+                        "description": "Services"
+                      },
+                      "OpeningTimes": {
+                        "type": "array",
+                        "items": {
+                          "type": "object",
+                          "properties": {
+                            "Weekday": {
+                              "type": "string",
+                              "description": "Weekday"
+                            },
+                            "OpeningTime": {
+                              "type": "string",
+                              "description": "OpeningTime"
+                            },
+                            "ClosingTime": {
+                              "type": "string",
+                              "description": "ClosingTime"
+                            },
+                            "Times": {
+                              "type": "string",
+                              "description": "Times"
+                            },
+                            "OffsetOpeningTime": {
+                              "type": "integer",
+                              "format": "int32",
+                              "description": "OffsetOpeningTime"
+                            },
+                            "OffsetClosingTime": {
+                              "type": "integer",
+                              "format": "int32",
+                              "description": "OffsetClosingTime"
+                            },
+                            "OpeningTimeType": {
+                              "type": "string",
+                              "description": "OpeningTimeType"
+                            },
+                            "AdditionalOpeningDate": {
+                              "type": "string",
+                              "description": "AdditionalOpeningDate"
+                            },
+                            "IsOpen": {
+                              "type": "boolean",
+                              "description": "IsOpen"
+                            }
+                          }
+                        },
+                        "description": "OpeningTimes"
+                      },
+                      "Contacts": {
+                        "type": "array",
+                        "items": {
+                          "type": "object",
+                          "properties": {
+                            "ContactType": {
+                              "type": "string",
+                              "description": "ContactType"
+                            },
+                            "ContactAvailabilityType": {
+                              "type": "string",
+                              "description": "ContactAvailabilityType"
+                            },
+                            "ContactMethodType": {
+                              "type": "string",
+                              "description": "ContactMethodType"
+                            },
+                            "ContactValue": {
+                              "type": "string",
+                              "description": "ContactValue"
+                            }
+                          }
+                        },
+                        "description": "Contacts"
+                      },
+                      "Facilities": {
+                        "type": "array",
+                        "items": {
+                          "type": "object",
+                          "properties": {
+                            "Id": {
+                              "type": "integer",
+                              "format": "int32",
+                              "description": "Id"
+                            },
+                            "Name": {
+                              "type": "string",
+                              "description": "Name"
+                            },
+                            "Value": {
+                              "type": "string",
+                              "description": "Value"
+                            },
+                            "FacilityGroupName": {
+                              "type": "string",
+                              "description": "FacilityGroupName"
+                            }
+                          }
+                        },
+                        "description": "Facilities"
+                      },
+                      "Staff": {
+                        "type": "array",
+                        "items": {
+                          "type": "object",
+                          "properties": {
+                            "Title": {
+                              "type": "string",
+                              "description": "Title"
+                            },
+                            "GivenName": {
+                              "type": "string",
+                              "description": "GivenName"
+                            },
+                            "FamilyName": {
+                              "type": "string",
+                              "description": "FamilyName"
+                            },
+                            "Role": {
+                              "type": "string",
+                              "description": "Role"
+                            },
+                            "Qualification": {
+                              "type": "string",
+                              "description": "Qualification"
+                            }
+                          }
+                        },
+                        "description": "Staff"
+                      },
+                      "GSD": {
+                        "type": "object",
+                        "properties": {
+                          "Metrics": {
+                            "type": "array",
+                            "items": {
+                              "type": "object",
+                              "properties": {
+                                "ElementTitle": {
+                                  "type": "string",
+                                  "description": "ElementTitle"
+                                },
+                                "ElementText": {
+                                  "type": "string",
+                                  "description": "ElementText"
+                                },
+                                "ElementOrder": {
+                                  "type": "integer",
+                                  "format": "int32",
+                                  "description": "ElementOrder"
+                                },
+                                "MetricId": {
+                                  "type": "string",
+                                  "description": "MetricId"
+                                }
+                              }
+                            },
+                            "description": "Metrics"
+                          },
+                          "DataSupplier": {
+                            "type": "array",
+                            "items": {
+                              "type": "object",
+                              "properties": {
+                                "ProvidedBy": {
+                                  "type": "string",
+                                  "description": "ProvidedBy"
+                                },
+                                "ProvidedByImage": {
+                                  "type": "string",
+                                  "description": "ProvidedByImage"
+                                },
+                                "ProvidedByUrl": {
+                                  "type": "string",
+                                  "description": "ProvidedByUrl"
+                                },
+                                "ProvidedOn": {
+                                  "type": "string",
+                                  "description": "ProvidedOn"
+                                }
+                              }
+                            },
+                            "description": "DataSupplier"
+                          },
+                          "GsdServices": {
+                            "type": "array",
+                            "items": {
+                              "type": "object",
+                              "properties": {
+                                "ServiceId": {
+                                  "type": "string",
+                                  "description": "ServiceId"
+                                },
+                                "ServiceName": {
+                                  "type": "string",
+                                  "description": "ServiceName"
+                                }
+                              }
+                            },
+                            "description": "GsdServices"
+                          }
+                        },
+                        "description": "GSD"
+                      },
+                      "LastUpdatedDates": {
+                        "type": "object",
+                        "properties": {
+                          "OpeningTimes": {
+                            "type": "string",
+                            "description": "OpeningTimes"
+                          },
+                          "BankHolidayOpeningTimes": {
+                            "type": "string",
+                            "description": "BankHolidayOpeningTimes"
+                          },
+                          "DentistsAcceptingPatients": {
+                            "type": "string",
+                            "description": "DentistsAcceptingPatients"
+                          },
+                          "Facilities": {
+                            "type": "string",
+                            "description": "Facilities"
+                          },
+                          "HospitalDepartment": {
+                            "type": "string",
+                            "description": "HospitalDepartment"
+                          },
+                          "Services": {
+                            "type": "string",
+                            "description": "Services"
+                          },
+                          "ContactDetails": {
+                            "type": "string",
+                            "description": "ContactDetails"
+                          },
+                          "AcceptingPatients": {
+                            "type": "string",
+                            "description": "AcceptingPatients"
+                          },
+                          "KeyValueData": {
+                            "type": "array",
+                            "items": {},
+                            "description": "KeyValueData"
+                          }
+                        },
+                        "description": "LastUpdatedDates"
+                      },
+                      "AcceptingPatients": {
+                        "type": "object",
+                        "properties": {
+                          "GP": {
+                            "type": "string",
+                            "description": "GP"
+                          },
+                          "Dentist": {
+                            "type": "array",
+                            "items": {
+                              "type": "object",
+                              "properties": {
+                                "Id": {
+                                  "type": "integer",
+                                  "format": "int32",
+                                  "description": "Id"
+                                },
+                                "Name": {
+                                  "type": "string",
+                                  "description": "Name"
+                                },
+                                "AcceptingPatients": {
+                                  "type": "boolean",
+                                  "description": "AcceptingPatients"
+                                }
+                              }
+                            },
+                            "description": "Dentist"
+                          }
+                        },
+                        "description": "AcceptingPatients"
+                      },
+                      "GPRegistration": {
+                        "type": "object",
+                        "properties": {
+                          "RegistrationLink": {
+                            "type": "string",
+                            "description": "RegistrationLink"
+                          },
+                          "AcceptingOutOfArea": {
+                            "type": "boolean",
+                            "description": "AcceptingOutOfArea"
+                          }
+                        },
+                        "description": "GPRegistration"
+                      },
+                      "CCG": {
+                        "type": "object",
+                        "properties": {
+                          "ODSCode": {
+                            "type": "string",
+                            "description": "ODSCode"
+                          },
+                          "OrganisationName": {
+                            "type": "string",
+                            "description": "OrganisationName"
+                          }
+                        },
+                        "description": "CCG"
+                      },
+                      "RelatedIAPTCCGs": {
+                        "type": "array",
+                        "items": {},
+                        "description": "RelatedIAPTCCGs"
+                      },
+                      "CCGLocalAuthority": {
+                        "type": "array",
+                        "items": {},
+                        "description": "CCGLocalAuthority"
+                      },
+                      "Trusts": {
+                        "type": "array",
+                        "items": {
+                          "type": "object",
+                          "properties": {
+                            "ODSCode": {
+                              "type": "string",
+                              "description": "ODSCode"
+                            },
+                            "OrganisationName": {
+                              "type": "string",
+                              "description": "OrganisationName"
+                            }
+                          }
+                        },
+                        "description": "Trusts"
+                      },
+                      "Metrics": {
+                        "type": "array",
+                        "items": {
+                          "type": "object",
+                          "properties": {
+                            "MetricID": {
+                              "type": "integer",
+                              "format": "int32",
+                              "description": "MetricID"
+                            },
+                            "MetricName": {
+                              "type": "string",
+                              "description": "MetricName"
+                            },
+                            "DisplayName": {
+                              "type": "string",
+                              "description": "DisplayName"
+                            },
+                            "Description": {
+                              "type": "string",
+                              "description": "Description"
+                            },
+                            "Value": {
+                              "type": "string",
+                              "description": "Value"
+                            },
+                            "Value2": {
+                              "type": "string",
+                              "description": "Value2"
+                            },
+                            "Value3": {
+                              "type": "string",
+                              "description": "Value3"
+                            },
+                            "Text": {
+                              "type": "string",
+                              "description": "Text"
+                            },
+                            "LinkUrl": {
+                              "type": "string",
+                              "description": "LinkUrl"
+                            },
+                            "LinkText": {
+                              "type": "string",
+                              "description": "LinkText"
+                            },
+                            "MetricDisplayTypeID": {
+                              "type": "integer",
+                              "format": "int32",
+                              "description": "MetricDisplayTypeID"
+                            },
+                            "MetricDisplayTypeName": {
+                              "type": "string",
+                              "description": "MetricDisplayTypeName"
+                            },
+                            "HospitalSectorType": {
+                              "type": "string",
+                              "description": "HospitalSectorType"
+                            },
+                            "MetricText": {
+                              "type": "string",
+                              "description": "MetricText"
+                            },
+                            "DefaultText": {
+                              "type": "string",
+                              "description": "DefaultText"
+                            },
+                            "IsMetaMetric": {
+                              "type": "boolean",
+                              "description": "IsMetaMetric"
+                            },
+                            "BandingClassification": {
+                              "type": "string",
+                              "description": "BandingClassification"
+                            },
+                            "BandingName": {
+                              "type": "string",
+                              "description": "BandingName"
+                            }
+                          }
+                        },
+                        "description": "Metrics"
+                      },
+                      "distanceMiles": {
+                        "type": "number",
+                        "format": "float",
+                        "description": "distanceMiles"
+                      }
+                    }
+                  },
+                  "description": "value"
+                },
+                "@odata.nextLink": {
+                  "type": "string",
+                  "description": "@odata.nextLink"
+                }
+              }
+            }
+          }
+        },
+        "summary": "Search for organisations by postcode or place",
+        "description": "Use this endpoint to search for information about services provided by NHS organisations, listed in the service search on the NHS website, filtered by postcode or place name.",
+        "operationId": "PostOrganisationsPostCodePlace",
+        "parameters": [
+          {
+            "name": "api-version",
+            "in": "query",
+            "required": true,
+            "type": "integer",
+            "default": 2,
+            "description": "Specify the version of the API. MUST be 2."
+          },
+          {
+            "name": "search",
+            "in": "query",
+            "required": false,
+            "type": "string",
+            "description": "Search query term.  When searching searchable fields, the search text itself is tokenized, so multiple terms can be separated by white space, for example search=hello world.  To match any term, use *. Omitting this parameter has the same effect as setting it to *."
+          },
+          {
+            "name": "latitude",
+            "in": "query",
+            "required": false,
+            "type": "number",
+            "description": "The latitude parameter for geospacial searches."
+          },
+          {
+            "name": "longitude",
+            "in": "query",
+            "required": false,
+            "type": "number",
+            "description": "The longitude parameter for geospacial searches."
+          },
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "type": "object",
+              "properties": {
+                "search": {
+                  "type": "string",
+                  "description": "The text to search for. All searchable fields are searched by default unless searchFields is specified.  When searching searchable fields, the search text itself is tokenized, so multiple terms can be separated by white space, for example search=hello world.  To match any term, use * which can be useful for boolean filter queries. Omitting this parameter has the same effect as setting it to *.",
+                  "title": "search"
+                },
+                "searchMode": {
+                  "type": "string",
+                  "description": "Default value: any  Defaults to any. Specifies whether any or all of the search terms must be matched in order to count the document as a match.  Allowed values: any, all",
+                  "title": "searchMode",
+                  "enum": [
+                    "any",
+                    "all"
+                  ]
+                },
+                "searchFields": {
+                  "type": "string",
+                  "description": "A comma-separated list of field names to search for the specified text. This field works in conjunction with the search field.  Example search field: searchFields=ODSCode",
+                  "title": "searchFields"
+                },
+                "queryType": {
+                  "type": "string",
+                  "description": "Default value: simple  When set to simple, search text is interpreted using a simple query language that allows for symbols such as +, * and \"\".  When the query type is set to full, search text is interpreted using the Lucene query language which allows field-specific and weighted searches.  The following example is a search over independent terms, with a requirement that all matching documents include pool.  For more information, see Simple query syntax in Azure Cognitive Search.  Example using simple query type:  queryType=simple  search=budget hotel +pool  searchMode=all  This particular example shows in-field search and term boosting. It looks for hotels where the category field contains the term budget.  Any documents containing the phrase recently renovated are ranked higher as a result of the term boost value.  For more information, see Lucene query syntax in Azure Cognitive Search.  Example using full query type:  queryType=full  search=category:budget AND \\'recently renovated\\'^3  searchMode=all  Allowed values: simple, full",
+                  "title": "queryType",
+                  "enum": [
+                    "simple",
+                    "full"
+                  ]
+                },
+                "select": {
+                  "type": "string",
+                  "description": "A list of comma-separated fields to include in the result set.  If unspecified or set to *, all fields marked as retrievable in the schema are included in the projection.  Example: $select=ODSCode,OrganisationName,Contacts,Address1,Address2,Address3,City,Postcode,OrganisationSubType",
+                  "title": "select"
+                },
+                "filter": {
+                  "type": "string",
+                  "description": "A structured search expression in standard OData syntax.  The $filter parameter specifies inclusion or exclusion criteria for returning matches in search results.  For more information on using the $filter, see OData $filter syntax in Azure Cognitive Search.  Examples:  Filter results by Pharmacies that are EPS-enabled and classed as 'Community', that is, ServiceCode is EPS0001, Organisation Type is PHA and Sub Type is Community:  $filter=Services / any (x: x/ServiceCode eq 'EPS0001' ) and OrganisationTypeId eq 'PHA' and OrganisationSubType eq 'Community'  Filter results that match our postcode, that is Postcode field is NG16:  $filter=search.ismatch('NG16', 'Postcode')  Filter results by Postcode is CW9 and `OrganisationTypeId\" is a dentist:  $filter=search.ismatch('CW9', 'Postcode') and OrganisationTypeId eq 'DEN'  For details on organisation types and service codes, see organisation and service codes.",
+                  "title": "filter"
+                },
+                "orderby": {
+                  "type": "string",
+                  "description": "A list of comma-separated expressions to sort the results by. Each expression can be either a field name or a call to the geo.distance() function.  Each expression can be followed by asc to indicate ascending, and desc to indicate descending. The default is ascending order.  This $orderBy routine orders the results by the distance from the geography point included in the expression.  The geography point can be a position from where you are and the results are ordered by how local the results are.  For more information, see Simple query syntax in Azure Cognitive Search.  Example: $orderby=geo.distance(Geocode, geography'POINT(-0.76444095373153675 52.000820159912109)')",
+                  "title": "orderby"
+                },
+                "skip": {
+                  "type": "integer",
+                  "format": "int32",
+                  "description": "The number of search results to skip. For example, $skip:25 returns the entries after the first 25 entries in the search results.",
+                  "title": "skip"
+                },
+                "top": {
+                  "type": "integer",
+                  "format": "int32",
+                  "description": "Default value: 50  The number of search results to retrieve. The default is 50.",
+                  "title": "top"
+                },
+                "count": {
+                  "type": "boolean",
+                  "description": "Default value: false  Optional, defaults to false. Specifies whether to fetch the total count of results.  This is the count of all documents that match the search and $filter parameters, ignoring $top and $skip.  Setting this value to true may have a performance impact. The count returned is an approximation.  If you’d like to get only the count without any documents, you can use $top=0.",
+                  "title": "count",
+                  "enum": [
+                    "",
+                    true,
+                    false
+                  ]
+                }
+              }
+            }
+          }
+        ]
+      }
+    }
+  },
+  "definitions": {},
+  "parameters": {},
+  "responses": {},
+  "securityDefinitions": {
+    "API Key": {
+      "type": "apiKey",
+      "in": "header",
+      "name": "apikey"
+    }
+  },
+  "security": [
+    {
+      "API Key": []
+    }
+  ],
+  "tags": []
+}
