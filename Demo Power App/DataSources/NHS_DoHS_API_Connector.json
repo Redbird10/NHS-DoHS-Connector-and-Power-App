@@ -1,0 +1,8 @@
+[
+  {
+    "ApiId": "/providers/microsoft.powerapps/apis/shared_nhs-5fdohs-5fapi-5fcd50f11fb408e582-5f2a291c2c40cf4dbc",
+    "Name": "NHS_DoHS_API_Connector",
+    "ServiceKind": "ConnectedWadl",
+    "Type": "ServiceInfo"
+  }
+]

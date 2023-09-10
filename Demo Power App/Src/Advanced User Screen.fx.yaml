@@ -1,0 +1,3463 @@
+"'Advanced User Screen' As screen.'tabletAutoLayout_Sidebar_ver1.0'":
+    Fill: =RGBA(236, 236, 235, 0.54)
+    LoadingSpinnerColor: =RGBA(0, 120, 212, 1)
+
+    "'Container Title' As groupContainer.manualLayoutContainer":
+        DropShadow: =DropShadow.Light
+        Fill: =RGBA(0, 114, 206, 1)
+        Height: =66
+        RadiusBottomLeft: =4
+        RadiusBottomRight: =4
+        RadiusTopLeft: =4
+        RadiusTopRight: =4
+        Width: =1326
+        X: =20
+        Y: =20
+        ZIndex: =2
+
+        "'App Title' As label":
+            BorderColor: =RGBA(0, 0, 0, 0)
+            BorderStyle: =BorderStyle.None
+            BorderThickness: =2
+            Color: =RGBA(255, 255, 255, 1)
+            DisabledBorderColor: =RGBA(0, 0, 0, 0)
+            DisabledColor: =RGBA(161, 159, 157, 1)
+            Fill: =RGBA(0, 114, 206, 1)
+            FocusedBorderThickness: =4
+            Font: =Font.'Segoe UI'
+            Height: =66
+            PaddingLeft: =25
+            Size: =16
+            Text: ="Care Connect (NHS DoHS API Connector Demo App)"
+            Width: =1326
+            ZIndex: =1
+
+    "'Left Container' As groupContainer.manualLayoutContainer":
+        DropShadow: =DropShadow.Light
+        Fill: =RGBA(255, 255, 255, 1)
+        Height: =646
+        RadiusBottomLeft: =4
+        RadiusBottomRight: =4
+        RadiusTopLeft: =4
+        RadiusTopRight: =4
+        Width: =350
+        X: =20
+        Y: =102
+        ZIndex: =5
+
+        "TabGallery As gallery.'BrowseLayout_Vertical_TwoTextVariant_ver5.0'":
+            BorderColor: =RGBA(245, 245, 245, 1)
+            DelayItemLoading: =true
+            Fill: =Color.Transparent
+            Height: =600
+            Items: ='Page Navi Tabs'
+            Layout: =Layout.Vertical
+            LoadingSpinner: =LoadingSpinner.Data
+            TemplatePadding: =0
+            TemplateSize: =90
+            Width: =350
+            ZIndex: =1
+
+            TabTitle As label:
+                Color: =RGBA(50, 49, 48, 1)
+                DisabledColor: =RGBA(161, 159, 157, 1)
+                Font: =Font.'Segoe UI'
+                FontWeight: =If(ThisItem.IsSelected, FontWeight.Semibold, FontWeight.Normal)
+                Height: =Self.Size * 1.8
+                OnSelect: =Select(Parent)
+                PaddingBottom: =0
+                PaddingLeft: =12
+                PaddingRight: =0
+                PaddingTop: =0
+                Size: =12
+                Text: =ThisItem.Name
+                VerticalAlign: =VerticalAlign.Top
+                Width: |
+                    =Parent.TemplateWidth - 86
+                X: =16
+                Y: =(Parent.TemplateHeight - (Self.Size * 1.8 + TabDes.Size * 1.8)) / 2
+                ZIndex: =1
+
+            TabDes As label:
+                Color: =RGBA(96, 94, 92, 1)
+                DisabledColor: =RGBA(161, 159, 157, 1)
+                Font: =Font.'Segoe UI'
+                FontWeight: =If(ThisItem.IsSelected, FontWeight.Semibold, FontWeight.Normal)
+                Height: =Self.Size * 1.8
+                OnSelect: =Select(Parent)
+                PaddingBottom: =0
+                PaddingLeft: =12
+                PaddingRight: =0
+                PaddingTop: =0
+                Size: =10
+                Text: =ThisItem.Description
+                VerticalAlign: =VerticalAlign.Top
+                Width: =TabTitle.Width
+                X: =TabTitle.X
+                Y: =TabTitle.Y + TabTitle.Height
+                ZIndex: =2
+
+            NextArrow4 As icon.ChevronRight:
+                AccessibleLabel: =Self.Tooltip
+                BorderColor: =RGBA(0, 0, 0, 0)
+                Color: =RGBA(166, 166, 166, 1)
+                DisabledBorderColor: =RGBA(245, 245, 245, 1)
+                DisabledColor: =RGBA(225, 223, 221, 1)
+                DisabledFill: =RGBA(0, 0, 0, 0)
+                FocusedBorderThickness: =4
+                Height: =50
+                HoverBorderColor: =RGBA(0, 0, 0, 0)
+                HoverColor: =RGBA(16, 110, 190, 1)
+                HoverFill: =RGBA(0, 0, 0, 0)
+                Icon: =Icon.ChevronRight
+                OnSelect: =Select(Parent)
+                PaddingBottom: =16
+                PaddingLeft: =16
+                PaddingRight: =16
+                PaddingTop: =16
+                PressedBorderColor: =RGBA(0, 0, 0, 0)
+                PressedColor: =RGBA(16, 110, 190, 1)
+                PressedFill: =RGBA(0, 0, 0, 0)
+                Tooltip: ="View item details"
+                Width: =50
+                X: =Parent.TemplateWidth - Self.Width - 12
+                Y: =(Parent.TemplateHeight / 2) - (Self.Height / 2)
+                ZIndex: =3
+
+            Separator4 As rectangle:
+                BorderColor: =RGBA(0, 0, 0, 0)
+                Fill: =RGBA(255, 255, 255, 1)
+                Height: =8
+                OnSelect: =Select(Parent)
+                Width: =Parent.TemplateWidth
+                Y: =Parent.TemplateHeight - Self.Height
+                ZIndex: =4
+
+            Rectangle4 As rectangle:
+                BorderColor: =RGBA(0, 0, 0, 0)
+                Fill: =RGBA(0, 120, 212, 1)
+                Height: =90
+                OnSelect: =Select(Parent)
+                Visible: =ThisItem.IsSelected
+                Width: =4
+                ZIndex: =5
+
+        "'Group Home Button' As group":
+            Height: =5
+            Width: =5
+            X: =40
+            Y: =40
+            ZIndex: =5
+
+            "'Button Home' As button":
+                BorderColor: =RGBA(0, 0, 0, 0)
+                BorderStyle: =BorderStyle.None
+                DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                DisabledColor: =RGBA(161, 159, 157, 1)
+                DisabledFill: =RGBA(242, 242, 241, 0)
+                DisplayMode: =DisplayMode.View
+                Fill: =If('Button Home Overlay'.Pressed,RGBA(16,110,190,1),RGBA(0,47,92,0.7))
+                Font: =Font.'Segoe UI'
+                Height: =46
+                HoverBorderColor: =RGBA(0, 0, 0, 0)
+                HoverColor: =RGBA(255, 255, 255, 1)
+                HoverFill: =RGBA(16, 110, 190, 1)
+                PaddingLeft: =40
+                PressedBorderColor: =RGBA(0, 69, 120, 1)
+                PressedColor: =RGBA(255, 255, 255, 1)
+                PressedFill: =RGBA(16, 110, 190, 1)
+                RadiusBottomLeft: =0
+                RadiusBottomRight: =0
+                RadiusTopLeft: =0
+                RadiusTopRight: =0
+                Size: =15
+                Text: ="   Home Page"
+                Width: =350
+                Y: =600
+                ZIndex: =2
+
+            "'Icon Home' As icon.Home":
+                BorderColor: =RGBA(0, 0, 0, 0)
+                Color: =RGBA(255, 255, 255, 1)
+                DisabledBorderColor: =RGBA(245, 245, 245, 1)
+                DisabledColor: =RGBA(225, 223, 221, 1)
+                DisabledFill: =RGBA(0, 0, 0, 0)
+                DisplayMode: =DisplayMode.View
+                FocusedBorderThickness: =4
+                Height: =46
+                HoverBorderColor: =RGBA(0, 0, 0, 0)
+                HoverColor: =RGBA(16, 110, 190, 1)
+                HoverFill: =RGBA(0, 0, 0, 0)
+                Icon: =Icon.Home
+                PaddingBottom: =12
+                PaddingLeft: =8
+                PaddingRight: =8
+                PaddingTop: =8
+                PressedBorderColor: =RGBA(0, 0, 0, 0)
+                PressedColor: =RGBA(16, 110, 190, 1)
+                PressedFill: =RGBA(0, 0, 0, 0)
+                Width: =44
+                X: =100
+                Y: =600
+                ZIndex: =3
+
+            "'Button Home Overlay' As button":
+                BorderColor: =RGBA(0, 0, 0, 0)
+                BorderStyle: =BorderStyle.None
+                Color: =Color.Transparent
+                DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                DisabledColor: =Color.Transparent
+                DisabledFill: =Color.Transparent
+                Fill: =Color.Transparent
+                Font: =Font.'Segoe UI'
+                FontWeight: =FontWeight.Semibold
+                Height: =46
+                HoverBorderColor: =RGBA(255, 255, 255, 1)
+                HoverColor: =Color.Transparent
+                HoverFill: =RGBA(159, 197, 229, 0.2)
+                OnSelect: =Navigate('Welcome Screen')
+                PressedBorderColor: =RGBA(0, 69, 120, 1)
+                PressedColor: =Color.Transparent
+                PressedFill: =Color.Transparent
+                RadiusBottomLeft: =0
+                RadiusBottomRight: =0
+                RadiusTopLeft: =0
+                RadiusTopRight: =0
+                Size: =15
+                Text: =""
+                Width: =350
+                Y: =600
+                ZIndex: =4
+
+    "'Right Container' As groupContainer.manualLayoutContainer":
+        BorderStyle: =BorderStyle.Dotted
+        DropShadow: =DropShadow.Light
+        Fill: =RGBA(255, 255, 255, 1)
+        Height: =646
+        RadiusBottomLeft: =4
+        RadiusBottomRight: =4
+        RadiusTopLeft: =4
+        RadiusTopRight: =4
+        Width: =962
+        X: =384
+        Y: =102
+        ZIndex: =6
+
+        MainSectionContainer1 As groupContainer.verticalAutoLayoutContainer:
+            Height: =646
+            LayoutDirection: =LayoutDirection.Vertical
+            LayoutMode: =LayoutMode.Auto
+            LayoutOverflowY: =LayoutOverflow.Scroll
+            RadiusBottomLeft: =4
+            RadiusBottomRight: =4
+            RadiusTopLeft: =4
+            RadiusTopRight: =4
+            Visible: =TabGallery.Selected.ID="1"
+            Width: =962
+            ZIndex: =17
+
+            "'Search Fields' As groupContainer":
+                BorderStyle: =BorderStyle.Dashed
+                FillPortions: =0
+                Height: =400
+                LayoutMinHeight: =100
+                LayoutMinWidth: =250
+                RadiusBottomLeft: =4
+                RadiusBottomRight: =4
+                RadiusTopLeft: =4
+                RadiusTopRight: =4
+                Width: =962
+                ZIndex: =1
+
+                SearchFileldContainer As groupContainer.manualLayoutContainer:
+                    Height: =85
+                    RadiusBottomLeft: =4
+                    RadiusBottomRight: =4
+                    RadiusTopLeft: =4
+                    RadiusTopRight: =4
+                    Width: =260
+                    X: =40
+                    Y: =25
+                    ZIndex: =1
+
+                    SearchLabel As label:
+                        BorderColor: =RGBA(0, 0, 0, 0)
+                        BorderStyle: =BorderStyle.None
+                        BorderThickness: =2
+                        Color: =RGBA(50, 49, 48, 1)
+                        DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                        DisabledColor: =RGBA(161, 159, 157, 1)
+                        FocusedBorderThickness: =4
+                        Font: =Font.'Segoe UI'
+                        Size: =13
+                        Text: ="Search Keyword"
+                        Tooltip: |-
+                            ="""The text to search for. All searchable fields are searched by default unless searchFields is specified.
+                            
+                            When searching searchable fields, the search text itself is tokenized, so multiple terms can be separated by white space, for example search=hello world.
+                            
+                            To match any term, use * which can be useful for boolean filter queries. Omitting this parameter has the same effect as setting it to *."""
+                        Width: =250
+                        X: =5
+                        ZIndex: =1
+
+                    SearchTextInput As text:
+                        BorderColor: =RGBA(179, 179, 179, 1)
+                        Color: =RGBA(50, 49, 48, 1)
+                        Default: =Blank()
+                        DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                        DisabledColor: =RGBA(161, 159, 157, 1)
+                        DisabledFill: =RGBA(242, 242, 241, 0)
+                        FocusedBorderThickness: =4
+                        Font: =Font.'Segoe UI'
+                        HintText: ="Optional, keep blank for all types"
+                        HoverBorderColor: =RGBA(16, 110, 190, 1)
+                        HoverColor: =RGBA(50, 49, 48, 1)
+                        HoverFill: =RGBA(255, 255, 255, 1)
+                        PressedBorderColor: =RGBA(0, 120, 212, 1)
+                        PressedColor: =RGBA(50, 49, 48, 1)
+                        PressedFill: =RGBA(255, 255, 255, 1)
+                        RadiusBottomLeft: =2
+                        RadiusBottomRight: =2
+                        RadiusTopLeft: =2
+                        RadiusTopRight: =2
+                        Size: =12
+                        Width: =250
+                        X: =5
+                        Y: =40
+                        ZIndex: =2
+
+                    Icon3 As icon.Help:
+                        BorderColor: =RGBA(0, 0, 0, 0)
+                        Color: =RGBA(0, 120, 212, 1)
+                        DisabledBorderColor: =RGBA(245, 245, 245, 1)
+                        DisabledColor: =RGBA(225, 223, 221, 1)
+                        DisabledFill: =RGBA(0, 0, 0, 0)
+                        FocusedBorderThickness: =4
+                        Height: =15
+                        HoverBorderColor: =RGBA(0, 0, 0, 0)
+                        HoverColor: =RGBA(16, 110, 190, 1)
+                        HoverFill: =RGBA(0, 0, 0, 0)
+                        Icon: =Icon.Help
+                        PressedBorderColor: =RGBA(0, 0, 0, 0)
+                        PressedColor: =RGBA(16, 110, 190, 1)
+                        PressedFill: =RGBA(0, 0, 0, 0)
+                        Tooltip: ="You can hover on each of the names to see relavant description."
+                        Width: =15
+                        X: =136
+                        Y: =12
+                        ZIndex: =3
+
+                SearchFileldContainer_2 As groupContainer.manualLayoutContainer:
+                    Height: =85
+                    RadiusBottomLeft: =4
+                    RadiusBottomRight: =4
+                    RadiusTopLeft: =4
+                    RadiusTopRight: =4
+                    Width: =260
+                    X: =341
+                    Y: =25
+                    ZIndex: =2
+
+                    SearchLabel_2 As label:
+                        BorderColor: =RGBA(0, 0, 0, 0)
+                        BorderStyle: =BorderStyle.None
+                        BorderThickness: =2
+                        Color: =RGBA(50, 49, 48, 1)
+                        DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                        DisabledColor: =RGBA(161, 159, 157, 1)
+                        FocusedBorderThickness: =4
+                        Font: =Font.'Segoe UI'
+                        Size: =13
+                        Text: ="Search Mode"
+                        Tooltip: |-
+                            ="Default value: any
+                            
+                            Defaults to any. Specifies whether any or all of the search terms must be matched in order to count the document as a match."
+                        Width: =250
+                        X: =5
+                        ZIndex: =1
+
+                    Dropdown3 As dropdown:
+                        BorderColor: =RGBA(179, 179, 179, 1)
+                        BorderThickness: =1
+                        ChevronBackground: =RGBA(255, 255, 255, 1)
+                        ChevronDisabledBackground: =RGBA(242, 242, 241, 0)
+                        ChevronDisabledFill: =RGBA(161, 159, 157, 1)
+                        ChevronFill: =RGBA(50, 49, 48, 1)
+                        ChevronHoverBackground: =RGBA(245, 245, 245, 1)
+                        ChevronHoverFill: =RGBA(50, 49, 48, 1)
+                        Color: =RGBA(50, 49, 48, 1)
+                        DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                        DisabledColor: =RGBA(161, 159, 157, 1)
+                        DisabledFill: =RGBA(242, 242, 241, 0)
+                        Font: =Font.'Segoe UI'
+                        HoverBorderColor: =RGBA(16, 110, 190, 1)
+                        HoverColor: =RGBA(50, 49, 48, 1)
+                        HoverFill: =RGBA(245, 245, 245, 1)
+                        Items: =["any","all"]
+                        PaddingBottom: =5
+                        PaddingLeft: =12
+                        PaddingRight: =5
+                        PaddingTop: =5
+                        PressedBorderColor: =RGBA(16, 110, 190, 1)
+                        PressedColor: =RGBA(255, 255, 255, 1)
+                        PressedFill: =RGBA(0, 120, 212, 1)
+                        SelectionColor: =RGBA(50, 49, 48, 1)
+                        SelectionFill: =RGBA(0, 120, 212, 1)
+                        Size: =13
+                        Width: =250
+                        X: =5
+                        Y: =40
+                        ZIndex: =3
+
+                SearchFileldContainer_3 As groupContainer.manualLayoutContainer:
+                    Height: =85
+                    RadiusBottomLeft: =4
+                    RadiusBottomRight: =4
+                    RadiusTopLeft: =4
+                    RadiusTopRight: =4
+                    Width: =260
+                    X: =642
+                    Y: =25
+                    ZIndex: =3
+
+                    SearchLabel_3 As label:
+                        BorderColor: =RGBA(0, 0, 0, 0)
+                        BorderStyle: =BorderStyle.None
+                        BorderThickness: =2
+                        Color: =RGBA(50, 49, 48, 1)
+                        DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                        DisabledColor: =RGBA(161, 159, 157, 1)
+                        FocusedBorderThickness: =4
+                        Font: =Font.'Segoe UI'
+                        Size: =13
+                        Text: ="Search Fields"
+                        Tooltip: |-
+                            ="A comma-separated list of field names to search for the specified text. This field works in conjunction with the search field.
+                            
+                            Example search field - searchFields=ODSCode
+                            
+                            Omitting this parameter has the same effect as setting it to *."
+                        Width: =250
+                        X: =5
+                        ZIndex: =1
+
+                    SearchTextInput_1 As text:
+                        BorderColor: =RGBA(179, 179, 179, 1)
+                        Color: =RGBA(50, 49, 48, 1)
+                        Default: =Blank()
+                        DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                        DisabledColor: =RGBA(161, 159, 157, 1)
+                        DisabledFill: =RGBA(242, 242, 241, 0)
+                        FocusedBorderThickness: =4
+                        Font: =Font.'Segoe UI'
+                        HintText: |-
+                            ="Default: *"
+                        HoverBorderColor: =RGBA(16, 110, 190, 1)
+                        HoverColor: =RGBA(50, 49, 48, 1)
+                        HoverFill: =RGBA(255, 255, 255, 1)
+                        PressedBorderColor: =RGBA(0, 120, 212, 1)
+                        PressedColor: =RGBA(50, 49, 48, 1)
+                        PressedFill: =RGBA(255, 255, 255, 1)
+                        RadiusBottomLeft: =2
+                        RadiusBottomRight: =2
+                        RadiusTopLeft: =2
+                        RadiusTopRight: =2
+                        Size: =13
+                        Width: =250
+                        X: =5
+                        Y: =40
+                        ZIndex: =2
+
+                SearchFileldContainer_4 As groupContainer.manualLayoutContainer:
+                    Height: =85
+                    RadiusBottomLeft: =4
+                    RadiusBottomRight: =4
+                    RadiusTopLeft: =4
+                    RadiusTopRight: =4
+                    Width: =260
+                    X: =40
+                    Y: =115
+                    ZIndex: =4
+
+                    SearchLabel_4 As label:
+                        BorderColor: =RGBA(0, 0, 0, 0)
+                        BorderStyle: =BorderStyle.None
+                        BorderThickness: =2
+                        Color: =RGBA(50, 49, 48, 1)
+                        DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                        DisabledColor: =RGBA(161, 159, 157, 1)
+                        FocusedBorderThickness: =4
+                        Font: =Font.'Segoe UI'
+                        Size: =13
+                        Text: ="Query Type"
+                        Tooltip: |-
+                            ="Default value: simple
+                            
+                            When set to simple, search text is interpreted using a simple query language that allows for symbols such as +, * and """".
+                            
+                            When the query type is set to full, search text is interpreted using the Lucene query language which allows field-specific and weighted searches.
+                            
+                            The following example is a search over independent terms, with a requirement that all matching documents include pool.
+                            
+                            For more information, see Simple query syntax in Azure Cognitive Search.
+                            
+                            Example using simple query type:
+                            
+                            queryType=simple
+                            
+                            search=budget hotel +pool
+                            
+                            searchMode=all
+                            
+                            The next example shows in-field search and term boosting. It looks for hotels where the category field contains the term budget.
+                            
+                            Any documents containing the phrase recently renovated are ranked higher as a result of the term boost value.
+                            
+                            For more information, see Lucene query syntax in Azure Cognitive Search.
+                            
+                            Example using full query type:
+                            
+                            queryType=full
+                            
+                            search=category:budget AND \'recently renovated\'^3
+                            
+                            searchMode=all
+                            
+                            Allowed values: simple, full"
+                        Width: =250
+                        X: =5
+                        ZIndex: =1
+
+                    Dropdown3_1 As dropdown:
+                        BorderColor: =RGBA(179, 179, 179, 1)
+                        BorderThickness: =1
+                        ChevronBackground: =RGBA(255, 255, 255, 1)
+                        ChevronDisabledBackground: =RGBA(242, 242, 241, 0)
+                        ChevronDisabledFill: =RGBA(161, 159, 157, 1)
+                        ChevronFill: =RGBA(50, 49, 48, 1)
+                        ChevronHoverBackground: =RGBA(245, 245, 245, 1)
+                        ChevronHoverFill: =RGBA(50, 49, 48, 1)
+                        Color: =RGBA(50, 49, 48, 1)
+                        DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                        DisabledColor: =RGBA(161, 159, 157, 1)
+                        DisabledFill: =RGBA(242, 242, 241, 0)
+                        Font: =Font.'Segoe UI'
+                        HoverBorderColor: =RGBA(16, 110, 190, 1)
+                        HoverColor: =RGBA(50, 49, 48, 1)
+                        HoverFill: =RGBA(245, 245, 245, 1)
+                        Items: =["simple","full"]
+                        PaddingBottom: =5
+                        PaddingLeft: =12
+                        PaddingRight: =5
+                        PaddingTop: =5
+                        PressedBorderColor: =RGBA(16, 110, 190, 1)
+                        PressedColor: =RGBA(255, 255, 255, 1)
+                        PressedFill: =RGBA(0, 120, 212, 1)
+                        SelectionColor: =RGBA(50, 49, 48, 1)
+                        SelectionFill: =RGBA(0, 120, 212, 1)
+                        Size: =13
+                        Width: =250
+                        X: =5
+                        Y: =40
+                        ZIndex: =2
+
+                SearchFileldContainer_5 As groupContainer.manualLayoutContainer:
+                    Height: =85
+                    RadiusBottomLeft: =4
+                    RadiusBottomRight: =4
+                    RadiusTopLeft: =4
+                    RadiusTopRight: =4
+                    Width: =260
+                    X: =341
+                    Y: =115
+                    ZIndex: =5
+
+                    SearchLabel_5 As label:
+                        BorderColor: =RGBA(0, 0, 0, 0)
+                        BorderStyle: =BorderStyle.None
+                        BorderThickness: =2
+                        Color: =RGBA(50, 49, 48, 1)
+                        DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                        DisabledColor: =RGBA(161, 159, 157, 1)
+                        FocusedBorderThickness: =4
+                        Font: =Font.'Segoe UI'
+                        Size: =13
+                        Text: ="Skip Results ($skip)"
+                        Tooltip: |-
+                            ="The number of search results to skip. For example, $skip:25 returns the entries after the first 25 entries in the search results."
+                        Width: =250
+                        X: =5
+                        ZIndex: =1
+
+                    SearchTextInput_2 As text:
+                        BorderColor: =RGBA(179, 179, 179, 1)
+                        Color: =RGBA(50, 49, 48, 1)
+                        Default: =Blank()
+                        DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                        DisabledColor: =RGBA(161, 159, 157, 1)
+                        DisabledFill: =RGBA(242, 242, 241, 0)
+                        FocusedBorderThickness: =4
+                        Font: =Font.'Segoe UI'
+                        Format: =TextFormat.Number
+                        HintText: |-
+                            ="Default: 0"
+                        HoverBorderColor: =RGBA(16, 110, 190, 1)
+                        HoverColor: =RGBA(50, 49, 48, 1)
+                        HoverFill: =RGBA(255, 255, 255, 1)
+                        PressedBorderColor: =RGBA(0, 120, 212, 1)
+                        PressedColor: =RGBA(50, 49, 48, 1)
+                        PressedFill: =RGBA(255, 255, 255, 1)
+                        RadiusBottomLeft: =2
+                        RadiusBottomRight: =2
+                        RadiusTopLeft: =2
+                        RadiusTopRight: =2
+                        Size: =13
+                        Width: =250
+                        X: =5
+                        Y: =40
+                        ZIndex: =2
+
+                SearchFileldContainer_6 As groupContainer.manualLayoutContainer:
+                    Height: =85
+                    RadiusBottomLeft: =4
+                    RadiusBottomRight: =4
+                    RadiusTopLeft: =4
+                    RadiusTopRight: =4
+                    Width: =260
+                    X: =642
+                    Y: =115
+                    ZIndex: =6
+
+                    SearchLabel_6 As label:
+                        BorderColor: =RGBA(0, 0, 0, 0)
+                        BorderStyle: =BorderStyle.None
+                        BorderThickness: =2
+                        Color: =RGBA(50, 49, 48, 1)
+                        DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                        DisabledColor: =RGBA(161, 159, 157, 1)
+                        FocusedBorderThickness: =4
+                        Font: =Font.'Segoe UI'
+                        Size: =13
+                        Text: ="Result Number ($top)"
+                        Tooltip: |-
+                            ="Default value: 50
+                            
+                            The number of search results to retrieve. The default is 50."
+                        Width: =250
+                        X: =5
+                        ZIndex: =1
+
+                    SearchTextInput_3 As text:
+                        BorderColor: =RGBA(179, 179, 179, 1)
+                        Color: =RGBA(50, 49, 48, 1)
+                        Default: =Blank()
+                        DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                        DisabledColor: =RGBA(161, 159, 157, 1)
+                        DisabledFill: =RGBA(242, 242, 241, 0)
+                        FocusedBorderThickness: =4
+                        Font: =Font.'Segoe UI'
+                        Format: =TextFormat.Number
+                        HintText: |-
+                            ="Default: 50"
+                        HoverBorderColor: =RGBA(16, 110, 190, 1)
+                        HoverColor: =RGBA(50, 49, 48, 1)
+                        HoverFill: =RGBA(255, 255, 255, 1)
+                        PressedBorderColor: =RGBA(0, 120, 212, 1)
+                        PressedColor: =RGBA(50, 49, 48, 1)
+                        PressedFill: =RGBA(255, 255, 255, 1)
+                        RadiusBottomLeft: =2
+                        RadiusBottomRight: =2
+                        RadiusTopLeft: =2
+                        RadiusTopRight: =2
+                        Size: =13
+                        Width: =250
+                        X: =5
+                        Y: =40
+                        ZIndex: =2
+
+                SearchFileldContainer_7 As groupContainer.manualLayoutContainer:
+                    Height: =85
+                    RadiusBottomLeft: =4
+                    RadiusBottomRight: =4
+                    RadiusTopLeft: =4
+                    RadiusTopRight: =4
+                    Width: =260
+                    X: =40
+                    Y: =205
+                    ZIndex: =7
+
+                    SearchLabel_7 As label:
+                        BorderColor: =RGBA(0, 0, 0, 0)
+                        BorderStyle: =BorderStyle.None
+                        BorderThickness: =2
+                        Color: =RGBA(50, 49, 48, 1)
+                        DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                        DisabledColor: =RGBA(161, 159, 157, 1)
+                        FocusedBorderThickness: =4
+                        Font: =Font.'Segoe UI'
+                        Size: =13
+                        Text: ="Result Count ($count)"
+                        Tooltip: |-
+                            ="Default value: false
+                            
+                            Optional, defaults to false. Specifies whether to fetch the total count of results.
+                            
+                            This is the count of all documents that match the search and $filter parameters, ignoring $top and $skip.
+                            
+                            Setting this value to true may have a performance impact. The count returned is an approximation.
+                            
+                            If you’d like to get only the count without any documents, you can use $top=0."
+                        Width: =250
+                        X: =5
+                        ZIndex: =1
+
+                    Checkbox1 As checkbox:
+                        BorderColor: =RGBA(179, 179, 179, 1)
+                        BorderThickness: =1
+                        CheckboxSize: =30
+                        CheckmarkFill: =RGBA(0, 120, 212, 1)
+                        Color: =RGBA(50, 49, 48, 1)
+                        DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                        DisabledColor: =RGBA(161, 159, 157, 1)
+                        FocusedBorderThickness: =4
+                        Font: =Font.'Segoe UI'
+                        Height: =40
+                        HoverBorderColor: =RGBA(0, 120, 212, 1)
+                        HoverColor: =RGBA(50, 49, 48, 1)
+                        HoverFill: =RGBA(0, 0, 0, 0)
+                        PressedBorderColor: =RGBA(16, 110, 190, 1)
+                        PressedColor: =RGBA(50, 49, 48, 1)
+                        PressedFill: =RGBA(0, 0, 0, 0)
+                        Size: =13
+                        Text: ="See counts / True"
+                        Width: =250
+                        X: =5
+                        Y: =40
+                        ZIndex: =3
+
+                SearchFileldContainer_8 As groupContainer.manualLayoutContainer:
+                    Height: =85
+                    RadiusBottomLeft: =4
+                    RadiusBottomRight: =4
+                    RadiusTopLeft: =4
+                    RadiusTopRight: =4
+                    Width: =260
+                    X: =341
+                    Y: =205
+                    ZIndex: =8
+
+                    SearchLabel_8 As label:
+                        BorderColor: =RGBA(0, 0, 0, 0)
+                        BorderStyle: =BorderStyle.None
+                        BorderThickness: =2
+                        Color: =RGBA(50, 49, 48, 1)
+                        DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                        DisabledColor: =RGBA(161, 159, 157, 1)
+                        FocusedBorderThickness: =4
+                        Font: =Font.'Segoe UI'
+                        Size: =13
+                        Text: ="Order By ($orderBy)"
+                        Tooltip: |-
+                            ="A list of comma-separated expressions to sort the results by. Each expression can be either a field name or a call to the geo.distance() function.
+                            
+                            Each expression can be followed by asc to indicate ascending, and desc to indicate descending. The default is ascending order.
+                            
+                            This $orderBy routine orders the results by the distance from the geography point included in the expression.
+                            
+                            The geography point can be a position from where you are and the results are ordered by how local they are.
+                            
+                            For more information, see Simple query syntax in Azure Cognitive Search.
+                            
+                            Example: $orderby=geo.distance(Geocode, geography'POINT(-0.76444095373153675 52.000820159912109)')"
+                        Width: =250
+                        X: =5
+                        ZIndex: =1
+
+                    SearchTextInput_4 As text:
+                        BorderColor: =RGBA(179, 179, 179, 1)
+                        Color: =RGBA(50, 49, 48, 1)
+                        Default: =Blank()
+                        DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                        DisabledColor: =RGBA(161, 159, 157, 1)
+                        DisabledFill: =RGBA(242, 242, 241, 0)
+                        FocusedBorderThickness: =4
+                        Font: =Font.'Segoe UI'
+                        HintText: ="Optional"
+                        HoverBorderColor: =RGBA(16, 110, 190, 1)
+                        HoverColor: =RGBA(50, 49, 48, 1)
+                        HoverFill: =RGBA(255, 255, 255, 1)
+                        PressedBorderColor: =RGBA(0, 120, 212, 1)
+                        PressedColor: =RGBA(50, 49, 48, 1)
+                        PressedFill: =RGBA(255, 255, 255, 1)
+                        RadiusBottomLeft: =2
+                        RadiusBottomRight: =2
+                        RadiusTopLeft: =2
+                        RadiusTopRight: =2
+                        Size: =13
+                        Width: =250
+                        X: =5
+                        Y: =40
+                        ZIndex: =2
+
+                SearchFileldContainer_9 As groupContainer.manualLayoutContainer:
+                    Height: =85
+                    RadiusBottomLeft: =4
+                    RadiusBottomRight: =4
+                    RadiusTopLeft: =4
+                    RadiusTopRight: =4
+                    Width: =260
+                    X: =642
+                    Y: =205
+                    ZIndex: =9
+
+                    SearchLabel_9 As label:
+                        BorderColor: =RGBA(0, 0, 0, 0)
+                        BorderStyle: =BorderStyle.None
+                        BorderThickness: =2
+                        Color: =RGBA(50, 49, 48, 1)
+                        DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                        DisabledColor: =RGBA(161, 159, 157, 1)
+                        FocusedBorderThickness: =4
+                        Font: =Font.'Segoe UI'
+                        Size: =13
+                        Text: ="Result Fields ($select)"
+                        Tooltip: |-
+                            ="A list of comma-separated fields to include in the result set.
+                            
+                            If unspecified or set to *, all fields marked as retrievable in the schema are included in the projection.
+                            
+                            Example: $select=ODSCode,OrganisationName,Contacts,Address1,Address2,Address3,City,Postcode,OrganisationSubType"
+                        Width: =250
+                        X: =5
+                        ZIndex: =1
+
+                    SearchTextInput_5 As text:
+                        BorderColor: =RGBA(179, 179, 179, 1)
+                        Color: =RGBA(50, 49, 48, 1)
+                        Default: =Blank()
+                        DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                        DisabledColor: =RGBA(161, 159, 157, 1)
+                        DisabledFill: =RGBA(242, 242, 241, 0)
+                        FocusedBorderThickness: =4
+                        Font: =Font.'Segoe UI'
+                        HintText: |-
+                            ="Default: *"
+                        HoverBorderColor: =RGBA(16, 110, 190, 1)
+                        HoverColor: =RGBA(50, 49, 48, 1)
+                        HoverFill: =RGBA(255, 255, 255, 1)
+                        PressedBorderColor: =RGBA(0, 120, 212, 1)
+                        PressedColor: =RGBA(50, 49, 48, 1)
+                        PressedFill: =RGBA(255, 255, 255, 1)
+                        RadiusBottomLeft: =2
+                        RadiusBottomRight: =2
+                        RadiusTopLeft: =2
+                        RadiusTopRight: =2
+                        Size: =13
+                        Width: =250
+                        X: =5
+                        Y: =40
+                        ZIndex: =2
+
+                SearchFileldContainer_10 As groupContainer.manualLayoutContainer:
+                    Height: =85
+                    RadiusBottomLeft: =4
+                    RadiusBottomRight: =4
+                    RadiusTopLeft: =4
+                    RadiusTopRight: =4
+                    Width: =260
+                    X: =40
+                    Y: =295
+                    ZIndex: =10
+
+                    SearchLabel_10 As label:
+                        BorderColor: =RGBA(0, 0, 0, 0)
+                        BorderStyle: =BorderStyle.None
+                        BorderThickness: =2
+                        Color: =RGBA(50, 49, 48, 1)
+                        DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                        DisabledColor: =RGBA(161, 159, 157, 1)
+                        FocusedBorderThickness: =4
+                        Font: =Font.'Segoe UI'
+                        Size: =13
+                        Text: ="Filter ($filter)"
+                        Tooltip: |-
+                            ="A structured search expression in standard OData syntax.
+                            
+                            The $filter parameter specifies inclusion or exclusion criteria for returning matches in search results.
+                            
+                            For more information on using the $filter, see OData $filter syntax in Azure Cognitive Search.
+                            
+                            Examples:
+                            
+                            Filter results by pharmacies that are EPS-enabled and classed as 'community', that is, ServiceCode is EPS0001 and OrganisationTypeID is PHA and SubType is Community:
+                            
+                            $filter=Services / any (x: x/ServiceCode eq 'EPS0001' ) and OrganisationTypeId eq 'PHA' and OrganisationSubType eq 'Community'
+                            
+                            Filter results that match a postcode, that is Postcode field is NG16:
+                            
+                            $filter=search.ismatch('NG16', 'Postcode')
+                            
+                            Filter results by Postcode is CW9 and OrganisationTypeId is a dentist:
+                            
+                            $filter=search.ismatch('CW9', 'Postcode') and OrganisationTypeId eq 'DEN'
+                            
+                            For details on organisation types and service codes, see organisation and service codes."
+                        Width: =250
+                        X: =5
+                        ZIndex: =1
+
+                    SearchTextInput_6 As text:
+                        BorderColor: =RGBA(179, 179, 179, 1)
+                        Color: =RGBA(50, 49, 48, 1)
+                        Default: =Blank()
+                        DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                        DisabledColor: =RGBA(161, 159, 157, 1)
+                        DisabledFill: =RGBA(242, 242, 241, 0)
+                        FocusedBorderThickness: =4
+                        Font: =Font.'Segoe UI'
+                        HintText: ="OData Filter Syntax"
+                        HoverBorderColor: =RGBA(16, 110, 190, 1)
+                        HoverColor: =RGBA(50, 49, 48, 1)
+                        HoverFill: =RGBA(255, 255, 255, 1)
+                        PressedBorderColor: =RGBA(0, 120, 212, 1)
+                        PressedColor: =RGBA(50, 49, 48, 1)
+                        PressedFill: =RGBA(255, 255, 255, 1)
+                        RadiusBottomLeft: =2
+                        RadiusBottomRight: =2
+                        RadiusTopLeft: =2
+                        RadiusTopRight: =2
+                        Size: =13
+                        Width: =250
+                        X: =5
+                        Y: =40
+                        ZIndex: =2
+
+                ButtonContainer As groupContainer.manualLayoutContainer:
+                    Height: =85
+                    RadiusBottomLeft: =4
+                    RadiusBottomRight: =4
+                    RadiusTopLeft: =4
+                    RadiusTopRight: =4
+                    Width: =260
+                    X: =642
+                    Y: =295
+                    ZIndex: =11
+
+                    SearchButton As button:
+                        BorderColor: =RGBA(0, 0, 0, 0)
+                        BorderStyle: =BorderStyle.None
+                        DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                        DisabledColor: =RGBA(161, 159, 157, 1)
+                        DisabledFill: =RGBA(230, 230, 230, 1)
+                        Fill: =RGBA(0, 120, 212, 1)
+                        Font: =Font.'Segoe UI'
+                        FontWeight: =FontWeight.Semibold
+                        HoverBorderColor: =RGBA(0, 0, 0, 0)
+                        HoverColor: =RGBA(255, 255, 255, 1)
+                        HoverFill: =RGBA(16, 110, 190, 1)
+                        OnSelect: |-
+                            =Set(
+                                Type1Results,
+                                NHS_DoHS_API_Connector.GetOrganisationTypes(
+                                    1,
+                                    {
+                                        search: If(IsBlank(SearchTextInput.Text),Blank(),SearchTextInput.Text),
+                                        searchMode: Dropdown3.Selected.Value,
+                                        searchFields: If(IsBlank(SearchTextInput_1.Text),Blank(),SearchTextInput_1.Text),
+                                        queryType: Dropdown3_1.Selected.Value,
+                                        '$skip': If(IsBlank(SearchTextInput_2.Text),Blank(),SearchTextInput_2.Text),
+                                        '$top': If(IsBlank(SearchTextInput_3.Text),Blank(),SearchTextInput_3.Text),
+                                        '$count': Checkbox1.Value,
+                                        '$orderBy': If(IsBlank(SearchTextInput_4.Text),Blank(),SearchTextInput_4.Text),
+                                        '$select': If(IsBlank(SearchTextInput_5.Text),Blank(),SearchTextInput_5.Text),
+                                        '$filter': If(IsBlank(SearchTextInput_6.Text),Blank(),SearchTextInput_6.Text)
+                                    }
+                                ).value
+                            );
+                            Set(
+                                Type1JSON,
+                                JSON(
+                                    Type1Results,
+                                    JSONFormat.IndentFour
+                                )
+                            )
+                        PressedBorderColor: =RGBA(0, 69, 120, 1)
+                        PressedColor: =RGBA(255, 255, 255, 1)
+                        PressedFill: =RGBA(16, 110, 190, 1)
+                        Size: =15
+                        Text: ="Search"
+                        Width: =250
+                        X: =5
+                        Y: =35
+                        ZIndex: =3
+
+            ResultTitleBar As groupContainer.manualLayoutContainer:
+                DropShadow: =DropShadow.Light
+                Fill: =RGBA(65, 182, 230, 0.8)
+                FillPortions: =0
+                Height: =40
+                LayoutMinHeight: =100
+                LayoutMinWidth: =250
+                RadiusBottomLeft: =4
+                RadiusBottomRight: =4
+                RadiusTopLeft: =4
+                RadiusTopRight: =4
+                Visible: =And(Not(IsBlank(Type1Results)),TabGallery.Selected.ID="1")
+                Width: =962
+                Y: =412
+                ZIndex: =2
+
+                Label2 As label:
+                    Align: =Align.Center
+                    BorderColor: =RGBA(0, 0, 0, 0)
+                    BorderStyle: =BorderStyle.None
+                    BorderThickness: =2
+                    Color: =RGBA(255, 255, 255, 1)
+                    DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                    DisabledColor: =RGBA(161, 159, 157, 1)
+                    FocusedBorderThickness: =4
+                    Font: =Font.'Segoe UI'
+                    Size: =13
+                    Text: ="Display Name"
+                    Width: =286
+                    X: =44
+                    ZIndex: =1
+
+                Label2_1 As label:
+                    Align: =Align.Center
+                    BorderColor: =RGBA(0, 0, 0, 0)
+                    BorderStyle: =BorderStyle.None
+                    BorderThickness: =2
+                    Color: =RGBA(255, 255, 255, 1)
+                    DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                    DisabledColor: =RGBA(161, 159, 157, 1)
+                    FocusedBorderThickness: =4
+                    Font: =Font.'Segoe UI'
+                    Size: =13
+                    Text: ="Organisation Type ID"
+                    Width: =286
+                    X: =330
+                    ZIndex: =2
+
+                Label2_2 As label:
+                    Align: =Align.Center
+                    BorderColor: =RGBA(0, 0, 0, 0)
+                    BorderStyle: =BorderStyle.None
+                    BorderThickness: =2
+                    Color: =RGBA(255, 255, 255, 1)
+                    DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                    DisabledColor: =RGBA(161, 159, 157, 1)
+                    FocusedBorderThickness: =4
+                    Font: =Font.'Segoe UI'
+                    Size: =13
+                    Text: ="Organisation Type Name"
+                    Width: =286
+                    X: =616
+                    ZIndex: =3
+
+            Type1ResultsGallery As gallery.galleryVertical:
+                BorderColor: =RGBA(245, 245, 245, 1)
+                DelayItemLoading: =true
+                FillPortions: =0
+                Height: =20+60*CountRows(Type1ResultsGallery.AllItems)
+                Items: =Type1Results
+                Layout: =Layout.Vertical
+                LayoutMinHeight: =287
+                LayoutMinWidth: =320
+                LoadingSpinner: =LoadingSpinner.Data
+                TemplatePadding: =10
+                TemplateSize: =50
+                Visible: =And(Not(IsBlank(Type1Results)),TabGallery.Selected.ID="1")
+                Width: =962
+                Y: =452
+                ZIndex: =3
+
+                Type1ResultsContainer As groupContainer:
+                    DropShadow: =DropShadow.Light
+                    Height: =50
+                    RadiusBottomLeft: =4
+                    RadiusBottomRight: =4
+                    RadiusTopLeft: =4
+                    RadiusTopRight: =4
+                    Width: =858
+                    X: =35
+                    ZIndex: =11
+
+                    Label1 As label:
+                        Align: =Align.Center
+                        BorderColor: =RGBA(0, 0, 0, 0)
+                        BorderStyle: =BorderStyle.None
+                        BorderThickness: =2
+                        Color: =RGBA(50, 49, 48, 1)
+                        DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                        DisabledColor: =RGBA(161, 159, 157, 1)
+                        FocusedBorderThickness: =4
+                        Font: =Font.'Segoe UI'
+                        Height: =50
+                        Size: =13
+                        Text: =ThisItem.DisplayName
+                        Width: =286
+                        ZIndex: =1
+
+                    Label1_1 As label:
+                        Align: =Align.Center
+                        BorderColor: =RGBA(0, 0, 0, 0)
+                        BorderStyle: =BorderStyle.None
+                        BorderThickness: =2
+                        Color: =RGBA(50, 49, 48, 1)
+                        DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                        DisabledColor: =RGBA(161, 159, 157, 1)
+                        FocusedBorderThickness: =4
+                        Font: =Font.'Segoe UI'
+                        Height: =50
+                        Size: =13
+                        Text: =ThisItem.OrganisationTypeID
+                        Width: =286
+                        X: =286
+                        ZIndex: =2
+
+                    Label1_2 As label:
+                        Align: =Align.Center
+                        BorderColor: =RGBA(0, 0, 0, 0)
+                        BorderStyle: =BorderStyle.None
+                        BorderThickness: =2
+                        Color: =RGBA(50, 49, 48, 1)
+                        DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                        DisabledColor: =RGBA(161, 159, 157, 1)
+                        FocusedBorderThickness: =4
+                        Font: =Font.'Segoe UI'
+                        Height: =50
+                        Size: =13
+                        Text: =ThisItem.OrganisationTypeName
+                        Width: =286
+                        X: =572
+                        ZIndex: =3
+
+            "'Label JSON Title' As label":
+                Align: =Align.Center
+                BorderColor: =RGBA(0, 0, 0, 0)
+                BorderStyle: =BorderStyle.None
+                BorderThickness: =2
+                Color: =RGBA(255, 255, 255, 1)
+                DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                DisabledColor: =RGBA(161, 159, 157, 1)
+                Fill: =RGBA(65, 182, 230, 1)
+                FocusedBorderThickness: =4
+                Font: =Font.'Segoe UI'
+                Size: =13
+                Text: ="Results of Organisation Types in Formatted JSON"
+                Visible: =And(Not(IsBlank(Type1JSON)),TabGallery.Selected.ID="1")
+                Width: =Parent.Width
+                X: =255
+                Y: =450
+                ZIndex: =4
+
+            "'Label JSON Content' As label":
+                AutoHeight: =true
+                BorderColor: =RGBA(0, 0, 0, 0)
+                BorderStyle: =BorderStyle.None
+                BorderThickness: =2
+                Color: =RGBA(50, 49, 48, 1)
+                DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                DisabledColor: =RGBA(161, 159, 157, 1)
+                FocusedBorderThickness: =4
+                Font: =Font.'Segoe UI'
+                PaddingLeft: =20
+                Size: =13
+                Text: =Type1JSON
+                Width: =Parent.Width
+                X: =40
+                Y: =40
+                ZIndex: =5
+
+        MainSectionContainer2 As groupContainer.verticalAutoLayoutContainer:
+            Fill: =RGBA(255, 255, 255, 1)
+            Height: =646
+            LayoutAlignItems: =LayoutAlignItems.Stretch
+            LayoutDirection: =LayoutDirection.Vertical
+            LayoutGap: =10
+            LayoutMode: =LayoutMode.Auto
+            LayoutOverflowY: =LayoutOverflow.Scroll
+            RadiusBottomLeft: =8
+            RadiusBottomRight: =8
+            RadiusTopLeft: =8
+            RadiusTopRight: =8
+            Visible: =TabGallery.Selected.ID="2"
+            Width: =962
+            ZIndex: =18
+
+            "'Search Fields2' As groupContainer":
+                BorderStyle: =BorderStyle.Dashed
+                FillPortions: =0
+                Height: =435
+                LayoutMinHeight: =100
+                LayoutMinWidth: =250
+                RadiusBottomLeft: =4
+                RadiusBottomRight: =4
+                RadiusTopLeft: =4
+                RadiusTopRight: =4
+                Width: =962
+                ZIndex: =1
+
+                SearchFileldContainer_1 As groupContainer.manualLayoutContainer:
+                    Height: =85
+                    RadiusBottomLeft: =4
+                    RadiusBottomRight: =4
+                    RadiusTopLeft: =4
+                    RadiusTopRight: =4
+                    Width: =260
+                    X: =40
+                    Y: =25
+                    ZIndex: =1
+
+                    SearchLabel_1 As label:
+                        BorderColor: =RGBA(0, 0, 0, 0)
+                        BorderStyle: =BorderStyle.None
+                        BorderThickness: =2
+                        Color: =RGBA(50, 49, 48, 1)
+                        DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                        DisabledColor: =RGBA(161, 159, 157, 1)
+                        FocusedBorderThickness: =4
+                        Font: =Font.'Segoe UI'
+                        Size: =13
+                        Text: ="Search Keyword"
+                        Tooltip: |-
+                            ="""The text to search for. All searchable fields are searched by default unless searchFields is specified.
+                            
+                            When searching searchable fields, the search text itself is tokenized, so multiple terms can be separated by white space, for example search=hello world.
+                            
+                            To match any term, use * which can be useful for boolean filter queries. Omitting this parameter has the same effect as setting it to *."""
+                        Width: =250
+                        X: =5
+                        ZIndex: =1
+
+                    SearchTextInput_7 As text:
+                        BorderColor: =RGBA(179, 179, 179, 1)
+                        Color: =RGBA(50, 49, 48, 1)
+                        Default: =Blank()
+                        DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                        DisabledColor: =RGBA(161, 159, 157, 1)
+                        DisabledFill: =RGBA(242, 242, 241, 0)
+                        FocusedBorderThickness: =4
+                        Font: =Font.'Segoe UI'
+                        HintText: ="Optional, keep blank for all "
+                        HoverBorderColor: =RGBA(16, 110, 190, 1)
+                        HoverColor: =RGBA(50, 49, 48, 1)
+                        HoverFill: =RGBA(255, 255, 255, 1)
+                        PressedBorderColor: =RGBA(0, 120, 212, 1)
+                        PressedColor: =RGBA(50, 49, 48, 1)
+                        PressedFill: =RGBA(255, 255, 255, 1)
+                        RadiusBottomLeft: =2
+                        RadiusBottomRight: =2
+                        RadiusTopLeft: =2
+                        RadiusTopRight: =2
+                        Size: =12
+                        Width: =250
+                        X: =5
+                        Y: =40
+                        ZIndex: =2
+
+                    Icon3_1 As icon.Help:
+                        BorderColor: =RGBA(0, 0, 0, 0)
+                        Color: =RGBA(0, 120, 212, 1)
+                        DisabledBorderColor: =RGBA(245, 245, 245, 1)
+                        DisabledColor: =RGBA(225, 223, 221, 1)
+                        DisabledFill: =RGBA(0, 0, 0, 0)
+                        FocusedBorderThickness: =4
+                        Height: =15
+                        HoverBorderColor: =RGBA(0, 0, 0, 0)
+                        HoverColor: =RGBA(16, 110, 190, 1)
+                        HoverFill: =RGBA(0, 0, 0, 0)
+                        Icon: =Icon.Help
+                        PressedBorderColor: =RGBA(0, 0, 0, 0)
+                        PressedColor: =RGBA(16, 110, 190, 1)
+                        PressedFill: =RGBA(0, 0, 0, 0)
+                        Tooltip: ="You can hover on each of the names to see relavant description."
+                        Width: =15
+                        X: =136
+                        Y: =12
+                        ZIndex: =3
+
+                SearchFileldContainer_11 As groupContainer.manualLayoutContainer:
+                    Height: =85
+                    RadiusBottomLeft: =4
+                    RadiusBottomRight: =4
+                    RadiusTopLeft: =4
+                    RadiusTopRight: =4
+                    Width: =260
+                    X: =341
+                    Y: =25
+                    ZIndex: =2
+
+                    SearchLabel_11 As label:
+                        BorderColor: =RGBA(0, 0, 0, 0)
+                        BorderStyle: =BorderStyle.None
+                        BorderThickness: =2
+                        Color: =RGBA(50, 49, 48, 1)
+                        DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                        DisabledColor: =RGBA(161, 159, 157, 1)
+                        FocusedBorderThickness: =4
+                        Font: =Font.'Segoe UI'
+                        Size: =13
+                        Text: ="Search Mode"
+                        Tooltip: |-
+                            ="Default value: any
+                            
+                            Defaults to any. Specifies whether any or all of the search terms must be matched in order to count the document as a match."
+                        Width: =250
+                        X: =5
+                        ZIndex: =1
+
+                    Dropdown3_2 As dropdown:
+                        BorderColor: =RGBA(179, 179, 179, 1)
+                        BorderThickness: =1
+                        ChevronBackground: =RGBA(255, 255, 255, 1)
+                        ChevronDisabledBackground: =RGBA(242, 242, 241, 0)
+                        ChevronDisabledFill: =RGBA(161, 159, 157, 1)
+                        ChevronFill: =RGBA(50, 49, 48, 1)
+                        ChevronHoverBackground: =RGBA(245, 245, 245, 1)
+                        ChevronHoverFill: =RGBA(50, 49, 48, 1)
+                        Color: =RGBA(50, 49, 48, 1)
+                        DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                        DisabledColor: =RGBA(161, 159, 157, 1)
+                        DisabledFill: =RGBA(242, 242, 241, 0)
+                        Font: =Font.'Segoe UI'
+                        HoverBorderColor: =RGBA(16, 110, 190, 1)
+                        HoverColor: =RGBA(50, 49, 48, 1)
+                        HoverFill: =RGBA(245, 245, 245, 1)
+                        Items: =["any","all"]
+                        PaddingBottom: =5
+                        PaddingLeft: =12
+                        PaddingRight: =5
+                        PaddingTop: =5
+                        PressedBorderColor: =RGBA(16, 110, 190, 1)
+                        PressedColor: =RGBA(255, 255, 255, 1)
+                        PressedFill: =RGBA(0, 120, 212, 1)
+                        SelectionColor: =RGBA(50, 49, 48, 1)
+                        SelectionFill: =RGBA(0, 120, 212, 1)
+                        Size: =13
+                        Width: =250
+                        X: =5
+                        Y: =40
+                        ZIndex: =3
+
+                SearchFileldContainer_12 As groupContainer.manualLayoutContainer:
+                    Height: =85
+                    RadiusBottomLeft: =4
+                    RadiusBottomRight: =4
+                    RadiusTopLeft: =4
+                    RadiusTopRight: =4
+                    Width: =260
+                    X: =642
+                    Y: =25
+                    ZIndex: =3
+
+                    SearchLabel_12 As label:
+                        BorderColor: =RGBA(0, 0, 0, 0)
+                        BorderStyle: =BorderStyle.None
+                        BorderThickness: =2
+                        Color: =RGBA(50, 49, 48, 1)
+                        DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                        DisabledColor: =RGBA(161, 159, 157, 1)
+                        FocusedBorderThickness: =4
+                        Font: =Font.'Segoe UI'
+                        Size: =13
+                        Text: ="Search Fields"
+                        Tooltip: |-
+                            ="A comma-separated list of field names to search for the specified text. This field works in conjunction with the search field.
+                            
+                            Example search field - searchFields=ODSCode
+                            
+                            Omitting this parameter has the same effect as setting it to *."
+                        Width: =250
+                        X: =5
+                        ZIndex: =1
+
+                    SearchTextInput_8 As text:
+                        BorderColor: =RGBA(179, 179, 179, 1)
+                        Color: =RGBA(50, 49, 48, 1)
+                        Default: =Blank()
+                        DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                        DisabledColor: =RGBA(161, 159, 157, 1)
+                        DisabledFill: =RGBA(242, 242, 241, 0)
+                        FocusedBorderThickness: =4
+                        Font: =Font.'Segoe UI'
+                        HintText: |-
+                            ="Default: *"
+                        HoverBorderColor: =RGBA(16, 110, 190, 1)
+                        HoverColor: =RGBA(50, 49, 48, 1)
+                        HoverFill: =RGBA(255, 255, 255, 1)
+                        PressedBorderColor: =RGBA(0, 120, 212, 1)
+                        PressedColor: =RGBA(50, 49, 48, 1)
+                        PressedFill: =RGBA(255, 255, 255, 1)
+                        RadiusBottomLeft: =2
+                        RadiusBottomRight: =2
+                        RadiusTopLeft: =2
+                        RadiusTopRight: =2
+                        Size: =13
+                        Width: =250
+                        X: =5
+                        Y: =40
+                        ZIndex: =2
+
+                SearchFileldContainer_13 As groupContainer.manualLayoutContainer:
+                    Height: =85
+                    RadiusBottomLeft: =4
+                    RadiusBottomRight: =4
+                    RadiusTopLeft: =4
+                    RadiusTopRight: =4
+                    Width: =260
+                    X: =40
+                    Y: =115
+                    ZIndex: =4
+
+                    SearchLabel_13 As label:
+                        BorderColor: =RGBA(0, 0, 0, 0)
+                        BorderStyle: =BorderStyle.None
+                        BorderThickness: =2
+                        Color: =RGBA(50, 49, 48, 1)
+                        DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                        DisabledColor: =RGBA(161, 159, 157, 1)
+                        FocusedBorderThickness: =4
+                        Font: =Font.'Segoe UI'
+                        Size: =13
+                        Text: ="Query Type"
+                        Tooltip: |-
+                            ="Default value: simple
+                            
+                            When set to simple, search text is interpreted using a simple query language that allows for symbols such as +, * and """".
+                            
+                            When the query type is set to full, search text is interpreted using the Lucene query language which allows field-specific and weighted searches.
+                            
+                            The following example is a search over independent terms, with a requirement that all matching documents include pool.
+                            
+                            For more information, see Simple query syntax in Azure Cognitive Search.
+                            
+                            Example using simple query type:
+                            
+                            queryType=simple
+                            
+                            search=budget hotel +pool
+                            
+                            searchMode=all
+                            
+                            The next example shows in-field search and term boosting. It looks for hotels where the category field contains the term budget.
+                            
+                            Any documents containing the phrase recently renovated are ranked higher as a result of the term boost value.
+                            
+                            For more information, see Lucene query syntax in Azure Cognitive Search.
+                            
+                            Example using full query type:
+                            
+                            queryType=full
+                            
+                            search=category:budget AND \'recently renovated\'^3
+                            
+                            searchMode=all
+                            
+                            Allowed values: simple, full"
+                        Width: =250
+                        X: =5
+                        ZIndex: =1
+
+                    Dropdown3_3 As dropdown:
+                        BorderColor: =RGBA(179, 179, 179, 1)
+                        BorderThickness: =1
+                        ChevronBackground: =RGBA(255, 255, 255, 1)
+                        ChevronDisabledBackground: =RGBA(242, 242, 241, 0)
+                        ChevronDisabledFill: =RGBA(161, 159, 157, 1)
+                        ChevronFill: =RGBA(50, 49, 48, 1)
+                        ChevronHoverBackground: =RGBA(245, 245, 245, 1)
+                        ChevronHoverFill: =RGBA(50, 49, 48, 1)
+                        Color: =RGBA(50, 49, 48, 1)
+                        DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                        DisabledColor: =RGBA(161, 159, 157, 1)
+                        DisabledFill: =RGBA(242, 242, 241, 0)
+                        Font: =Font.'Segoe UI'
+                        HoverBorderColor: =RGBA(16, 110, 190, 1)
+                        HoverColor: =RGBA(50, 49, 48, 1)
+                        HoverFill: =RGBA(245, 245, 245, 1)
+                        Items: =["simple","full"]
+                        PaddingBottom: =5
+                        PaddingLeft: =12
+                        PaddingRight: =5
+                        PaddingTop: =5
+                        PressedBorderColor: =RGBA(16, 110, 190, 1)
+                        PressedColor: =RGBA(255, 255, 255, 1)
+                        PressedFill: =RGBA(0, 120, 212, 1)
+                        SelectionColor: =RGBA(50, 49, 48, 1)
+                        SelectionFill: =RGBA(0, 120, 212, 1)
+                        Size: =13
+                        Width: =250
+                        X: =5
+                        Y: =40
+                        ZIndex: =2
+
+                SearchFileldContainer_14 As groupContainer.manualLayoutContainer:
+                    Height: =85
+                    RadiusBottomLeft: =4
+                    RadiusBottomRight: =4
+                    RadiusTopLeft: =4
+                    RadiusTopRight: =4
+                    Width: =260
+                    X: =341
+                    Y: =115
+                    ZIndex: =5
+
+                    SearchLabel_14 As label:
+                        BorderColor: =RGBA(0, 0, 0, 0)
+                        BorderStyle: =BorderStyle.None
+                        BorderThickness: =2
+                        Color: =RGBA(50, 49, 48, 1)
+                        DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                        DisabledColor: =RGBA(161, 159, 157, 1)
+                        FocusedBorderThickness: =4
+                        Font: =Font.'Segoe UI'
+                        Size: =13
+                        Text: ="Skip Results ($skip)"
+                        Tooltip: |-
+                            ="The number of search results to skip. For example, $skip:25 returns the entries after the first 25 entries in the search results."
+                        Width: =250
+                        X: =5
+                        ZIndex: =1
+
+                    SearchTextInput_9 As text:
+                        BorderColor: =RGBA(179, 179, 179, 1)
+                        Color: =RGBA(50, 49, 48, 1)
+                        Default: =Blank()
+                        DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                        DisabledColor: =RGBA(161, 159, 157, 1)
+                        DisabledFill: =RGBA(242, 242, 241, 0)
+                        FocusedBorderThickness: =4
+                        Font: =Font.'Segoe UI'
+                        Format: =TextFormat.Number
+                        HintText: |-
+                            ="Default: 0"
+                        HoverBorderColor: =RGBA(16, 110, 190, 1)
+                        HoverColor: =RGBA(50, 49, 48, 1)
+                        HoverFill: =RGBA(255, 255, 255, 1)
+                        PressedBorderColor: =RGBA(0, 120, 212, 1)
+                        PressedColor: =RGBA(50, 49, 48, 1)
+                        PressedFill: =RGBA(255, 255, 255, 1)
+                        RadiusBottomLeft: =2
+                        RadiusBottomRight: =2
+                        RadiusTopLeft: =2
+                        RadiusTopRight: =2
+                        Size: =13
+                        Width: =250
+                        X: =5
+                        Y: =40
+                        ZIndex: =2
+
+                SearchFileldContainer_15 As groupContainer.manualLayoutContainer:
+                    Height: =85
+                    RadiusBottomLeft: =4
+                    RadiusBottomRight: =4
+                    RadiusTopLeft: =4
+                    RadiusTopRight: =4
+                    Width: =260
+                    X: =642
+                    Y: =115
+                    ZIndex: =6
+
+                    SearchLabel_15 As label:
+                        BorderColor: =RGBA(0, 0, 0, 0)
+                        BorderStyle: =BorderStyle.None
+                        BorderThickness: =2
+                        Color: =RGBA(50, 49, 48, 1)
+                        DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                        DisabledColor: =RGBA(161, 159, 157, 1)
+                        FocusedBorderThickness: =4
+                        Font: =Font.'Segoe UI'
+                        Size: =13
+                        Text: ="Result Number ($top)"
+                        Tooltip: |-
+                            ="Default value: 50
+                            
+                            The number of search results to retrieve. The default is 50."
+                        Width: =250
+                        X: =5
+                        ZIndex: =1
+
+                    SearchTextInput_10 As text:
+                        BorderColor: =RGBA(179, 179, 179, 1)
+                        Color: =RGBA(50, 49, 48, 1)
+                        Default: =Blank()
+                        DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                        DisabledColor: =RGBA(161, 159, 157, 1)
+                        DisabledFill: =RGBA(242, 242, 241, 0)
+                        FocusedBorderThickness: =4
+                        Font: =Font.'Segoe UI'
+                        Format: =TextFormat.Number
+                        HintText: |-
+                            ="Default: 50"
+                        HoverBorderColor: =RGBA(16, 110, 190, 1)
+                        HoverColor: =RGBA(50, 49, 48, 1)
+                        HoverFill: =RGBA(255, 255, 255, 1)
+                        PressedBorderColor: =RGBA(0, 120, 212, 1)
+                        PressedColor: =RGBA(50, 49, 48, 1)
+                        PressedFill: =RGBA(255, 255, 255, 1)
+                        RadiusBottomLeft: =2
+                        RadiusBottomRight: =2
+                        RadiusTopLeft: =2
+                        RadiusTopRight: =2
+                        Size: =13
+                        Width: =250
+                        X: =5
+                        Y: =40
+                        ZIndex: =2
+
+                SearchFileldContainer_16 As groupContainer.manualLayoutContainer:
+                    Height: =85
+                    RadiusBottomLeft: =4
+                    RadiusBottomRight: =4
+                    RadiusTopLeft: =4
+                    RadiusTopRight: =4
+                    Width: =260
+                    X: =40
+                    Y: =205
+                    ZIndex: =7
+
+                    SearchLabel_16 As label:
+                        BorderColor: =RGBA(0, 0, 0, 0)
+                        BorderStyle: =BorderStyle.None
+                        BorderThickness: =2
+                        Color: =RGBA(50, 49, 48, 1)
+                        DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                        DisabledColor: =RGBA(161, 159, 157, 1)
+                        FocusedBorderThickness: =4
+                        Font: =Font.'Segoe UI'
+                        Size: =13
+                        Text: ="Result Count ($count)"
+                        Tooltip: |-
+                            ="Default value: false
+                            
+                            Optional, defaults to false. Specifies whether to fetch the total count of results.
+                            
+                            This is the count of all documents that match the search and $filter parameters, ignoring $top and $skip.
+                            
+                            Setting this value to true may have a performance impact. The count returned is an approximation.
+                            
+                            If you’d like to get only the count without any documents, you can use $top=0."
+                        Width: =250
+                        X: =5
+                        ZIndex: =1
+
+                    Checkbox1_1 As checkbox:
+                        BorderColor: =RGBA(179, 179, 179, 1)
+                        BorderThickness: =1
+                        CheckboxSize: =30
+                        CheckmarkFill: =RGBA(0, 120, 212, 1)
+                        Color: =RGBA(50, 49, 48, 1)
+                        DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                        DisabledColor: =RGBA(161, 159, 157, 1)
+                        FocusedBorderThickness: =4
+                        Font: =Font.'Segoe UI'
+                        Height: =40
+                        HoverBorderColor: =RGBA(0, 120, 212, 1)
+                        HoverColor: =RGBA(50, 49, 48, 1)
+                        HoverFill: =RGBA(0, 0, 0, 0)
+                        PressedBorderColor: =RGBA(16, 110, 190, 1)
+                        PressedColor: =RGBA(50, 49, 48, 1)
+                        PressedFill: =RGBA(0, 0, 0, 0)
+                        Size: =13
+                        Text: ="See counts / True"
+                        Width: =250
+                        X: =5
+                        Y: =40
+                        ZIndex: =3
+
+                SearchFileldContainer_17 As groupContainer.manualLayoutContainer:
+                    Height: =85
+                    RadiusBottomLeft: =4
+                    RadiusBottomRight: =4
+                    RadiusTopLeft: =4
+                    RadiusTopRight: =4
+                    Width: =260
+                    X: =341
+                    Y: =205
+                    ZIndex: =8
+
+                    SearchLabel_17 As label:
+                        BorderColor: =RGBA(0, 0, 0, 0)
+                        BorderStyle: =BorderStyle.None
+                        BorderThickness: =2
+                        Color: =RGBA(50, 49, 48, 1)
+                        DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                        DisabledColor: =RGBA(161, 159, 157, 1)
+                        FocusedBorderThickness: =4
+                        Font: =Font.'Segoe UI'
+                        Size: =13
+                        Text: ="Order By ($orderBy)"
+                        Tooltip: |-
+                            ="A list of comma-separated expressions to sort the results by. Each expression can be either a field name or a call to the geo.distance() function.
+                            
+                            Each expression can be followed by asc to indicate ascending, and desc to indicate descending. The default is ascending order.
+                            
+                            This $orderBy routine orders the results by the distance from the geography point included in the expression.
+                            
+                            The geography point can be a position from where you are and the results are ordered by how local they are.
+                            
+                            For more information, see Simple query syntax in Azure Cognitive Search.
+                            
+                            Example: $orderby=geo.distance(Geocode, geography'POINT(-0.76444095373153675 52.000820159912109)')"
+                        Width: =250
+                        X: =5
+                        ZIndex: =1
+
+                    SearchTextInput_11 As text:
+                        BorderColor: =RGBA(179, 179, 179, 1)
+                        Color: =RGBA(50, 49, 48, 1)
+                        Default: =Blank()
+                        DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                        DisabledColor: =RGBA(161, 159, 157, 1)
+                        DisabledFill: =RGBA(242, 242, 241, 0)
+                        FocusedBorderThickness: =4
+                        Font: =Font.'Segoe UI'
+                        HintText: ="Optional"
+                        HoverBorderColor: =RGBA(16, 110, 190, 1)
+                        HoverColor: =RGBA(50, 49, 48, 1)
+                        HoverFill: =RGBA(255, 255, 255, 1)
+                        PressedBorderColor: =RGBA(0, 120, 212, 1)
+                        PressedColor: =RGBA(50, 49, 48, 1)
+                        PressedFill: =RGBA(255, 255, 255, 1)
+                        RadiusBottomLeft: =2
+                        RadiusBottomRight: =2
+                        RadiusTopLeft: =2
+                        RadiusTopRight: =2
+                        Size: =13
+                        Width: =250
+                        X: =5
+                        Y: =40
+                        ZIndex: =2
+
+                SearchFileldContainer_18 As groupContainer.manualLayoutContainer:
+                    Height: =85
+                    RadiusBottomLeft: =4
+                    RadiusBottomRight: =4
+                    RadiusTopLeft: =4
+                    RadiusTopRight: =4
+                    Width: =260
+                    X: =642
+                    Y: =205
+                    ZIndex: =9
+
+                    SearchLabel_18 As label:
+                        BorderColor: =RGBA(0, 0, 0, 0)
+                        BorderStyle: =BorderStyle.None
+                        BorderThickness: =2
+                        Color: =RGBA(50, 49, 48, 1)
+                        DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                        DisabledColor: =RGBA(161, 159, 157, 1)
+                        FocusedBorderThickness: =4
+                        Font: =Font.'Segoe UI'
+                        Size: =13
+                        Text: ="Result Fields ($select)"
+                        Tooltip: |-
+                            ="A list of comma-separated fields to include in the result set.
+                            
+                            If unspecified or set to *, all fields marked as retrievable in the schema are included in the projection.
+                            
+                            Example: $select=ODSCode,OrganisationName,Contacts,Address1,Address2,Address3,City,Postcode,OrganisationSubType"
+                        Width: =250
+                        X: =5
+                        ZIndex: =1
+
+                    SearchTextInput_12 As text:
+                        BorderColor: =RGBA(179, 179, 179, 1)
+                        Color: =RGBA(50, 49, 48, 1)
+                        Default: =Blank()
+                        DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                        DisabledColor: =RGBA(161, 159, 157, 1)
+                        DisabledFill: =RGBA(242, 242, 241, 0)
+                        FocusedBorderThickness: =4
+                        Font: =Font.'Segoe UI'
+                        HintText: |-
+                            ="Default: *"
+                        HoverBorderColor: =RGBA(16, 110, 190, 1)
+                        HoverColor: =RGBA(50, 49, 48, 1)
+                        HoverFill: =RGBA(255, 255, 255, 1)
+                        PressedBorderColor: =RGBA(0, 120, 212, 1)
+                        PressedColor: =RGBA(50, 49, 48, 1)
+                        PressedFill: =RGBA(255, 255, 255, 1)
+                        RadiusBottomLeft: =2
+                        RadiusBottomRight: =2
+                        RadiusTopLeft: =2
+                        RadiusTopRight: =2
+                        Size: =13
+                        Width: =250
+                        X: =5
+                        Y: =40
+                        ZIndex: =2
+
+                SearchFileldContainer_19 As groupContainer.manualLayoutContainer:
+                    Height: =85
+                    RadiusBottomLeft: =4
+                    RadiusBottomRight: =4
+                    RadiusTopLeft: =4
+                    RadiusTopRight: =4
+                    Width: =260
+                    X: =40
+                    Y: =295
+                    ZIndex: =10
+
+                    SearchLabel_19 As label:
+                        BorderColor: =RGBA(0, 0, 0, 0)
+                        BorderStyle: =BorderStyle.None
+                        BorderThickness: =2
+                        Color: =RGBA(50, 49, 48, 1)
+                        DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                        DisabledColor: =RGBA(161, 159, 157, 1)
+                        FocusedBorderThickness: =4
+                        Font: =Font.'Segoe UI'
+                        Size: =13
+                        Text: ="Filter ($filter)"
+                        Tooltip: |-
+                            ="A structured search expression in standard OData syntax.
+                            
+                            The $filter parameter specifies inclusion or exclusion criteria for returning matches in search results.
+                            
+                            For more information on using the $filter, see OData $filter syntax in Azure Cognitive Search.
+                            
+                            Examples:
+                            
+                            Filter results by pharmacies that are EPS-enabled and classed as 'community', that is, ServiceCode is EPS0001 and OrganisationTypeID is PHA and SubType is Community:
+                            
+                            $filter=Services / any (x: x/ServiceCode eq 'EPS0001' ) and OrganisationTypeId eq 'PHA' and OrganisationSubType eq 'Community'
+                            
+                            Filter results that match a postcode, that is Postcode field is NG16:
+                            
+                            $filter=search.ismatch('NG16', 'Postcode')
+                            
+                            Filter results by Postcode is CW9 and OrganisationTypeId is a dentist:
+                            
+                            $filter=search.ismatch('CW9', 'Postcode') and OrganisationTypeId eq 'DEN'
+                            
+                            For details on organisation types and service codes, see organisation and service codes."
+                        Width: =250
+                        X: =5
+                        ZIndex: =1
+
+                    SearchTextInput_13 As text:
+                        BorderColor: =RGBA(179, 179, 179, 1)
+                        Color: =RGBA(50, 49, 48, 1)
+                        Default: =Blank()
+                        DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                        DisabledColor: =RGBA(161, 159, 157, 1)
+                        DisabledFill: =RGBA(242, 242, 241, 0)
+                        FocusedBorderThickness: =4
+                        Font: =Font.'Segoe UI'
+                        HintText: ="OData Filter Syntax"
+                        HoverBorderColor: =RGBA(16, 110, 190, 1)
+                        HoverColor: =RGBA(50, 49, 48, 1)
+                        HoverFill: =RGBA(255, 255, 255, 1)
+                        PressedBorderColor: =RGBA(0, 120, 212, 1)
+                        PressedColor: =RGBA(50, 49, 48, 1)
+                        PressedFill: =RGBA(255, 255, 255, 1)
+                        RadiusBottomLeft: =2
+                        RadiusBottomRight: =2
+                        RadiusTopLeft: =2
+                        RadiusTopRight: =2
+                        Size: =13
+                        Width: =250
+                        X: =5
+                        Y: =40
+                        ZIndex: =2
+
+                ButtonContainer_1 As groupContainer.manualLayoutContainer:
+                    Height: =85
+                    RadiusBottomLeft: =4
+                    RadiusBottomRight: =4
+                    RadiusTopLeft: =4
+                    RadiusTopRight: =4
+                    Width: =260
+                    X: =642
+                    Y: =295
+                    ZIndex: =11
+
+                    SearchButton_1 As button:
+                        BorderColor: =RGBA(0, 0, 0, 0)
+                        BorderStyle: =BorderStyle.None
+                        DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                        DisabledColor: =RGBA(161, 159, 157, 1)
+                        DisabledFill: =RGBA(230, 230, 230, 1)
+                        Fill: =RGBA(0, 120, 212, 1)
+                        Font: =Font.'Segoe UI'
+                        FontWeight: =FontWeight.Semibold
+                        HoverBorderColor: =RGBA(0, 0, 0, 0)
+                        HoverColor: =RGBA(255, 255, 255, 1)
+                        HoverFill: =RGBA(16, 110, 190, 1)
+                        OnSelect: |-
+                            =Set(
+                                Type2Results,
+                                NHS_DoHS_API_Connector.GetOrganisations(
+                                    2,
+                                    {
+                                        search: If(IsBlank(SearchTextInput_7.Text),Blank(),SearchTextInput_7.Text),
+                                        searchMode: Dropdown3_2.Selected.Value,
+                                        searchFields: If(IsBlank(SearchTextInput_8.Text),Blank(),SearchTextInput_8.Text),
+                                        queryType: Dropdown3_3.Selected.Value,
+                                        '$skip': If(IsBlank(SearchTextInput_9.Text),Blank(),SearchTextInput_9.Text),
+                                        '$top': If(IsBlank(SearchTextInput_10.Text),Blank(),SearchTextInput_10.Text),
+                                        '$count': Checkbox1_1.Value,
+                                        '$orderBy': If(IsBlank(SearchTextInput_11.Text),Blank(),SearchTextInput_11.Text),
+                                        '$select': If(IsBlank(SearchTextInput_12.Text),Blank(),SearchTextInput_12.Text),
+                                        '$filter': If(IsBlank(SearchTextInput_13.Text),Blank(),SearchTextInput_13.Text)
+                                    }
+                                )
+                            );
+                            Set(
+                                Type2OrganisationJS,
+                                JSON(
+                                    First(Type2Results.value),
+                                    JSONFormat.IndentFour & JSONFormat.IgnoreUnsupportedTypes
+                                )
+                            )
+                        PressedBorderColor: =RGBA(0, 69, 120, 1)
+                        PressedColor: =RGBA(255, 255, 255, 1)
+                        PressedFill: =RGBA(16, 110, 190, 1)
+                        Size: =15
+                        Text: ="Search"
+                        Width: =250
+                        X: =5
+                        Y: =35
+                        ZIndex: =3
+
+            Type2GalleryTitle As label:
+                Align: =Align.Center
+                BorderColor: =RGBA(0, 0, 0, 0)
+                BorderStyle: =BorderStyle.None
+                BorderThickness: =2
+                Color: =RGBA(255, 255, 255, 1)
+                DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                DisabledColor: =RGBA(161, 159, 157, 1)
+                Fill: =RGBA(65, 182, 230, 1)
+                FocusedBorderThickness: =4
+                Font: =Font.'Segoe UI'
+                Size: =13
+                Text: ="Search Results  — Choose  organization from the list to see its detail in JSON"
+                Visible: =Not(IsBlank(Type2Results.value))
+                ZIndex: =2
+
+            GalleryResultsContainer_for_2 As groupContainer.manualLayoutContainer:
+                FillPortions: =0
+                Height: =Max(Type2Gallery.Height,Type2JSONContainer.Height)+20
+                LayoutMinHeight: =100
+                LayoutMinWidth: =250
+                RadiusBottomLeft: =4
+                RadiusBottomRight: =4
+                RadiusTopLeft: =4
+                RadiusTopRight: =4
+                Visible: =Not(IsBlank(Type2Results.value))
+                ZIndex: =3
+
+                Type2Gallery As gallery.galleryVertical:
+                    DelayItemLoading: =true
+                    Height: =60*CountRows(Type2Gallery.AllItems)
+                    Items: =Type2Results.value
+                    Layout: =Layout.Vertical
+                    LoadingSpinner: =LoadingSpinner.Data
+                    OnSelect: =Set(Type2OrganisationJS,JSON(ThisItem,JSONFormat.IndentFour& JSONFormat.IgnoreUnsupportedTypes))
+                    TemplateSize: |
+                        =50
+                    Visible: =Not(IsBlank(Type2Results.value))
+                    Width: =325
+                    X: =14
+                    ZIndex: =1
+
+                    Type2GalleryContainer As groupContainer.manualLayoutContainer:
+                        DropShadow: =DropShadow.Light
+                        Height: =50
+                        RadiusBottomLeft: =4
+                        RadiusBottomRight: =4
+                        RadiusTopLeft: =4
+                        RadiusTopRight: =4
+                        Width: =315
+                        ZIndex: =3
+
+                        Type2ResultsLabel As label:
+                            BorderColor: =RGBA(0, 0, 0, 0)
+                            BorderStyle: =BorderStyle.None
+                            BorderThickness: =2
+                            Color: =RGBA(50, 49, 48, 1)
+                            DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                            DisabledColor: =RGBA(161, 159, 157, 1)
+                            FocusedBorderThickness: =4
+                            Font: =Font.'Segoe UI'
+                            FontWeight: =If(ThisItem.IsSelected, FontWeight.Semibold, FontWeight.Normal)
+                            Height: =50
+                            OnSelect: =Select(Type2Gallery)
+                            PaddingLeft: =15
+                            Size: =13
+                            Text: =ThisItem.OrganisationName
+                            Width: =276
+                            ZIndex: =1
+
+                        Icon1_1 As icon.ArrowRight:
+                            BorderColor: =RGBA(0, 0, 0, 0)
+                            Color: =RGBA(0, 120, 212, 1)
+                            DisabledBorderColor: =RGBA(245, 245, 245, 1)
+                            DisabledColor: =RGBA(225, 223, 221, 1)
+                            DisabledFill: =RGBA(0, 0, 0, 0)
+                            FocusedBorderThickness: =4
+                            Height: =50
+                            HoverBorderColor: =RGBA(0, 0, 0, 0)
+                            HoverColor: =RGBA(16, 110, 190, 1)
+                            HoverFill: =RGBA(0, 0, 0, 0)
+                            Icon: =Icon.ArrowRight
+                            OnSelect: =Select(Type2Gallery)
+                            PressedBorderColor: =RGBA(0, 0, 0, 0)
+                            PressedColor: =RGBA(16, 110, 190, 1)
+                            PressedFill: =RGBA(0, 0, 0, 0)
+                            Visible: =ThisItem.IsSelected
+                            Width: =31
+                            X: =276
+                            ZIndex: =2
+
+                Type2JSONContainer As groupContainer.manualLayoutContainer:
+                    DropShadow: =DropShadow.Light
+                    Height: |
+                        =Label10_1.Height+Label11_1.Height
+                    RadiusBottomLeft: =4
+                    RadiusBottomRight: =4
+                    RadiusTopLeft: =4
+                    RadiusTopRight: =4
+                    Width: =600
+                    X: =345
+                    Y: =5
+                    ZIndex: =3
+
+                    Label10_1 As label:
+                        BorderColor: =RGBA(0, 0, 0, 0)
+                        BorderStyle: =BorderStyle.None
+                        BorderThickness: =2
+                        Color: =RGBA(50, 49, 48, 1)
+                        DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                        DisabledColor: =RGBA(161, 159, 157, 1)
+                        FocusedBorderThickness: =4
+                        Font: =Font.Arial
+                        FontWeight: =FontWeight.Bold
+                        PaddingLeft: =15
+                        Size: =13
+                        Text: ="JSON of the Selected Organisation"
+                        Width: =600
+                        ZIndex: =1
+
+                    Label11_1 As label:
+                        AutoHeight: =true
+                        BorderColor: =RGBA(0, 0, 0, 0)
+                        BorderStyle: =BorderStyle.None
+                        BorderThickness: =2
+                        Color: =RGBA(50, 49, 48, 1)
+                        DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                        DisabledColor: =RGBA(161, 159, 157, 1)
+                        FocusedBorderThickness: =4
+                        Font: =Font.'Segoe UI'
+                        PaddingLeft: =15
+                        Size: =13
+                        Text: =Type2OrganisationJS
+                        Width: =600
+                        Y: =40
+                        ZIndex: =2
+
+        MainSectionContainer3 As groupContainer.verticalAutoLayoutContainer:
+            Fill: =RGBA(255, 255, 255, 1)
+            Height: =646
+            LayoutAlignItems: =LayoutAlignItems.Stretch
+            LayoutDirection: =LayoutDirection.Vertical
+            LayoutGap: =10
+            LayoutMode: =LayoutMode.Auto
+            LayoutOverflowY: =LayoutOverflow.Scroll
+            RadiusBottomLeft: =8
+            RadiusBottomRight: =8
+            RadiusTopLeft: =8
+            RadiusTopRight: =8
+            Visible: =TabGallery.Selected.ID="3"
+            Width: =962
+            ZIndex: =19
+
+            SearchFields3 As groupContainer.manualLayoutContainer:
+                BorderStyle: =BorderStyle.Dashed
+                FillPortions: =0
+                Height: =220
+                LayoutMinHeight: =100
+                LayoutMinWidth: =250
+                RadiusBottomLeft: =4
+                RadiusBottomRight: =4
+                RadiusTopLeft: =4
+                RadiusTopRight: =4
+                ZIndex: =1
+
+                "'3SearchFileldContainer_20' As groupContainer.manualLayoutContainer":
+                    Height: =85
+                    RadiusBottomLeft: =4
+                    RadiusBottomRight: =4
+                    RadiusTopLeft: =4
+                    RadiusTopRight: =4
+                    Width: =260
+                    X: =40
+                    Y: =25
+                    ZIndex: =1
+
+                    SearchLabel_20 As label:
+                        BorderColor: =RGBA(0, 0, 0, 0)
+                        BorderStyle: =BorderStyle.None
+                        BorderThickness: =2
+                        Color: =RGBA(50, 49, 48, 1)
+                        DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                        DisabledColor: =RGBA(161, 159, 157, 1)
+                        FocusedBorderThickness: =4
+                        Font: =Font.'Segoe UI'
+                        Size: =13
+                        Text: ="Location Name, Postcode"
+                        Width: =250
+                        X: =5
+                        ZIndex: =1
+
+                    SearchTextInput_NameCode As text:
+                        BorderColor: =RGBA(179, 179, 179, 1)
+                        Color: =RGBA(50, 49, 48, 1)
+                        Default: =""
+                        DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                        DisabledColor: =RGBA(161, 159, 157, 1)
+                        DisabledFill: =RGBA(216, 221, 224, 0.5)
+                        DisplayMode: |-
+                            =If(
+                                "Name" in Radio1.Selected.Value,
+                                DisplayMode.Edit,
+                                DisplayMode.Disabled
+                            )
+                        FocusedBorderThickness: =4
+                        Font: =Font.'Segoe UI'
+                        HintText: =""
+                        HoverBorderColor: =RGBA(16, 110, 190, 1)
+                        HoverColor: =RGBA(50, 49, 48, 1)
+                        HoverFill: =RGBA(255, 255, 255, 1)
+                        PressedBorderColor: =RGBA(0, 120, 212, 1)
+                        PressedColor: =RGBA(50, 49, 48, 1)
+                        PressedFill: =RGBA(255, 255, 255, 1)
+                        RadiusBottomLeft: =2
+                        RadiusBottomRight: =2
+                        RadiusTopLeft: =2
+                        RadiusTopRight: =2
+                        Size: =12
+                        Width: =250
+                        X: =5
+                        Y: =40
+                        ZIndex: =2
+
+                    Icon3_2 As icon.Help:
+                        BorderColor: =RGBA(0, 0, 0, 0)
+                        Color: =RGBA(0, 120, 212, 1)
+                        DisabledBorderColor: =RGBA(245, 245, 245, 1)
+                        DisabledColor: =RGBA(225, 223, 221, 1)
+                        DisabledFill: =RGBA(0, 0, 0, 0)
+                        FocusedBorderThickness: =4
+                        Height: =15
+                        HoverBorderColor: =RGBA(0, 0, 0, 0)
+                        HoverColor: =RGBA(16, 110, 190, 1)
+                        HoverFill: =RGBA(0, 0, 0, 0)
+                        Icon: =Icon.Help
+                        PressedBorderColor: =RGBA(0, 0, 0, 0)
+                        PressedColor: =RGBA(16, 110, 190, 1)
+                        PressedFill: =RGBA(0, 0, 0, 0)
+                        Tooltip: ="Enter Placename or Postcode here, Or switch to coordinates mode below."
+                        Width: =15
+                        X: =215
+                        Y: =12
+                        ZIndex: =3
+
+                "'3SearchFileldContainer_21' As groupContainer.manualLayoutContainer":
+                    Height: =85
+                    RadiusBottomLeft: =4
+                    RadiusBottomRight: =4
+                    RadiusTopLeft: =4
+                    RadiusTopRight: =4
+                    Width: =260
+                    X: =341
+                    Y: =25
+                    ZIndex: =2
+
+                    SearchLabel_21 As label:
+                        BorderColor: =RGBA(0, 0, 0, 0)
+                        BorderStyle: =BorderStyle.None
+                        BorderThickness: =2
+                        Color: =RGBA(50, 49, 48, 1)
+                        DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                        DisabledColor: =RGBA(161, 159, 157, 1)
+                        FocusedBorderThickness: =4
+                        Font: =Font.'Segoe UI'
+                        Size: =13
+                        Text: ="Latitude"
+                        Width: =250
+                        X: =5
+                        ZIndex: =1
+
+                    SearchTextInput_Lat As text:
+                        BorderColor: =RGBA(179, 179, 179, 1)
+                        Color: =RGBA(50, 49, 48, 1)
+                        Default: =""
+                        DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                        DisabledColor: =RGBA(161, 159, 157, 1)
+                        DisabledFill: =RGBA(216, 221, 224, 0.5)
+                        DisplayMode: |-
+                            =If(
+                                "Latitude" in Radio1.Selected.Value,
+                                DisplayMode.Edit,
+                                DisplayMode.Disabled
+                            )
+                        FocusedBorderThickness: =4
+                        Font: =Font.'Segoe UI'
+                        Format: =TextFormat.Number
+                        HintText: =""
+                        HoverBorderColor: =RGBA(16, 110, 190, 1)
+                        HoverColor: =RGBA(50, 49, 48, 1)
+                        HoverFill: =RGBA(255, 255, 255, 1)
+                        PressedBorderColor: =RGBA(0, 120, 212, 1)
+                        PressedColor: =RGBA(50, 49, 48, 1)
+                        PressedFill: =RGBA(255, 255, 255, 1)
+                        RadiusBottomLeft: =2
+                        RadiusBottomRight: =2
+                        RadiusTopLeft: =2
+                        RadiusTopRight: =2
+                        Size: =13
+                        Width: =250
+                        X: =5
+                        Y: =40
+                        ZIndex: =2
+
+                "'3SearchFileldContainer_22' As groupContainer.manualLayoutContainer":
+                    Height: =85
+                    RadiusBottomLeft: =4
+                    RadiusBottomRight: =4
+                    RadiusTopLeft: =4
+                    RadiusTopRight: =4
+                    Width: =260
+                    X: =642
+                    Y: =25
+                    ZIndex: =3
+
+                    SearchLabel_22 As label:
+                        BorderColor: =RGBA(0, 0, 0, 0)
+                        BorderStyle: =BorderStyle.None
+                        BorderThickness: =2
+                        Color: =RGBA(50, 49, 48, 1)
+                        DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                        DisabledColor: =RGBA(161, 159, 157, 1)
+                        FocusedBorderThickness: =4
+                        Font: =Font.'Segoe UI'
+                        Size: =13
+                        Text: ="Longitude"
+                        Width: =250
+                        X: =5
+                        ZIndex: =1
+
+                    SearchTextInput_Long As text:
+                        BorderColor: =RGBA(179, 179, 179, 1)
+                        Color: =RGBA(50, 49, 48, 1)
+                        Default: =""
+                        DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                        DisabledColor: =RGBA(161, 159, 157, 1)
+                        DisabledFill: =RGBA(216, 221, 224, 0.5)
+                        DisplayMode: |-
+                            =If(
+                                "Longitude" in Radio1.Selected.Value,
+                                DisplayMode.Edit,
+                                DisplayMode.Disabled
+                            )
+                        FocusedBorderThickness: =4
+                        Font: =Font.'Segoe UI'
+                        Format: =TextFormat.Number
+                        HintText: =""
+                        HoverBorderColor: =RGBA(16, 110, 190, 1)
+                        HoverColor: =RGBA(50, 49, 48, 1)
+                        HoverFill: =RGBA(255, 255, 255, 1)
+                        PressedBorderColor: =RGBA(0, 120, 212, 1)
+                        PressedColor: =RGBA(50, 49, 48, 1)
+                        PressedFill: =RGBA(255, 255, 255, 1)
+                        RadiusBottomLeft: =2
+                        RadiusBottomRight: =2
+                        RadiusTopLeft: =2
+                        RadiusTopRight: =2
+                        Size: =13
+                        Width: =250
+                        X: =5
+                        Y: =40
+                        ZIndex: =2
+
+                SearchButton_2 As button:
+                    BorderColor: =RGBA(0, 0, 0, 0)
+                    BorderStyle: =BorderStyle.None
+                    DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                    DisabledColor: =RGBA(255, 255, 255, 1)
+                    DisabledFill: =RGBA(204, 204, 204, 1)
+                    DisplayMode: |-
+                        =If(
+                            Or(
+                                And(
+                                    Not(IsBlank(SearchTextInput_NameCode.Text)),
+                                    SearchTextInput_NameCode.DisplayMode = DisplayMode.Edit
+                                ),
+                                And(
+                                    Not(IsBlank(SearchTextInput_Long.Text)),
+                                    Not(IsBlank(SearchTextInput_Lat.Text)),
+                                    SearchTextInput_Long.DisplayMode = DisplayMode.Edit
+                        
+                                )
+                            ),
+                            DisplayMode.Edit,
+                            DisplayMode.Disabled
+                        )
+                    Fill: =RGBA(0, 120, 212, 1)
+                    Font: =Font.'Segoe UI'
+                    FontWeight: =FontWeight.Semibold
+                    HoverBorderColor: =RGBA(0, 0, 0, 0)
+                    HoverColor: =RGBA(255, 255, 255, 1)
+                    HoverFill: =RGBA(16, 110, 190, 1)
+                    OnSelect: |-
+                        =Set(
+                            Type3Results,
+                            If(
+                                SearchTextInput_NameCode.DisplayMode = DisplayMode.Edit,
+                                NHS_DoHS_API_Connector.PostOrganisationsPostCodePlace(
+                                    2,
+                                    {
+                                        search: SearchTextInput_NameCode.Text,
+                                        skip: ""
+                                    }
+                                ),
+                                NHS_DoHS_API_Connector.PostOrganisationsPostCodePlace(
+                                    2,
+                                    {
+                                        latitude: SearchTextInput_Lat.Text,
+                                        longitude: SearchTextInput_Long.Text,
+                                        skip: ""
+                                    }
+                                )
+                            )
+                        );
+                        Set(
+                            Type3OrganisationJS,
+                            JSON(
+                                First(Type3Results.value),
+                                JSONFormat.IndentFour & JSONFormat.IgnoreUnsupportedTypes
+                            )
+                        )
+                    PressedBorderColor: =RGBA(0, 69, 120, 1)
+                    PressedColor: =RGBA(255, 255, 255, 1)
+                    PressedFill: =RGBA(16, 110, 190, 1)
+                    Size: =15
+                    Text: ="Search"
+                    Visible: ='Toggle Experimental'.Value = false
+                    Width: =250
+                    X: =647
+                    Y: =159
+                    ZIndex: =4
+
+                Radio1 As radio:
+                    BorderColor: =RGBA(50, 49, 48, 1)
+                    BorderStyle: =BorderStyle.None
+                    BorderThickness: =2
+                    Color: =RGBA(50, 49, 48, 1)
+                    Default: ="Location Name or PostCode"
+                    DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                    DisabledColor: =RGBA(161, 159, 157, 1)
+                    FocusedBorderThickness: =4
+                    Font: =Font.'Segoe UI'
+                    Height: =52
+                    HoverColor: =RGBA(50, 49, 48, 1)
+                    HoverFill: =RGBA(0, 0, 0, 0)
+                    Items: =["Location Name or PostCode", "Latitude & Longitude"]
+                    PaddingBottom: =5
+                    PaddingTop: =5
+                    PressedColor: =RGBA(50, 49, 48, 1)
+                    PressedFill: =RGBA(0, 0, 0, 0)
+                    RadioBorderColor: =RGBA(50, 49, 48, 1)
+                    RadioSelectionFill: =RGBA(0, 120, 212, 1)
+                    RadioSize: =20
+                    Size: =10
+                    Width: =260
+                    X: =40
+                    Y: =169
+                    ZIndex: =5
+
+                SearchLabel_23 As label:
+                    BorderColor: =RGBA(0, 0, 0, 0)
+                    BorderStyle: =BorderStyle.None
+                    BorderThickness: =2
+                    Color: =RGBA(50, 49, 48, 1)
+                    DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                    DisabledColor: =RGBA(161, 159, 157, 1)
+                    FocusedBorderThickness: =4
+                    Font: =Font.'Segoe UI'
+                    Size: =13
+                    Text: ="Search Choice"
+                    Width: =250
+                    X: =45
+                    Y: =136
+                    ZIndex: =6
+
+                Label5 As label:
+                    BorderColor: =RGBA(0, 0, 0, 0)
+                    BorderStyle: =BorderStyle.None
+                    BorderThickness: =2
+                    Color: =RGBA(50, 49, 48, 1)
+                    DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                    DisabledColor: =RGBA(161, 159, 157, 1)
+                    FocusedBorderThickness: =4
+                    Font: =Font.'Segoe UI'
+                    Size: =13
+                    Text: =
+                    X: =60
+                    Y: =310
+                    ZIndex: =7
+
+                "'Toggle Experimental' As toggleSwitch":
+                    BorderColor: =RGBA(0, 0, 0, 0)
+                    BorderStyle: =BorderStyle.None
+                    Color: =RGBA(50, 49, 48, 1)
+                    DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                    FalseFill: =RGBA(96, 94, 92, 1)
+                    FalseHoverFill: =RGBA(113, 111, 110, 1)
+                    FocusedBorderThickness: =4
+                    Font: =Font.'Segoe UI'
+                    HandleFill: =RGBA(255, 255, 255, 1)
+                    HoverBorderColor: =RGBA(0, 0, 0, 0)
+                    PressedBorderColor: =RGBA(0, 0, 0, 0)
+                    Size: =13
+                    TrueFill: =RGBA(0, 120, 212, 1)
+                    TrueHoverFill: =RGBA(16, 110, 190, 1)
+                    X: =351
+                    Y: =176
+                    ZIndex: =8
+
+                Label7 As label:
+                    BorderColor: =RGBA(0, 0, 0, 0)
+                    BorderStyle: =BorderStyle.None
+                    BorderThickness: =2
+                    Color: =RGBA(50, 49, 48, 1)
+                    DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                    DisabledColor: =RGBA(161, 159, 157, 1)
+                    FocusedBorderThickness: =4
+                    Font: =Font.'Segoe UI'
+                    Size: =13
+                    Text: ="Experimental Parameters"
+                    Width: =205
+                    X: =346
+                    Y: =136
+                    ZIndex: =9
+
+                Label8 As label:
+                    BorderColor: =RGBA(0, 0, 0, 0)
+                    BorderStyle: =BorderStyle.None
+                    BorderThickness: =2
+                    Color: =RGBA(145, 143, 141, 1)
+                    DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                    DisabledColor: =RGBA(161, 159, 157, 1)
+                    FocusedBorderThickness: =4
+                    Font: =Font.'Segoe UI'
+                    Height: =68
+                    Italic: =true
+                    Size: =8
+                    Text: ="Warning! These parameters are not officially documented by the NHS for the DoHS API, and are only for expererimental usages!"
+                    Visible: ='Toggle Experimental'.Value = true
+                    Width: =250
+                    X: =647
+                    Y: =145
+                    ZIndex: =10
+
+            "'Search Fields3_EXP' As groupContainer":
+                BorderStyle: =BorderStyle.Dashed
+                BorderThickness: =1
+                DropShadow: =DropShadow.Light
+                FillPortions: =0
+                Height: =435
+                LayoutMinHeight: =100
+                LayoutMinWidth: =250
+                RadiusBottomLeft: =4
+                RadiusBottomRight: =4
+                RadiusTopLeft: =4
+                RadiusTopRight: =4
+                Visible: ='Toggle Experimental'.Value = true
+                Width: =962
+                ZIndex: =2
+
+                SearchFileldContainer_20 As groupContainer.manualLayoutContainer:
+                    Height: =85
+                    RadiusBottomLeft: =4
+                    RadiusBottomRight: =4
+                    RadiusTopLeft: =4
+                    RadiusTopRight: =4
+                    Width: =260
+                    X: =40
+                    Y: =25
+                    ZIndex: =1
+
+                    SearchLabel_24 As label:
+                        BorderColor: =RGBA(0, 0, 0, 0)
+                        BorderStyle: =BorderStyle.None
+                        BorderThickness: =2
+                        Color: =RGBA(50, 49, 48, 1)
+                        DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                        DisabledColor: =RGBA(161, 159, 157, 1)
+                        FocusedBorderThickness: =4
+                        Font: =Font.'Segoe UI'
+                        Size: =13
+                        Text: ="Search Keyword"
+                        Tooltip: |-
+                            ="""The text to search for. All searchable fields are searched by default unless searchFields is specified.
+                            
+                            When searching searchable fields, the search text itself is tokenized, so multiple terms can be separated by white space, for example search=hello world.
+                            
+                            To match any term, use * which can be useful for boolean filter queries. Omitting this parameter has the same effect as setting it to *."""
+                        Width: =250
+                        X: =5
+                        ZIndex: =1
+
+                    SearchTextInput_14 As text:
+                        BorderColor: =RGBA(179, 179, 179, 1)
+                        Color: =RGBA(50, 49, 48, 1)
+                        Default: =Blank()
+                        DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                        DisabledColor: =RGBA(161, 159, 157, 1)
+                        DisabledFill: =RGBA(242, 242, 241, 0)
+                        FocusedBorderThickness: =4
+                        Font: =Font.'Segoe UI'
+                        HintText: ="Optional"
+                        HoverBorderColor: =RGBA(16, 110, 190, 1)
+                        HoverColor: =RGBA(50, 49, 48, 1)
+                        HoverFill: =RGBA(255, 255, 255, 1)
+                        PressedBorderColor: =RGBA(0, 120, 212, 1)
+                        PressedColor: =RGBA(50, 49, 48, 1)
+                        PressedFill: =RGBA(255, 255, 255, 1)
+                        RadiusBottomLeft: =2
+                        RadiusBottomRight: =2
+                        RadiusTopLeft: =2
+                        RadiusTopRight: =2
+                        Size: =12
+                        Width: =250
+                        X: =5
+                        Y: =40
+                        ZIndex: =2
+
+                    Icon3_3 As icon.Help:
+                        BorderColor: =RGBA(0, 0, 0, 0)
+                        Color: =RGBA(0, 120, 212, 1)
+                        DisabledBorderColor: =RGBA(245, 245, 245, 1)
+                        DisabledColor: =RGBA(225, 223, 221, 1)
+                        DisabledFill: =RGBA(0, 0, 0, 0)
+                        FocusedBorderThickness: =4
+                        Height: =15
+                        HoverBorderColor: =RGBA(0, 0, 0, 0)
+                        HoverColor: =RGBA(16, 110, 190, 1)
+                        HoverFill: =RGBA(0, 0, 0, 0)
+                        Icon: =Icon.Help
+                        PressedBorderColor: =RGBA(0, 0, 0, 0)
+                        PressedColor: =RGBA(16, 110, 190, 1)
+                        PressedFill: =RGBA(0, 0, 0, 0)
+                        Tooltip: ="You can hover on each of the names to see relavant description."
+                        Width: =15
+                        X: =136
+                        Y: =12
+                        ZIndex: =3
+
+                SearchFileldContainer_21 As groupContainer.manualLayoutContainer:
+                    Height: =85
+                    RadiusBottomLeft: =4
+                    RadiusBottomRight: =4
+                    RadiusTopLeft: =4
+                    RadiusTopRight: =4
+                    Width: =260
+                    X: =341
+                    Y: =25
+                    ZIndex: =2
+
+                    SearchLabel_25 As label:
+                        BorderColor: =RGBA(0, 0, 0, 0)
+                        BorderStyle: =BorderStyle.None
+                        BorderThickness: =2
+                        Color: =RGBA(50, 49, 48, 1)
+                        DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                        DisabledColor: =RGBA(161, 159, 157, 1)
+                        FocusedBorderThickness: =4
+                        Font: =Font.'Segoe UI'
+                        Size: =13
+                        Text: ="Search Mode"
+                        Tooltip: |-
+                            ="Default value: any
+                            
+                            Defaults to any. Specifies whether any or all of the search terms must be matched in order to count the document as a match."
+                        Width: =250
+                        X: =5
+                        ZIndex: =1
+
+                    Dropdown3_4 As dropdown:
+                        BorderColor: =RGBA(179, 179, 179, 1)
+                        BorderThickness: =1
+                        ChevronBackground: =RGBA(255, 255, 255, 1)
+                        ChevronDisabledBackground: =RGBA(242, 242, 241, 0)
+                        ChevronDisabledFill: =RGBA(161, 159, 157, 1)
+                        ChevronFill: =RGBA(50, 49, 48, 1)
+                        ChevronHoverBackground: =RGBA(245, 245, 245, 1)
+                        ChevronHoverFill: =RGBA(50, 49, 48, 1)
+                        Color: =RGBA(50, 49, 48, 1)
+                        Default: =""
+                        DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                        DisabledColor: =RGBA(161, 159, 157, 1)
+                        DisabledFill: =RGBA(242, 242, 241, 0)
+                        Font: =Font.'Segoe UI'
+                        HoverBorderColor: =RGBA(16, 110, 190, 1)
+                        HoverColor: =RGBA(50, 49, 48, 1)
+                        HoverFill: =RGBA(245, 245, 245, 1)
+                        Items: |-
+                            =[
+                                {DisplayName:"any (Default, implicit)", P:Blank()},
+                                {DisplayName:"any (explicit)", P:"any"},
+                                {DisplayName:"all", P:"all"}
+                            ]
+                        PaddingBottom: =5
+                        PaddingLeft: =12
+                        PaddingRight: =5
+                        PaddingTop: =5
+                        PressedBorderColor: =RGBA(16, 110, 190, 1)
+                        PressedColor: =RGBA(255, 255, 255, 1)
+                        PressedFill: =RGBA(0, 120, 212, 1)
+                        SelectionColor: =RGBA(50, 49, 48, 1)
+                        SelectionFill: =RGBA(0, 120, 212, 1)
+                        Size: =13
+                        Width: =250
+                        X: =5
+                        Y: =40
+                        ZIndex: =3
+
+                SearchFileldContainer_22 As groupContainer.manualLayoutContainer:
+                    Height: =85
+                    RadiusBottomLeft: =4
+                    RadiusBottomRight: =4
+                    RadiusTopLeft: =4
+                    RadiusTopRight: =4
+                    Width: =260
+                    X: =642
+                    Y: =25
+                    ZIndex: =3
+
+                    SearchLabel_26 As label:
+                        BorderColor: =RGBA(0, 0, 0, 0)
+                        BorderStyle: =BorderStyle.None
+                        BorderThickness: =2
+                        Color: =RGBA(50, 49, 48, 1)
+                        DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                        DisabledColor: =RGBA(161, 159, 157, 1)
+                        FocusedBorderThickness: =4
+                        Font: =Font.'Segoe UI'
+                        Size: =13
+                        Text: ="Search Fields"
+                        Tooltip: |-
+                            ="A comma-separated list of field names to search for the specified text. This field works in conjunction with the search field.
+                            
+                            Example search field - searchFields=ODSCode
+                            
+                            Omitting this parameter has the same effect as setting it to *."
+                        Width: =250
+                        X: =5
+                        ZIndex: =1
+
+                    SearchTextInput_15 As text:
+                        BorderColor: =RGBA(179, 179, 179, 1)
+                        Color: =RGBA(50, 49, 48, 1)
+                        Default: =Blank()
+                        DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                        DisabledColor: =RGBA(161, 159, 157, 1)
+                        DisabledFill: =RGBA(242, 242, 241, 0)
+                        FocusedBorderThickness: =4
+                        Font: =Font.'Segoe UI'
+                        HintText: |-
+                            ="Default: *"
+                        HoverBorderColor: =RGBA(16, 110, 190, 1)
+                        HoverColor: =RGBA(50, 49, 48, 1)
+                        HoverFill: =RGBA(255, 255, 255, 1)
+                        PressedBorderColor: =RGBA(0, 120, 212, 1)
+                        PressedColor: =RGBA(50, 49, 48, 1)
+                        PressedFill: =RGBA(255, 255, 255, 1)
+                        RadiusBottomLeft: =2
+                        RadiusBottomRight: =2
+                        RadiusTopLeft: =2
+                        RadiusTopRight: =2
+                        Size: =13
+                        Width: =250
+                        X: =5
+                        Y: =40
+                        ZIndex: =2
+
+                SearchFileldContainer_23 As groupContainer.manualLayoutContainer:
+                    Height: =85
+                    RadiusBottomLeft: =4
+                    RadiusBottomRight: =4
+                    RadiusTopLeft: =4
+                    RadiusTopRight: =4
+                    Width: =260
+                    X: =40
+                    Y: =115
+                    ZIndex: =4
+
+                    SearchLabel_27 As label:
+                        BorderColor: =RGBA(0, 0, 0, 0)
+                        BorderStyle: =BorderStyle.None
+                        BorderThickness: =2
+                        Color: =RGBA(50, 49, 48, 1)
+                        DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                        DisabledColor: =RGBA(161, 159, 157, 1)
+                        FocusedBorderThickness: =4
+                        Font: =Font.'Segoe UI'
+                        Size: =13
+                        Text: ="Query Type"
+                        Tooltip: |-
+                            ="Default value: simple
+                            
+                            When set to simple, search text is interpreted using a simple query language that allows for symbols such as +, * and """".
+                            
+                            When the query type is set to full, search text is interpreted using the Lucene query language which allows field-specific and weighted searches.
+                            
+                            The following example is a search over independent terms, with a requirement that all matching documents include pool.
+                            
+                            For more information, see Simple query syntax in Azure Cognitive Search.
+                            
+                            Example using simple query type:
+                            
+                            queryType=simple
+                            
+                            search=budget hotel +pool
+                            
+                            searchMode=all
+                            
+                            The next example shows in-field search and term boosting. It looks for hotels where the category field contains the term budget.
+                            
+                            Any documents containing the phrase recently renovated are ranked higher as a result of the term boost value.
+                            
+                            For more information, see Lucene query syntax in Azure Cognitive Search.
+                            
+                            Example using full query type:
+                            
+                            queryType=full
+                            
+                            search=category:budget AND \'recently renovated\'^3
+                            
+                            searchMode=all
+                            
+                            Allowed values: simple, full"
+                        Width: =250
+                        X: =5
+                        ZIndex: =1
+
+                    Dropdown3_5 As dropdown:
+                        BorderColor: =RGBA(179, 179, 179, 1)
+                        BorderThickness: =1
+                        ChevronBackground: =RGBA(255, 255, 255, 1)
+                        ChevronDisabledBackground: =RGBA(242, 242, 241, 0)
+                        ChevronDisabledFill: =RGBA(161, 159, 157, 1)
+                        ChevronFill: =RGBA(50, 49, 48, 1)
+                        ChevronHoverBackground: =RGBA(245, 245, 245, 1)
+                        ChevronHoverFill: =RGBA(50, 49, 48, 1)
+                        Color: =RGBA(50, 49, 48, 1)
+                        Default: =""
+                        DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                        DisabledColor: =RGBA(161, 159, 157, 1)
+                        DisabledFill: =RGBA(242, 242, 241, 0)
+                        Font: =Font.'Segoe UI'
+                        HoverBorderColor: =RGBA(16, 110, 190, 1)
+                        HoverColor: =RGBA(50, 49, 48, 1)
+                        HoverFill: =RGBA(245, 245, 245, 1)
+                        Items: |-
+                            =[
+                                {DisplayName:"simple (Default, implicit)", P:Blank()},
+                                {DisplayName:"simple (explicit)", P:"simple"},
+                                {DisplayName:"full", P:"full"}
+                            ]
+                        PaddingBottom: =5
+                        PaddingLeft: =12
+                        PaddingRight: =5
+                        PaddingTop: =5
+                        PressedBorderColor: =RGBA(16, 110, 190, 1)
+                        PressedColor: =RGBA(255, 255, 255, 1)
+                        PressedFill: =RGBA(0, 120, 212, 1)
+                        SelectionColor: =RGBA(50, 49, 48, 1)
+                        SelectionFill: =RGBA(0, 120, 212, 1)
+                        Size: =13
+                        Width: =250
+                        X: =5
+                        Y: =40
+                        ZIndex: =2
+
+                SearchFileldContainer_25 As groupContainer.manualLayoutContainer:
+                    Height: =85
+                    RadiusBottomLeft: =4
+                    RadiusBottomRight: =4
+                    RadiusTopLeft: =4
+                    RadiusTopRight: =4
+                    Width: =260
+                    X: =642
+                    Y: =115
+                    ZIndex: =6
+
+                    SearchLabel_29 As label:
+                        BorderColor: =RGBA(0, 0, 0, 0)
+                        BorderStyle: =BorderStyle.None
+                        BorderThickness: =2
+                        Color: =RGBA(50, 49, 48, 1)
+                        DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                        DisabledColor: =RGBA(161, 159, 157, 1)
+                        FocusedBorderThickness: =4
+                        Font: =Font.'Segoe UI'
+                        Size: =13
+                        Text: ="Result Number ($top)"
+                        Tooltip: |-
+                            ="Default value: 50
+                            
+                            The number of search results to retrieve. The default is 50."
+                        Width: =250
+                        X: =5
+                        ZIndex: =1
+
+                    SearchTextInput_17 As text:
+                        BorderColor: =RGBA(179, 179, 179, 1)
+                        Color: =RGBA(50, 49, 48, 1)
+                        Default: =Blank()
+                        DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                        DisabledColor: =RGBA(161, 159, 157, 1)
+                        DisabledFill: =RGBA(242, 242, 241, 0)
+                        FocusedBorderThickness: =4
+                        Font: =Font.'Segoe UI'
+                        Format: =TextFormat.Number
+                        HintText: |-
+                            ="Default: 50"
+                        HoverBorderColor: =RGBA(16, 110, 190, 1)
+                        HoverColor: =RGBA(50, 49, 48, 1)
+                        HoverFill: =RGBA(255, 255, 255, 1)
+                        PressedBorderColor: =RGBA(0, 120, 212, 1)
+                        PressedColor: =RGBA(50, 49, 48, 1)
+                        PressedFill: =RGBA(255, 255, 255, 1)
+                        RadiusBottomLeft: =2
+                        RadiusBottomRight: =2
+                        RadiusTopLeft: =2
+                        RadiusTopRight: =2
+                        Size: =13
+                        Width: =250
+                        X: =5
+                        Y: =40
+                        ZIndex: =2
+
+                SearchFileldContainer_26 As groupContainer.manualLayoutContainer:
+                    Height: =85
+                    RadiusBottomLeft: =4
+                    RadiusBottomRight: =4
+                    RadiusTopLeft: =4
+                    RadiusTopRight: =4
+                    Width: =260
+                    X: =40
+                    Y: =205
+                    ZIndex: =7
+
+                    SearchLabel_30 As label:
+                        BorderColor: =RGBA(0, 0, 0, 0)
+                        BorderStyle: =BorderStyle.None
+                        BorderThickness: =2
+                        Color: =RGBA(50, 49, 48, 1)
+                        DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                        DisabledColor: =RGBA(161, 159, 157, 1)
+                        FocusedBorderThickness: =4
+                        Font: =Font.'Segoe UI'
+                        Size: =13
+                        Text: ="Result Count ($count)"
+                        Tooltip: |-
+                            ="Default value: false
+                            
+                            Optional, defaults to false. Specifies whether to fetch the total count of results.
+                            
+                            This is the count of all documents that match the search and $filter parameters, ignoring $top and $skip.
+                            
+                            Setting this value to true may have a performance impact. The count returned is an approximation.
+                            
+                            If you’d like to get only the count without any documents, you can use $top=0."
+                        Width: =250
+                        X: =5
+                        ZIndex: =1
+
+                    Checkbox1_2 As checkbox:
+                        BorderColor: =RGBA(179, 179, 179, 1)
+                        BorderThickness: =1
+                        CheckboxSize: =30
+                        CheckmarkFill: =RGBA(0, 120, 212, 1)
+                        Color: =RGBA(50, 49, 48, 1)
+                        DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                        DisabledColor: =RGBA(161, 159, 157, 1)
+                        FocusedBorderThickness: =4
+                        Font: =Font.'Segoe UI'
+                        Height: =40
+                        HoverBorderColor: =RGBA(0, 120, 212, 1)
+                        HoverColor: =RGBA(50, 49, 48, 1)
+                        HoverFill: =RGBA(0, 0, 0, 0)
+                        PressedBorderColor: =RGBA(16, 110, 190, 1)
+                        PressedColor: =RGBA(50, 49, 48, 1)
+                        PressedFill: =RGBA(0, 0, 0, 0)
+                        Size: =13
+                        Text: ="See counts / True"
+                        Width: =250
+                        X: =5
+                        Y: =40
+                        ZIndex: =3
+
+                SearchFileldContainer_27 As groupContainer.manualLayoutContainer:
+                    Height: =85
+                    RadiusBottomLeft: =4
+                    RadiusBottomRight: =4
+                    RadiusTopLeft: =4
+                    RadiusTopRight: =4
+                    Width: =260
+                    X: =341
+                    Y: =205
+                    ZIndex: =8
+
+                    SearchLabel_31 As label:
+                        BorderColor: =RGBA(0, 0, 0, 0)
+                        BorderStyle: =BorderStyle.None
+                        BorderThickness: =2
+                        Color: =RGBA(50, 49, 48, 1)
+                        DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                        DisabledColor: =RGBA(161, 159, 157, 1)
+                        FocusedBorderThickness: =4
+                        Font: =Font.'Segoe UI'
+                        Size: =13
+                        Text: ="Order By ($orderBy)"
+                        Tooltip: |-
+                            ="A list of comma-separated expressions to sort the results by. Each expression can be either a field name or a call to the geo.distance() function.
+                            
+                            Each expression can be followed by asc to indicate ascending, and desc to indicate descending. The default is ascending order.
+                            
+                            This $orderBy routine orders the results by the distance from the geography point included in the expression.
+                            
+                            The geography point can be a position from where you are and the results are ordered by how local they are.
+                            
+                            For more information, see Simple query syntax in Azure Cognitive Search.
+                            
+                            Example: $orderby=geo.distance(Geocode, geography'POINT(-0.76444095373153675 52.000820159912109)')"
+                        Width: =250
+                        X: =5
+                        ZIndex: =1
+
+                    SearchTextInput_18 As text:
+                        BorderColor: =RGBA(179, 179, 179, 1)
+                        Color: =RGBA(50, 49, 48, 1)
+                        Default: =Blank()
+                        DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                        DisabledColor: =RGBA(161, 159, 157, 1)
+                        DisabledFill: =RGBA(242, 242, 241, 0)
+                        FocusedBorderThickness: =4
+                        Font: =Font.'Segoe UI'
+                        HintText: ="Optional"
+                        HoverBorderColor: =RGBA(16, 110, 190, 1)
+                        HoverColor: =RGBA(50, 49, 48, 1)
+                        HoverFill: =RGBA(255, 255, 255, 1)
+                        PressedBorderColor: =RGBA(0, 120, 212, 1)
+                        PressedColor: =RGBA(50, 49, 48, 1)
+                        PressedFill: =RGBA(255, 255, 255, 1)
+                        RadiusBottomLeft: =2
+                        RadiusBottomRight: =2
+                        RadiusTopLeft: =2
+                        RadiusTopRight: =2
+                        Size: =13
+                        Width: =250
+                        X: =5
+                        Y: =40
+                        ZIndex: =2
+
+                SearchFileldContainer_28 As groupContainer.manualLayoutContainer:
+                    Height: =85
+                    RadiusBottomLeft: =4
+                    RadiusBottomRight: =4
+                    RadiusTopLeft: =4
+                    RadiusTopRight: =4
+                    Width: =260
+                    X: =642
+                    Y: =205
+                    ZIndex: =9
+
+                    SearchLabel_32 As label:
+                        BorderColor: =RGBA(0, 0, 0, 0)
+                        BorderStyle: =BorderStyle.None
+                        BorderThickness: =2
+                        Color: =RGBA(50, 49, 48, 1)
+                        DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                        DisabledColor: =RGBA(161, 159, 157, 1)
+                        FocusedBorderThickness: =4
+                        Font: =Font.'Segoe UI'
+                        Size: =13
+                        Text: ="Result Fields ($select)"
+                        Tooltip: |-
+                            ="A list of comma-separated fields to include in the result set.
+                            
+                            If unspecified or set to *, all fields marked as retrievable in the schema are included in the projection.
+                            
+                            Example: $select=ODSCode,OrganisationName,Contacts,Address1,Address2,Address3,City,Postcode,OrganisationSubType"
+                        Width: =250
+                        X: =5
+                        ZIndex: =1
+
+                    SearchTextInput_19 As text:
+                        BorderColor: =RGBA(179, 179, 179, 1)
+                        Color: =RGBA(50, 49, 48, 1)
+                        Default: =Blank()
+                        DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                        DisabledColor: =RGBA(161, 159, 157, 1)
+                        DisabledFill: =RGBA(242, 242, 241, 0)
+                        FocusedBorderThickness: =4
+                        Font: =Font.'Segoe UI'
+                        HintText: |-
+                            ="Default: *"
+                        HoverBorderColor: =RGBA(16, 110, 190, 1)
+                        HoverColor: =RGBA(50, 49, 48, 1)
+                        HoverFill: =RGBA(255, 255, 255, 1)
+                        PressedBorderColor: =RGBA(0, 120, 212, 1)
+                        PressedColor: =RGBA(50, 49, 48, 1)
+                        PressedFill: =RGBA(255, 255, 255, 1)
+                        RadiusBottomLeft: =2
+                        RadiusBottomRight: =2
+                        RadiusTopLeft: =2
+                        RadiusTopRight: =2
+                        Size: =13
+                        Width: =250
+                        X: =5
+                        Y: =40
+                        ZIndex: =2
+
+                SearchFileldContainer_29 As groupContainer.manualLayoutContainer:
+                    Height: =85
+                    RadiusBottomLeft: =4
+                    RadiusBottomRight: =4
+                    RadiusTopLeft: =4
+                    RadiusTopRight: =4
+                    Width: =260
+                    X: =40
+                    Y: =295
+                    ZIndex: =10
+
+                    SearchLabel_33 As label:
+                        BorderColor: =RGBA(0, 0, 0, 0)
+                        BorderStyle: =BorderStyle.None
+                        BorderThickness: =2
+                        Color: =RGBA(50, 49, 48, 1)
+                        DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                        DisabledColor: =RGBA(161, 159, 157, 1)
+                        FocusedBorderThickness: =4
+                        Font: =Font.'Segoe UI'
+                        Size: =13
+                        Text: ="Filter ($filter)"
+                        Tooltip: |-
+                            ="A structured search expression in standard OData syntax.
+                            
+                            The $filter parameter specifies inclusion or exclusion criteria for returning matches in search results.
+                            
+                            For more information on using the $filter, see OData $filter syntax in Azure Cognitive Search.
+                            
+                            Examples:
+                            
+                            Filter results by pharmacies that are EPS-enabled and classed as 'community', that is, ServiceCode is EPS0001 and OrganisationTypeID is PHA and SubType is Community:
+                            
+                            $filter=Services / any (x: x/ServiceCode eq 'EPS0001' ) and OrganisationTypeId eq 'PHA' and OrganisationSubType eq 'Community'
+                            
+                            Filter results that match a postcode, that is Postcode field is NG16:
+                            
+                            $filter=search.ismatch('NG16', 'Postcode')
+                            
+                            Filter results by Postcode is CW9 and OrganisationTypeId is a dentist:
+                            
+                            $filter=search.ismatch('CW9', 'Postcode') and OrganisationTypeId eq 'DEN'
+                            
+                            For details on organisation types and service codes, see organisation and service codes."
+                        Width: =250
+                        X: =5
+                        ZIndex: =1
+
+                    SearchTextInput_20 As text:
+                        BorderColor: =RGBA(179, 179, 179, 1)
+                        Color: =RGBA(50, 49, 48, 1)
+                        Default: =Blank()
+                        DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                        DisabledColor: =RGBA(161, 159, 157, 1)
+                        DisabledFill: =RGBA(242, 242, 241, 0)
+                        FocusedBorderThickness: =4
+                        Font: =Font.'Segoe UI'
+                        HintText: ="OData Filter Syntax"
+                        HoverBorderColor: =RGBA(16, 110, 190, 1)
+                        HoverColor: =RGBA(50, 49, 48, 1)
+                        HoverFill: =RGBA(255, 255, 255, 1)
+                        PressedBorderColor: =RGBA(0, 120, 212, 1)
+                        PressedColor: =RGBA(50, 49, 48, 1)
+                        PressedFill: =RGBA(255, 255, 255, 1)
+                        RadiusBottomLeft: =2
+                        RadiusBottomRight: =2
+                        RadiusTopLeft: =2
+                        RadiusTopRight: =2
+                        Size: =13
+                        Width: =250
+                        X: =5
+                        Y: =40
+                        ZIndex: =2
+
+                ButtonContainer_2 As groupContainer.manualLayoutContainer:
+                    Height: =85
+                    RadiusBottomLeft: =4
+                    RadiusBottomRight: =4
+                    RadiusTopLeft: =4
+                    RadiusTopRight: =4
+                    Width: =260
+                    X: =642
+                    Y: =295
+                    ZIndex: =11
+
+                    SearchButton_3 As button:
+                        BorderColor: =RGBA(0, 0, 0, 0)
+                        BorderStyle: =BorderStyle.None
+                        DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                        DisabledColor: =RGBA(161, 159, 157, 1)
+                        DisabledFill: =RGBA(230, 230, 230, 1)
+                        Fill: =RGBA(0, 120, 212, 1)
+                        Font: =Font.'Segoe UI'
+                        FontWeight: =FontWeight.Semibold
+                        HoverBorderColor: =RGBA(0, 0, 0, 0)
+                        HoverColor: =RGBA(255, 255, 255, 1)
+                        HoverFill: =RGBA(16, 110, 190, 1)
+                        OnSelect: |-
+                            =Set(
+                                Type3Results,
+                                If(
+                                    SearchTextInput_NameCode.DisplayMode = DisplayMode.Edit,
+                                    NHS_DoHS_API_Connector.PostOrganisationsPostCodePlace(
+                                        2,
+                                        {
+                                            search: SearchTextInput_NameCode.Text,
+                                            search_1: If(IsBlank(SearchTextInput_14.Text),Blank(),SearchTextInput_14.Text),
+                                            searchMode: Dropdown3_4.Selected.P,
+                                            searchFields: If(IsBlank(SearchTextInput_15.Text),Blank(),SearchTextInput_15.Text),
+                                            queryType: Dropdown3_5.Selected.P,
+                                            skip: SearchTextInput_16.Text,
+                                            top: SearchTextInput_17.Text,
+                                            count: Checkbox1_2.Value,
+                                            orderBy: If(IsBlank(SearchTextInput_18.Text),Blank(),SearchTextInput_18.Text),
+                                            select: If(IsBlank(SearchTextInput_19.Text),Blank(),SearchTextInput_19.Text),
+                                            filter: If(IsBlank(SearchTextInput_20.Text),Blank(),SearchTextInput_20.Text)
+                                        }
+                                    ),
+                                    NHS_DoHS_API_Connector.PostOrganisationsPostCodePlace(
+                                        2,
+                                        {
+                                            latitude: SearchTextInput_Lat.Text,
+                                            longitude: SearchTextInput_Long.Text,
+                                            search_1: If(IsBlank(SearchTextInput_14.Text),Blank(),SearchTextInput_14.Text),
+                                            searchMode: Dropdown3_4.Selected.P,
+                                            searchFields: If(IsBlank(SearchTextInput_15.Text),Blank(),SearchTextInput_15.Text),
+                                            queryType: Dropdown3_5.Selected.P,
+                                            skip: SearchTextInput_16.Text,
+                                            top: SearchTextInput_17.Text,
+                                            count: Checkbox1_2.Value,
+                                            orderBy: If(IsBlank(SearchTextInput_18.Text),Blank(),SearchTextInput_18.Text),
+                                            select: If(IsBlank(SearchTextInput_19.Text),Blank(),SearchTextInput_19.Text),
+                                            filter: If(IsBlank(SearchTextInput_20.Text),Blank(),SearchTextInput_20.Text)
+                                        }
+                                    )
+                                )
+                            );
+                            Set(
+                                Type3OrganisationJS,
+                                JSON(
+                                    First(Type3Results.value),
+                                    JSONFormat.IndentFour & JSONFormat.IgnoreUnsupportedTypes
+                                )
+                            )
+                        PressedBorderColor: =RGBA(0, 69, 120, 1)
+                        PressedColor: =RGBA(255, 255, 255, 1)
+                        PressedFill: =RGBA(16, 110, 190, 1)
+                        Size: =15
+                        Text: ="Search"
+                        Width: =250
+                        X: =5
+                        Y: =35
+                        ZIndex: =3
+
+                SearchFileldContainer_24 As groupContainer.manualLayoutContainer:
+                    Height: =85
+                    RadiusBottomLeft: =4
+                    RadiusBottomRight: =4
+                    RadiusTopLeft: =4
+                    RadiusTopRight: =4
+                    Width: =260
+                    X: =341
+                    Y: =120
+                    ZIndex: =12
+
+                    SearchLabel_28 As label:
+                        BorderColor: =RGBA(0, 0, 0, 0)
+                        BorderStyle: =BorderStyle.None
+                        BorderThickness: =2
+                        Color: =RGBA(50, 49, 48, 1)
+                        DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                        DisabledColor: =RGBA(161, 159, 157, 1)
+                        FocusedBorderThickness: =4
+                        Font: =Font.'Segoe UI'
+                        Size: =13
+                        Text: ="Skip Results ($skip)"
+                        Tooltip: |-
+                            ="The number of search results to skip. For example, $skip:25 returns the entries after the first 25 entries in the search results."
+                        Width: =250
+                        X: =5
+                        ZIndex: =1
+
+                    SearchTextInput_16 As text:
+                        BorderColor: =RGBA(179, 179, 179, 1)
+                        Color: =RGBA(50, 49, 48, 1)
+                        Default: =Blank()
+                        DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                        DisabledColor: =RGBA(161, 159, 157, 1)
+                        DisabledFill: =RGBA(242, 242, 241, 0)
+                        FocusedBorderThickness: =4
+                        Font: =Font.'Segoe UI'
+                        Format: =TextFormat.Number
+                        HintText: |-
+                            ="Default: 0"
+                        HoverBorderColor: =RGBA(16, 110, 190, 1)
+                        HoverColor: =RGBA(50, 49, 48, 1)
+                        HoverFill: =RGBA(255, 255, 255, 1)
+                        PressedBorderColor: =RGBA(0, 120, 212, 1)
+                        PressedColor: =RGBA(50, 49, 48, 1)
+                        PressedFill: =RGBA(255, 255, 255, 1)
+                        RadiusBottomLeft: =2
+                        RadiusBottomRight: =2
+                        RadiusTopLeft: =2
+                        RadiusTopRight: =2
+                        Size: =13
+                        Width: =250
+                        X: =5
+                        Y: =40
+                        ZIndex: =2
+
+            PlaceNameGalleryTitle As label:
+                Align: =Align.Center
+                BorderColor: =RGBA(0, 0, 0, 0)
+                BorderStyle: =BorderStyle.None
+                BorderThickness: =2
+                Color: =RGBA(255, 255, 255, 1)
+                DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                DisabledColor: =RGBA(161, 159, 157, 1)
+                Fill: =RGBA(65, 182, 230, 1)
+                FocusedBorderThickness: =4
+                Font: =Font.'Segoe UI'
+                Size: =13
+                Text: ="Please choose the correct place from the list below"
+                Visible: =Not(IsBlank(Type3Results.place))
+                ZIndex: =3
+
+            PlaceNameGallery As gallery.galleryVertical:
+                BorderColor: =RGBA(245, 245, 245, 1)
+                DelayItemLoading: =true
+                FillPortions: =0
+                Height: =60*CountRows(PlaceNameGallery.AllItems)
+                Items: =Type3Results.place
+                Layout: =Layout.Vertical
+                LayoutMinHeight: =287
+                LayoutMinWidth: =320
+                LoadingSpinner: =LoadingSpinner.Data
+                TemplateSize: |
+                    =50
+                Visible: =Not(IsBlank(Type3Results.place))
+                ZIndex: =4
+
+                PlaceNameGalleryContainer As groupContainer:
+                    DropShadow: =DropShadow.Light
+                    Height: =50
+                    RadiusBottomLeft: =4
+                    RadiusBottomRight: =4
+                    RadiusTopLeft: =4
+                    RadiusTopRight: =4
+                    Width: =440
+                    X: =256
+                    ZIndex: =4
+
+                    Label3 As label:
+                        Color: =RGBA(50, 49, 48, 1)
+                        DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                        DisabledColor: =RGBA(161, 159, 157, 1)
+                        FocusedBorderThickness: =4
+                        Font: =Font.'Segoe UI'
+                        Height: =50
+                        Size: =13
+                        Text: =ThisItem.text
+                        Width: =370
+                        X: =20
+                        ZIndex: =1
+
+                    Button1 As button:
+                        BorderColor: =RGBA(0, 0, 0, 0)
+                        BorderStyle: =BorderStyle.None
+                        DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                        DisabledColor: =RGBA(161, 159, 157, 1)
+                        DisabledFill: =RGBA(242, 242, 241, 0)
+                        Fill: =RGBA(0, 120, 212, 0.81)
+                        Font: =Font.'Courier New'
+                        FontWeight: =FontWeight.Semibold
+                        Height: =50
+                        HoverBorderColor: =RGBA(0, 0, 0, 0)
+                        HoverColor: =RGBA(255, 255, 255, 1)
+                        HoverFill: =RGBA(16, 110, 190, 1)
+                        OnSelect: |-
+                            =Set(Type3Results,NHS_DoHS_API_Connector.PostOrganisationsPostCodePlace(2,{latitude:ThisItem.Latitude,longitude:ThisItem.Longitude,skip:""}));Set(Type3OrganisationJS,JSON(First(Type3Results.value),JSONFormat.IndentFour&JSONFormat.IgnoreUnsupportedTypes))
+                        PressedBorderColor: =RGBA(0, 69, 120, 1)
+                        PressedColor: =RGBA(255, 255, 255, 1)
+                        PressedFill: =RGBA(16, 110, 190, 1)
+                        RadiusBottomLeft: =0
+                        RadiusBottomRight: =0
+                        RadiusTopLeft: =0
+                        RadiusTopRight: =0
+                        Size: =15
+                        Text: ="→"
+                        Width: =50
+                        X: =390
+                        ZIndex: =2
+
+            Type3GalleryTitle As label:
+                Align: =Align.Center
+                BorderColor: =RGBA(0, 0, 0, 0)
+                BorderStyle: =BorderStyle.None
+                BorderThickness: =2
+                Color: =RGBA(255, 255, 255, 1)
+                DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                DisabledColor: =RGBA(161, 159, 157, 1)
+                Fill: =RGBA(65, 182, 230, 1)
+                FocusedBorderThickness: =4
+                Font: =Font.'Segoe UI'
+                Size: =13
+                Text: ="Search Results  — Choose  organization from the list to see its detail in JSON"
+                Visible: =Not(IsBlank(Type3Results.value))
+                ZIndex: =5
+
+            GalleryResultsContainer As groupContainer.manualLayoutContainer:
+                FillPortions: =0
+                Height: =Max(Type3Gallery.Height,Type3JSONContainer.Height)+20
+                LayoutMinHeight: =100
+                LayoutMinWidth: =250
+                RadiusBottomLeft: =4
+                RadiusBottomRight: =4
+                RadiusTopLeft: =4
+                RadiusTopRight: =4
+                Visible: =Not(IsBlank(Type3Results.value))
+                ZIndex: =7
+
+                Type3Gallery As gallery.galleryVertical:
+                    DelayItemLoading: =true
+                    Height: =60*CountRows(Type3Gallery.AllItems)
+                    Items: =Type3Results.value
+                    Layout: =Layout.Vertical
+                    LoadingSpinner: =LoadingSpinner.Data
+                    OnSelect: =Set(Type3OrganisationJS,JSON(ThisItem,JSONFormat.IndentFour& JSONFormat.IgnoreUnsupportedTypes))
+                    TemplateSize: |
+                        =50
+                    Visible: =Not(IsBlank(Type3Results.value))
+                    Width: =325
+                    X: =14
+                    ZIndex: =1
+
+                    Type3GalleryContainer As groupContainer.manualLayoutContainer:
+                        DropShadow: =DropShadow.Light
+                        Height: =50
+                        RadiusBottomLeft: =4
+                        RadiusBottomRight: =4
+                        RadiusTopLeft: =4
+                        RadiusTopRight: =4
+                        Width: =315
+                        ZIndex: =3
+
+                        Type3ResultsLabel As label:
+                            BorderColor: =RGBA(0, 0, 0, 0)
+                            BorderStyle: =BorderStyle.None
+                            BorderThickness: =2
+                            Color: =RGBA(50, 49, 48, 1)
+                            DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                            DisabledColor: =RGBA(161, 159, 157, 1)
+                            FocusedBorderThickness: =4
+                            Font: =Font.'Segoe UI'
+                            FontWeight: =If(ThisItem.IsSelected, FontWeight.Semibold, FontWeight.Normal)
+                            Height: =50
+                            OnSelect: =Select(Type3Gallery)
+                            PaddingLeft: =15
+                            Size: =13
+                            Text: =ThisItem.OrganisationName
+                            Width: =276
+                            ZIndex: =1
+
+                        Icon1 As icon.ArrowRight:
+                            BorderColor: =RGBA(0, 0, 0, 0)
+                            Color: =RGBA(0, 120, 212, 1)
+                            DisabledBorderColor: =RGBA(245, 245, 245, 1)
+                            DisabledColor: =RGBA(225, 223, 221, 1)
+                            DisabledFill: =RGBA(0, 0, 0, 0)
+                            FocusedBorderThickness: =4
+                            Height: =50
+                            HoverBorderColor: =RGBA(0, 0, 0, 0)
+                            HoverColor: =RGBA(16, 110, 190, 1)
+                            HoverFill: =RGBA(0, 0, 0, 0)
+                            Icon: =Icon.ArrowRight
+                            OnSelect: =Select(Type3Gallery)
+                            PressedBorderColor: =RGBA(0, 0, 0, 0)
+                            PressedColor: =RGBA(16, 110, 190, 1)
+                            PressedFill: =RGBA(0, 0, 0, 0)
+                            Visible: =ThisItem.IsSelected
+                            Width: =31
+                            X: =276
+                            ZIndex: =2
+
+                Type3JSONContainer As groupContainer.manualLayoutContainer:
+                    DropShadow: =DropShadow.Light
+                    Height: |
+                        =Label10.Height+Label11.Height
+                    RadiusBottomLeft: =4
+                    RadiusBottomRight: =4
+                    RadiusTopLeft: =4
+                    RadiusTopRight: =4
+                    Width: =600
+                    X: =345
+                    Y: =5
+                    ZIndex: =3
+
+                    Label10 As label:
+                        BorderColor: =RGBA(0, 0, 0, 0)
+                        BorderStyle: =BorderStyle.None
+                        BorderThickness: =2
+                        Color: =RGBA(50, 49, 48, 1)
+                        DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                        DisabledColor: =RGBA(161, 159, 157, 1)
+                        FocusedBorderThickness: =4
+                        Font: =Font.Arial
+                        FontWeight: =FontWeight.Bold
+                        PaddingLeft: =15
+                        Size: =13
+                        Text: ="JSON of the Selected Organisation"
+                        Width: =609
+                        ZIndex: =1
+
+                    Label11 As label:
+                        AutoHeight: =true
+                        BorderColor: =RGBA(0, 0, 0, 0)
+                        BorderStyle: =BorderStyle.None
+                        BorderThickness: =2
+                        Color: =RGBA(50, 49, 48, 1)
+                        DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                        DisabledColor: =RGBA(161, 159, 157, 1)
+                        FocusedBorderThickness: =4
+                        Font: =Font.'Segoe UI'
+                        PaddingLeft: =15
+                        Size: =13
+                        Text: =Type3OrganisationJS
+                        Width: =609
+                        Y: =40
+                        ZIndex: =2
+

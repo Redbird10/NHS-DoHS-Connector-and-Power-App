@@ -1,0 +1,97 @@
+[
+  {
+    "CdsFCBContext": "{\"FileType\":true,\"ImageExternalStorage\":true}",
+    "EntitySetName": "crcd4_pagenavitabses",
+    "IsHidden": false,
+    "IsSampleData": false,
+    "IsWritable": true,
+    "LogicalName": "crcd4_pagenavitabs",
+    "MaxGetRowsCount": 500,
+    "Name": "Page Navi Tabs",
+    "NativeCDSDataSourceInfoNameMapping": {
+      "_ownerid_value": "Owner",
+      "crcd4_description": "Description",
+      "crcd4_id": "ID",
+      "crcd4_name": "Name",
+      "crcd4_pagenavitabs_AsyncOperations": "System Jobs",
+      "crcd4_pagenavitabs_BulkDeleteFailures": "Bulk Delete Failures",
+      "crcd4_pagenavitabs_MailboxTrackingFolders": "Mailbox Auto Tracking Folders",
+      "crcd4_pagenavitabs_PrincipalObjectAttributeAccesses": "Field Sharing",
+      "crcd4_pagenavitabs_ProcessSession": "Process Sessions",
+      "crcd4_pagenavitabs_SyncErrors": "Sync Errors",
+      "crcd4_pagenavitabsid": "Page Navi Tabs",
+      "createdby": "Created By",
+      "createdon": "Created On",
+      "createdonbehalfby": "Created By (Delegate)",
+      "importsequencenumber": "Import Sequence Number",
+      "modifiedby": "Modified By",
+      "modifiedon": "Modified On",
+      "modifiedonbehalfby": "Modified By (Delegate)",
+      "overriddencreatedon": "Record Created On",
+      "owningbusinessunit": "Owning Business Unit",
+      "owningteam": "Owning Team",
+      "owninguser": "Owning User",
+      "statecode": "Status",
+      "statuscode": "Status Reason",
+      "timezoneruleversionnumber": "Time Zone Rule Version Number",
+      "utcconversiontimezonecode": "UTC Conversion Time Zone Code",
+      "versionnumber": "Version Number"
+    },
+    "PreferredName": "Page Navi Tabs",
+    "Type": "NativeCDSDataSourceInfo"
+  },
+  {
+    "DisplayName": "Page Navi Tabs (Views)",
+    "Name": "_crcd4_pagenavitabs_views",
+    "RelatedEntityName": "Page Navi Tabs",
+    "TrimmedViewName": true,
+    "Type": "ViewInfo",
+    "ViewInfoNameMapping": {
+      "443a6320-f75a-47d3-bc3f-e88b4138f404": "Page Navi Tabs Associated View",
+      "7855dc8f-0f78-4344-8ef7-19cf423a3db7": "Inactive Page Navi Tabs",
+      "8f9db469-a590-4630-a196-60e7ee43491c": "Page Navi Tabs Lookup View",
+      "bc44d094-b53d-4256-8fca-b7c0be0c452a": "Active Page Navi Tabs",
+      "d6c83677-7648-42b0-b88a-2a0c4fc7452f": "Page Navi Tabs Advanced Find View"
+    }
+  },
+  {
+    "DisplayName": "Status (Page Navi Tabs)",
+    "Name": "crcd4_pagenavitabs_statecode",
+    "OptionSetInfoNameMapping": {
+      "0": "Active",
+      "1": "Inactive"
+    },
+    "OptionSetIsBooleanValued": false,
+    "OptionSetIsGlobal": false,
+    "OptionSetReference": {
+      "OptionSetReferenceItem0": {
+        "OptionSetReferenceColumnName": "statecode",
+        "OptionSetReferenceEntityName": "Page Navi Tabs"
+      }
+    },
+    "OptionSetTypeKey": "StateType",
+    "RelatedColumnInvariantName": "statecode",
+    "RelatedEntityName": "Page Navi Tabs",
+    "Type": "OptionSetInfo"
+  },
+  {
+    "DisplayName": "Status Reason (Page Navi Tabs)",
+    "Name": "crcd4_pagenavitabs_statuscode",
+    "OptionSetInfoNameMapping": {
+      "1": "Active",
+      "2": "Inactive"
+    },
+    "OptionSetIsBooleanValued": false,
+    "OptionSetIsGlobal": false,
+    "OptionSetReference": {
+      "OptionSetReferenceItem0": {
+        "OptionSetReferenceColumnName": "statuscode",
+        "OptionSetReferenceEntityName": "Page Navi Tabs"
+      }
+    },
+    "OptionSetTypeKey": "StatusType",
+    "RelatedColumnInvariantName": "statuscode",
+    "RelatedEntityName": "Page Navi Tabs",
+    "Type": "OptionSetInfo"
+  }
+]

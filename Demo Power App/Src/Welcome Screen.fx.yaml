@@ -1,0 +1,324 @@
+"'Welcome Screen' As screen":
+    LoadingSpinnerColor: =RGBA(0, 120, 212, 1)
+
+    "'Rectangle 2 Down' As rectangle":
+        BorderColor: =RGBA(0, 0, 0, 0)
+        BorderStyle: =BorderStyle.None
+        BorderThickness: =2
+        DisabledFill: =RGBA(161, 159, 157, 1)
+        Fill: =RGBA(240, 244, 245, 1)
+        FocusedBorderThickness: =4
+        Height: =517
+        HoverFill: =RGBA(240, 244, 245, 1)
+        PressedFill: =RGBA(240, 244, 245, 1)
+        Width: =1366
+        Y: =251
+        ZIndex: =4
+
+    "'Label 2.1' As label":
+        BorderColor: =RGBA(0, 0, 0, 0)
+        BorderStyle: =BorderStyle.None
+        BorderThickness: =2
+        Color: =RGBA(76, 98, 114, 1)
+        DisabledBorderColor: =RGBA(0, 0, 0, 0)
+        DisabledColor: =RGBA(161, 159, 157, 1)
+        FocusedBorderThickness: =4
+        Font: =Font.'Segoe UI'
+        Height: =53
+        Size: =20
+        Text: |-
+            ="Please choose your user type to start
+            "
+        Width: =436
+        X: =465
+        Y: =309
+        ZIndex: =6
+
+    Group1 As group:
+        Height: =5
+        Width: =5
+        X: =40
+        Y: =40
+        ZIndex: =10
+
+        "'Rectangle 1 Up' As rectangle":
+            BorderColor: =RGBA(0, 0, 0, 0)
+            BorderStyle: =BorderStyle.None
+            BorderThickness: =2
+            DisabledFill: =RGBA(161, 159, 157, 1)
+            Fill: =RGBA(0, 120, 212, 1)
+            FocusedBorderThickness: =4
+            Height: =251
+            HoverFill: =RGBA(0, 120, 212, 1)
+            PressedFill: =RGBA(0, 120, 212, 1)
+            Width: =1366
+            ZIndex: =1
+
+        "'Label 1.2' As label":
+            BorderColor: =RGBA(0, 0, 0, 0)
+            BorderStyle: =BorderStyle.None
+            BorderThickness: =2
+            Color: =RGBA(240, 244, 245, 1)
+            DisabledBorderColor: =RGBA(0, 0, 0, 0)
+            DisabledColor: =RGBA(161, 159, 157, 1)
+            FocusedBorderThickness: =4
+            Font: =Font.'Segoe UI'
+            Height: =53
+            Size: =13
+            Text: ="This is a demo Power App for the NHS DoHS API Connector"
+            Width: =436
+            X: =465
+            Y: =124
+            ZIndex: =2
+
+        "'Label 1.1' As label":
+            Align: =Align.Center
+            BorderColor: =RGBA(0, 0, 0, 0)
+            BorderStyle: =BorderStyle.None
+            BorderThickness: =2
+            Color: =RGBA(255, 255, 255, 1)
+            DisabledBorderColor: =RGBA(0, 0, 0, 0)
+            DisabledColor: =RGBA(161, 159, 157, 1)
+            FocusedBorderThickness: =4
+            Height: =176
+            Size: =30
+            Text: |-
+                ="Welcome to the Care Connect! 
+                "
+            Width: =1366
+            Y: =5
+            ZIndex: =3
+
+    "'Button R Overlay' As button":
+        BorderColor: =RGBA(0, 0, 0, 0)
+        Color: =RGBA(0, 0, 0, 0)
+        DisabledBorderColor: =RGBA(0, 0, 0, 0)
+        DisabledColor: =RGBA(0, 0, 0, 0)
+        DisabledFill: =RGBA(0, 0, 0, 0)
+        Fill: =RGBA(0, 0, 0, 0)
+        Font: =Font.'Segoe UI'
+        FontWeight: =FontWeight.Semibold
+        Height: =277
+        HoverBorderColor: =RGBA(0, 69, 120, 0.65)
+        HoverColor: =RGBA(0, 0, 0, 0)
+        HoverFill: =RGBA(0, 0, 0, 0)
+        OnSelect: =Navigate('Advanced User Screen')
+        PressedBorderColor: =RGBA(0, 0, 0, 0)
+        PressedColor: =RGBA(0, 0, 0, 0)
+        PressedFill: =RGBA(230, 230, 230, 0.2)
+        RadiusBottomLeft: =20
+        RadiusBottomRight: =20
+        RadiusTopLeft: =20
+        RadiusTopRight: =20
+        Size: =15
+        Text: =""
+        Width: =424
+        X: =701
+        Y: =402
+        ZIndex: =15
+
+    Group4 As group:
+        Height: =5
+        Width: =5
+        X: =40
+        Y: =40
+        ZIndex: =15
+
+        "'Button L' As button":
+            BorderColor: =RGBA(0, 0, 0, 0)
+            BorderStyle: =BorderStyle.None
+            DisabledBorderColor: =RGBA(0, 0, 0, 0)
+            DisabledColor: =RGBA(161, 159, 157, 1)
+            DisabledFill: =RGBA(242, 242, 241, 0)
+            Fill: =RGBA(255, 255, 255, 0.85)
+            Font: =Font.'Segoe UI'
+            FontWeight: =FontWeight.Semibold
+            Height: =277
+            HoverBorderColor: =RGBA(0, 0, 0, 0)
+            HoverColor: =RGBA(255, 255, 255, 1)
+            HoverFill: =RGBA(0, 0, 0, 0)
+            PressedBorderColor: =RGBA(0, 69, 120, 1)
+            PressedColor: =RGBA(255, 255, 255, 1)
+            PressedFill: =RGBA(0, 0, 0, 0)
+            RadiusBottomLeft: =20
+            RadiusBottomRight: =20
+            RadiusTopLeft: =20
+            RadiusTopRight: =20
+            Size: =15
+            Text: =""
+            Width: =424
+            X: =241
+            Y: =402
+            ZIndex: =5
+
+        "'Label 2.1.1' As label":
+            BorderColor: =RGBA(0, 0, 0, 0)
+            BorderStyle: =BorderStyle.None
+            BorderThickness: =2
+            Color: =RGBA(76, 98, 114, 1)
+            DisabledBorderColor: =RGBA(0, 0, 0, 0)
+            DisabledColor: =RGBA(161, 159, 157, 1)
+            FocusedBorderThickness: =4
+            Font: =Font.'Segoe UI'
+            Size: =20
+            Text: ="Care Worker"
+            Width: =149
+            X: =378
+            Y: =508
+            ZIndex: =7
+
+        "'Icon 2.1' As icon.Medical":
+            BorderColor: =RGBA(0, 0, 0, 0)
+            Color: =RGBA(0, 120, 212, 1)
+            DisabledBorderColor: =RGBA(245, 245, 245, 1)
+            DisabledColor: =RGBA(225, 223, 221, 1)
+            DisabledFill: =RGBA(0, 0, 0, 0)
+            FocusedBorderThickness: =4
+            HoverBorderColor: =RGBA(0, 0, 0, 0)
+            HoverColor: =RGBA(16, 110, 190, 1)
+            HoverFill: =RGBA(0, 0, 0, 0)
+            Icon: =Icon.Medical
+            PressedBorderColor: =RGBA(0, 0, 0, 0)
+            PressedColor: =RGBA(16, 110, 190, 1)
+            PressedFill: =RGBA(0, 0, 0, 0)
+            X: =421
+            Y: =430
+            ZIndex: =8
+
+        Label6 As label:
+            Align: =Align.Justify
+            BorderColor: =RGBA(0, 0, 0, 0)
+            BorderStyle: =BorderStyle.None
+            BorderThickness: =2
+            Color: =RGBA(76, 98, 114, 1)
+            DisabledBorderColor: =RGBA(0, 0, 0, 0)
+            DisabledColor: =RGBA(161, 159, 157, 1)
+            FocusedBorderThickness: =4
+            Font: =Font.'Segoe UI'
+            Height: =97
+            LineHeight: =1.3
+            PaddingLeft: =30
+            PaddingRight: =30
+            Size: =11
+            Text: |-
+                ="Choose this option for an easy-to-use interface designed for Care Workers:
+                - You would be brought to the Location-Based Organisation Search function directly. 
+                - Key information would be formatted and shown."
+            Width: =424
+            X: =241
+            Y: =563
+            ZIndex: =9
+
+        "'Button L_1' As button":
+            BorderColor: =RGBA(0, 0, 0, 0)
+            BorderStyle: =BorderStyle.None
+            DisabledBorderColor: =RGBA(0, 0, 0, 0)
+            DisabledColor: =RGBA(161, 159, 157, 1)
+            DisabledFill: =RGBA(242, 242, 241, 0)
+            Fill: =RGBA(255, 255, 255, 0.85)
+            Font: =Font.'Segoe UI'
+            FontWeight: =FontWeight.Semibold
+            Height: =277
+            HoverBorderColor: =RGBA(0, 0, 0, 0)
+            HoverColor: =RGBA(255, 255, 255, 1)
+            HoverFill: =RGBA(0, 0, 0, 0)
+            PressedBorderColor: =RGBA(0, 69, 120, 1)
+            PressedColor: =RGBA(255, 255, 255, 1)
+            PressedFill: =RGBA(0, 0, 0, 0)
+            RadiusBottomLeft: =20
+            RadiusBottomRight: =20
+            RadiusTopLeft: =20
+            RadiusTopRight: =20
+            Size: =15
+            Text: =""
+            Width: =424
+            X: =701
+            Y: =402
+            ZIndex: =10
+
+        "'Label 2.1.1_1' As label":
+            BorderColor: =RGBA(0, 0, 0, 0)
+            BorderStyle: =BorderStyle.None
+            BorderThickness: =2
+            Color: =RGBA(76, 98, 114, 1)
+            DisabledBorderColor: =RGBA(0, 0, 0, 0)
+            DisabledColor: =RGBA(161, 159, 157, 1)
+            FocusedBorderThickness: =4
+            Font: =Font.'Segoe UI'
+            Size: =20
+            Text: ="Advanced User"
+            Width: =182
+            X: =822
+            Y: =508
+            ZIndex: =11
+
+        Label6_1 As label:
+            Align: =Align.Justify
+            BorderColor: =RGBA(0, 0, 0, 0)
+            BorderStyle: =BorderStyle.None
+            BorderThickness: =2
+            Color: =RGBA(76, 98, 114, 1)
+            DisabledBorderColor: =RGBA(0, 0, 0, 0)
+            DisabledColor: =RGBA(161, 159, 157, 1)
+            FocusedBorderThickness: =4
+            Font: =Font.'Segoe UI'
+            Height: =97
+            LineHeight: =1.3
+            PaddingLeft: =30
+            PaddingRight: =30
+            Size: =11
+            Text: |-
+                ="Choose this option for a comprehensive interface designed for Advanced Users:
+                - You would have access to all the parameters for the API. 
+                - All information for organisations would be presented in formatted JSON without filtering."
+            Width: =424
+            X: =701
+            Y: =563
+            ZIndex: =13
+
+        Icon2 As icon.ToolsWrench:
+            BorderColor: =RGBA(0, 0, 0, 0)
+            Color: =RGBA(0, 120, 212, 1)
+            DisabledBorderColor: =RGBA(245, 245, 245, 1)
+            DisabledColor: =RGBA(225, 223, 221, 1)
+            DisabledFill: =RGBA(0, 0, 0, 0)
+            FocusedBorderThickness: =4
+            HoverBorderColor: =RGBA(0, 0, 0, 0)
+            HoverColor: =RGBA(16, 110, 190, 1)
+            HoverFill: =RGBA(0, 0, 0, 0)
+            Icon: =Icon.ToolsWrench
+            PressedBorderColor: =RGBA(0, 0, 0, 0)
+            PressedColor: =RGBA(16, 110, 190, 1)
+            PressedFill: =RGBA(0, 0, 0, 0)
+            X: =881
+            Y: =430
+            ZIndex: =14
+
+    "'Button L Overlay' As button":
+        BorderColor: =RGBA(0, 0, 0, 0)
+        Color: =RGBA(0, 0, 0, 0)
+        DisabledBorderColor: =RGBA(0, 0, 0, 0)
+        DisabledColor: =RGBA(0, 0, 0, 0)
+        DisabledFill: =RGBA(0, 0, 0, 0)
+        Fill: =RGBA(0, 0, 0, 0)
+        Font: =Font.'Segoe UI'
+        FontWeight: =FontWeight.Semibold
+        Height: =277
+        HoverBorderColor: =RGBA(0, 69, 120, 0.65)
+        HoverColor: =RGBA(0, 0, 0, 0)
+        HoverFill: =RGBA(0, 0, 0, 0)
+        OnSelect: =Navigate('Care Worker Screen');Set(CWMode2,false);Set(Type1Results,NHS_DoHS_API_Connector.GetOrganisationTypes(1).value)
+        PressedBorderColor: =RGBA(0, 0, 0, 0)
+        PressedColor: =RGBA(0, 0, 0, 0)
+        PressedFill: =RGBA(230, 230, 230, 0.2)
+        RadiusBottomLeft: =20
+        RadiusBottomRight: =20
+        RadiusTopLeft: =20
+        RadiusTopRight: =20
+        Size: =15
+        Text: =""
+        Width: =424
+        X: =241
+        Y: =402
+        ZIndex: =16
+

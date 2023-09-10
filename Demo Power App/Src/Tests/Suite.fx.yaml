@@ -1,0 +1,43 @@
+"'a3acff93-09d7-4fa6-8db5-bde1ab125e0d' As TestSuite":
+    Description: ="End-to-End Test"
+    DisplayName: ="Suite"
+
+    "'2969f8e0-e047-42a9-a07a-05efb38f1672' As TestCase":
+        Description: =""
+        DisplayName: ="Case - Advanced User Browse Type and Search Organisation"
+
+        Step1 As TestStep:
+            Description: ="Select 'Button R Overlay'"
+            Screen: =Welcome Screen
+            Value: =Select('Button R Overlay')
+
+        Step2 As TestStep:
+            Description: ="Select 'SearchButton'"
+            Screen: =Advanced User Screen
+            Value: =Select(SearchButton)
+
+        Step3 As TestStep:
+            Description: ="Select 'TabDes' in row 3 in 'TabGallery'"
+            Screen: =Advanced User Screen
+            Value: =Select(TabGallery, 3, TabDes)
+
+        Step4 As TestStep:
+            Description: ="Set 'SearchTextInput_NameCode'.Text to ""M3"""
+            Screen: =Advanced User Screen
+            Value: =SetProperty(SearchTextInput_NameCode.Text, "M3")
+
+        Step5 As TestStep:
+            Description: ="Select 'SearchButton_2'"
+            Screen: =Advanced User Screen
+            Value: =Select(SearchButton_2)
+
+        Step6 As TestStep:
+            Description: ="Select 'Type3ResultsLabel' in row 2 in 'Type3GalleryContainer'"
+            Screen: =Advanced User Screen
+            Value: =Select(Type3GalleryContainer, 2, Type3ResultsLabel)
+
+        Step7 As TestStep:
+            Description: ="Select 'Button Home Overlay'"
+            Screen: =Advanced User Screen
+            Value: =Select('Button Home Overlay')
+

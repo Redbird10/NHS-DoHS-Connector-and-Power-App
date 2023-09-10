@@ -1,0 +1,25 @@
+{
+  "QualifiedValues": [
+    {
+      "Kind": "default.cds_crcd4_pagenavitabs_forms",
+      "Namespace": "Page Navi Tabs (Forms)",
+      "Values": {
+        "Information": "1ade3e3b-5159-4ce1-957f-c11a29758838"
+      }
+    },
+    {
+      "Kind": "default.cds_crcd4_nhsdirectoryofhealthcareservicesapi_forms",
+      "Namespace": "NHS Directory of Healthcare Services API (Forms)",
+      "Values": {
+        "Information": "27eae9c0-9aa1-4912-802c-f3f30f52bcb7"
+      }
+    },
+    {
+      "Kind": "default.cds_crcd4_inventory_forms",
+      "Namespace": "Inventories (Forms)",
+      "Values": {
+        "Information": "9d329c98-9773-429e-861f-d9526516a1af"
+      }
+    }
+  ]
+}

@@ -1,0 +1,20 @@
+{
+  "96e6bc3e-28a3-4d73-b863-2ed122c8cba0": {
+    "connectionRef": {
+      "apiTier": "Standard",
+      "displayName": "NHS_DoHS_API",
+      "iconUri": "https://prodapiicons.cdn.powerappscdn.net/20230815t000000z08d25f89413d46a487e2ee2ea4ad92b4/customconnectoricon.png",
+      "id": "/providers/microsoft.powerapps/apis/shared_nhs-5fdohs-5fapi-5fcd50f11fb408e582-5f2a291c2c40cf4dbc",
+      "isCustomApiConnection": true,
+      "parameterHints": {},
+      "parameterHintsV2": {}
+    },
+    "datasets": {},
+    "dataSources": [
+      "NHS_DoHS_API_Connector"
+    ],
+    "dependencies": {},
+    "dependents": [],
+    "id": "96e6bc3e-28a3-4d73-b863-2ed122c8cba0"
+  }
+}
